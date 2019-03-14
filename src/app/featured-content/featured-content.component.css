@@ -1,0 +1,135 @@
+#main-container{
+    margin: 50px 0px 4px 0px;
+    width: 100%;
+    height: 200px;
+    background: black;
+    position: relative;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+#arrow-left{
+    font-size: 32px;
+    position: absolute;
+    left: 4px;
+    top: 84px;
+}
+#arrow-right{
+    font-size: 32px;
+    position: absolute;
+    right: 4px;
+    top: 84px;
+}
+#circles-main-container{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+}
+#circles-container{
+    width: 60px;
+    margin: 0px auto;
+}
+.circles{
+    font-size: 8px;
+    margin: 2px;
+}
+a{
+    height: inherit;
+    width: inherit;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover{
+    color: white;
+}
+.circle-hover:hover{
+    color: red;
+}
+@media only screen and (min-width: 375px){
+    #main-container{
+        height: 230px;
+    }
+    #arrow-left{
+        font-size: 32px;
+        position: absolute;
+        left: 4px;
+        top: 99px;
+    }
+    #arrow-right{
+        font-size: 32px;
+        position: absolute;
+        right: 4px;
+        top: 99px;
+    }
+}
+@media only screen and (min-width: 414px){
+    #arrow-left{
+        font-size: 32px;
+        position: absolute;
+        left: 4px;
+        top: 104px;
+    }
+    #arrow-right{
+        font-size: 32px;
+        position: absolute;
+        right: 4px;
+        top: 104px;
+    }
+}
+@media only screen and (min-width: 768px){
+    #main-container{
+        height: 240px;
+        margin: 90px 0px 4px 0px;
+    }
+    #main-container{
+        height: 420px;
+    }
+    #arrow-left{
+        font-size: 32px;
+        position: absolute;
+        left: 4px;
+        top: 194px;
+    }
+    #arrow-right{
+        font-size: 32px;
+        position: absolute;
+        right: 4px;
+        top: 194px;
+    }
+    #circles-container{
+        width: 84px;
+        margin: 0px auto;
+    }
+    .circles{
+        font-size: 10px;
+        margin: 4px;
+    }
+}
+@media only screen and (min-width: 1024px){
+    #main-container{
+        height: 512px;
+    }
+    #arrow-left{
+        font-size: 32px;
+        position: absolute;
+        left: 4px;
+        top: 240px;
+    }
+    #arrow-right{
+        font-size: 32px;
+        position: absolute;
+        right: 4px;
+        top: 240px;
+    }
+    #circles-container{
+        width: 84px;
+        margin: 0px auto;
+    }
+    .circles{
+        font-size: 10px;
+        margin: 4px;
+    }
+}

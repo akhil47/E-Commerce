@@ -1,0 +1,42 @@
+<div id="main-container" >
+  <div class="side-bar" [ngClass]="{ 'open': sidebarActive }">
+    <div id="side-bar-scroll">
+        <div id="user-tools">
+            <div style="float: left;"><img src="https://www.gstatic.com/webp/gallery/4.jpg" alt=""></div>
+            <div id="user-login-container">
+                <h6><a>Login</a> | <a>Register</a></h6>       
+            </div>
+          </div>
+          <ul id="main-nav" class="list-unstyled">
+            <li>
+              <a (click)="showMenMenu()">Men <span class="caret"></span></a>
+              <ul [ngClass] = "{'show': menMenu}">
+                <li><a>Page 1</a></li>
+                <li><a>Page 2</a></li>
+              </ul>
+            </li>
+            <li>
+              <a (click)="showWomenMenu()">Women <span class="caret"></span></a>
+              <ul [ngClass] = "{'show': womenMenu}">
+                  <li><a>Page 1</a></li>
+                  <li><a>Page 2</a></li>
+              </ul>
+            </li>
+            <li>
+              <a (click)="showKidsMenu()">Kids <span class="caret"></span></a>
+              <ul [ngClass] = "{'show': kidsMenu}">
+                  <li><a>Page 1</a></li>
+                  <li><a>Page 2</a></li>
+              </ul>
+            </li>
+            <li>
+              <a (click)="showAccessoriesMenu()">Accessories <span class="caret"></span></a>
+              <ul [ngClass] = "{'show': accessoriesMenu}">
+                  <li><a>Page 1</a></li>
+                  <li><a>Page 2</a></li>
+              </ul>
+            </li>
+          </ul>
+    </div>
+  </div>
+</div>

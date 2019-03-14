@@ -1,0 +1,155 @@
+#main-container{
+    top: 0px;
+    height: 50px;
+    width: 100%;
+    background: white;
+    position: fixed;
+    z-index: 3;
+}
+#main-menu-container{
+    position: absolute;
+    display: none;
+}
+#side-menu-icon{
+    margin: 10px;
+    font-size: 30px;
+    float: left;
+}
+.icon-color-change{
+    color:#9237e8;
+}
+#logo{
+    height: 40px;
+    width: 40px;
+    float: left;
+    margin: 5px auto;
+}
+ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+li{
+    float: left;
+}
+li a{
+    text-decoration: none;
+    padding: 14px;
+    display: block;
+}
+li:hover .menu-hover{
+    background:  #9237e8;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover{
+    color:  #9237e8;
+}
+
+
+
+/* right side links styling */
+#right-links-container{
+    position: relative;
+    float: right;
+    height: 50px;
+}
+#cart-icon-container{
+    margin: 14px 8px;
+    float: left;
+}
+#cart-icon{
+    font-size: 20px;
+}
+#heart-icon-container{
+    float: left;
+    margin: 15px 8px;
+}
+#heart-icon{
+    font-size: 18px;
+}
+#search-icon-container{
+    float: left;
+    margin: 14px 8px;
+}
+#search-icon{
+    font-size: 20px;
+}
+
+
+/* mobile search bar styling */
+#search-main-container{
+    top: -100px;
+    left: 0px;
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    background-color: whitesmoke;
+    transition: 0.5s;
+    z-index: 1;
+}
+.show-search-bar{
+    top: 0px !important;
+}
+#search-bar-icon{
+    font-size: 16px;
+    color: black;
+}
+#search-bar{
+    height: 35px;
+    margin: 7.5px auto;
+    padding: 0px 34px 0px 8px;
+}
+#search-container{
+    margin: 0px 8px;
+}
+button{
+    top: 16px;
+    right: 24px;
+    position: absolute;
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+
+@media only screen and (min-width: 768px){
+    #right-links-container{
+        display: none;
+    }
+    #main-container{
+        top: 40px;
+        height: 50px;
+        width: 100%;
+        background: white;
+        position: fixed;
+    }
+    #side-menu-icon{
+        display: none;
+    }
+    #logo{
+        margin: 5px 8px;
+    }
+    #main-menu-container{
+        width: 100%;
+        display: inline-block;
+        left: 0px;
+        top: 0px;
+    }
+    #main-menu{
+        width: 300px;
+        margin: 0px auto;
+    }
+    .menu-hover{
+        height: 2px;
+        width: 100%;
+    }
+}

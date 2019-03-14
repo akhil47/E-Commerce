@@ -1,0 +1,22 @@
+<div id="main-container">
+    <div id="arrows-wrapper">
+      <a (click)="onLeftScroll()">
+        <div id="left-arrow-container">
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </div>
+      </a>
+      <div #productsMainContainer id="products-main-container">
+        <div id="products-container">
+          <div id="product" *ngFor="let product of productList">
+            <a><img src="https://www.thesouledstore.com/static/images/newtiles/socks.jpg" alt=""></a>
+            <!-- need product component like <app-product [property] = "product" > -->
+          </div>
+        </div>
+      </div>
+      <a (click)="onRightScroll()">
+        <div id="right-arrow-container">
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </div>
+      </a>
+    </div>
+  </div>

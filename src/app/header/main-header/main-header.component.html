@@ -1,0 +1,44 @@
+<div id="main-container">
+  <a (click)="onOpenSideBar()">
+    <i id="side-menu-icon" [ngClass]="{ 'icon-color-change': sideBarIconColor }"
+      class="fa fa-bars" aria-hidden="true"></i>
+  </a>
+  <img id="logo" [src]="logoURL" alt="Image not Available">
+  <div id="main-menu-container">
+      <div id="main-menu">
+          <ul>
+            <li *ngFor="let item of menuItems">
+              <a>{{ item }}</a>
+              <div class="menu-hover"></div>
+            </li>
+          </ul>
+        </div>
+  </div>
+  <div id="right-links-container">
+      <div id="right-links">
+          <div id="search-icon-container">
+              <a (click)="openSearch()">
+                <i id="search-icon" class="fa fa-search" aria-hidden="true"></i>
+              </a>
+          </div>
+          <div id="heart-icon-container">
+              <a>
+                <i id="heart-icon" class="fa fa-heart" aria-hidden="true"></i>
+              </a>
+          </div>
+          <div id="cart-icon-container">
+              <a>
+                <i id="cart-icon" class="fa fa-shopping-cart" aria-hidden="true"></i>
+              </a>
+          </div>
+      </div>
+  </div>
+</div>
+<div id="search-main-container" [ngClass]="{ 'show-search-bar': searchBar }">
+    <div id="search-container">
+        <form>
+            <input id="search-bar" placeholder="Search our collection..." type="text" class="form-control">
+            <button type="submit"><i id="search-bar-icon" class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+    </div>
+</div>

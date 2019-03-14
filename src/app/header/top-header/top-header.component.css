@@ -1,0 +1,68 @@
+#main-container{
+    top: 0px;
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    background: #9237e8;
+    z-index: 3;
+}
+#right-links{
+    float: right;
+    height: 40px;
+    padding: 0px 16px;
+}
+#cart{
+    margin: 9px 12px;
+    float: left;
+}
+.cart{
+    font-size: 20px;
+}
+#heart{
+    float: left;
+    margin: 10px 12px;
+}
+.heart{
+    font-size: 18px;
+}
+#user{
+    float: left;
+    margin: 9px 14px;
+}
+.user{
+    font-size: 20px;
+}
+#seperator{
+    margin: 8.75px 12px;
+    background: white;
+    width: 2px;
+    height: 22.5px;
+    float: left;
+}
+#search{
+    height: 40px;
+    width: 300px;
+    position: relative;
+    float: left;
+}
+#search-icon{
+    top: 12px;
+    right: 32px;
+    position: absolute;
+    font-size: 16px;
+    color: black;
+}
+#search-bar{
+    width: 256px;
+    height: 25px;
+    margin: 7.5px auto;
+    padding: 0px 32px 0px 8px;
+}
+a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+a:hover{
+    color: black;
+}
