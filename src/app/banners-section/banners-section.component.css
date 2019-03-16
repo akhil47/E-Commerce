@@ -5,6 +5,7 @@
     max-height: 160px;
     width: 312px;
     margin: 0px auto;
+    text-align: center;
 }
 .banner-large{
     width: 304px;
@@ -13,10 +14,15 @@
     float: left;
 }
 .banner-medium{
+    /* display: inline-block !important; */
     width: 148px;
     height: 148px;
     margin: 4px;
     float: left;
+}
+.banner-medium img{
+    height: inherit;
+    width: inherit;
 }
 .banner-small{
     width: 70px;
@@ -45,20 +51,14 @@ img{
     .banner-large{
         width: 359px;
         height: 175.5px;
-        margin: 4px;
-        float: left;
     }
     .banner-medium{
         width: 175.5px;
         height: 175.5px;
-        margin: 4px;
-        float: left;
     }
     .banner-small{
         width: 83.75px;
         height: 83.75px;
-        margin: 4px;
-        float: left;
     }
 }
 @media only screen and (min-width: 414px){
@@ -69,20 +69,14 @@ img{
     .banner-large{
         width: 398px;
         height: 195px;
-        margin: 4px;
-        float: left;
     }
     .banner-medium{
         width: 195px;
         height: 195px;
-        margin: 4px;
-        float: left;
     }
     .banner-small{
         width: 93.5px;
         height: 93.5px;
-        margin: 4px;
-        float: left;
     }
 }
 @media only screen and (min-width: 768px){
@@ -93,20 +87,14 @@ img{
     .banner-large{
         width: 752px;
         height: 350px;
-        margin: 4px;
-        float: left;
     }
     .banner-medium{
         width: 372px;
-        height: 220px;
-        margin: 4px;
-        float: left;
+        height: 270px;
     }
     .banner-small{
         width: 182px;
         height: 182px;
-        margin: 4px;
-        float: left;
     }
 }
 @media only screen and (min-width: 1024px){
@@ -117,19 +105,31 @@ img{
     .banner-large{
         width: 1008px;
         height: 400px;
-        margin: 4px;
-        float: left;
     }
     .banner-medium{
         width: 500px;
-        height: 240px;
-        margin: 4px;
-        float: left;
+        height: 350px;
     }
     .banner-small{
         width: 246px;
         height: 246px;
-        margin: 4px;
-        float: left;
+    }
+}
+@media only screen and (min-width: 1366px){
+    .banners-container{
+        width: 1358px;
+        max-height: 300px;
+    }
+    .banner-large{
+        width: 1350px;
+        height: 500px;
+    }
+    .banner-medium{
+        width: 671px;
+        height: 470px;
+    }
+    .banner-small{
+        width: 331px;
+        height: 331px;
     }
 }

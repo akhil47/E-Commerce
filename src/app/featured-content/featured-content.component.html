@@ -1,17 +1,18 @@
 <div id="main-container">
   
-  <a><img src="https://assets.jassets.com/assets/images/retaillabs/2019/2/25/b4fb4b5f-9ee5-4b2a-ad98-c4d191598dda1551090041569-Pepe-DesktopBanner.jpg" alt=""></a>
+  <a><img [src]="currentImage" alt=""></a>
   
   <!-- Navigation arrows -->
-  <a><i id="arrow-left" class="fa fa-arrow-circle-left" aria-hidden="true"></i></a>
-  <a><i id="arrow-right" class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+  <a (click)="backwardSlide()"><i id="arrow-left" class="fa fa-arrow-circle-left" aria-hidden="true"></i></a>
+  <a (click)="forwardSlide()"><i id="arrow-right" class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
 
   <!-- Navigation circles -->
   <div id="circles-main-container">
     <div id="circles-container">
-        <a class="circle-hover"><i class="fa fa-circle circles" aria-hidden="true"></i></a>
-        <a class="circle-hover" *ngFor="let _ of [0,1,2,3]"><i class="fa fa-circle-thin circles" aria-hidden="true"></i></a>
-        <!-- (for active banner link to angular)<i class="fa fa-circle" aria-hidden="true"></i> -->
+        <a class="circle-hover" *ngFor="let i of [0,1,2,3,4]">
+          <i *ngIf="i!=counter" (click)="activateSlide(i)" class="fa fa-circle-thin circles" aria-hidden="true"></i>
+          <i *ngIf="i==counter" class="fa fa-circle circles" aria-hidden="true"></i>
+        </a>
     </div>
   </div>
 </div>

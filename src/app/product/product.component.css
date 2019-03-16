@@ -1,0 +1,48 @@
+#outer-container{
+    width: 220px;
+    padding: 10px 10px 0px 10px;
+}
+#outer-container:hover{
+    background-color: bisque;
+}
+#product-image{
+    padding-bottom: 10px;
+}
+#product-info{
+    width: 200px;
+}
+#product-name-container{
+    width: 100%;
+}
+#product-name{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 14px;
+}
+#product-price-container{
+    width: 100%;
+    overflow: hidden;
+}
+#product-price{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 16px;
+}
+#seperator{
+    height: 1px;
+    width: 100%;
+    background-color: grey;
+}
+#product-size-container{
+    width: 100%;
+    overflow: hidden;
+}
+#product-size{
+    margin: 0px;
+    padding: 2px 0px 2px 0px;
+    font-family: "Times New Roman", Georgia, serif;
+    color: grey;
+    opacity: 0.8;
+}

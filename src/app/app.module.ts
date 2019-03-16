@@ -12,6 +12,8 @@ import { SideBarComponent } from './header/side-bar/side-bar.component';
 import { TopHeaderComponent } from './header/top-header/top-header.component';
 import { HeaderService } from './services/header.service';
 import { HorizontalScrollComponent } from './horizontal-scroll/horizontal-scroll.component';
+import { ProductComponent } from './product/product.component';
+import { TitleComponent } from './title/title.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { HorizontalScrollComponent } from './horizontal-scroll/horizontal-scroll
     FooterComponent,
     SideBarComponent,
     TopHeaderComponent,
-    HorizontalScrollComponent
+    HorizontalScrollComponent,
+    ProductComponent,
+    TitleComponent
   ],
   imports: [
     BrowserModule

@@ -2,10 +2,13 @@
     position: relative;
 }
 #products-main-container{
-    height: 136px;
     width: 100%;
     overflow-y: hidden;
     overflow-x: scroll;
+    position: relative;
+}
+#content-wrapper{
+    margin: 8px 8px 4px 8px;
     position: relative;
 }
 ::-webkit-scrollbar {
@@ -13,16 +16,12 @@
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
-#products-container{
-    padding: 4px;
-    float: left;
-    width: 1368px;
-}
 #product{
     float: left;
-    height: 128px;
-    width: 128px;
-    margin: 0px 4px;
+}
+#products-container{
+    float: left;
+    width: 2200px;
 }
 div a{
     height: inherit;
@@ -31,30 +30,30 @@ div a{
     text-decoration: none;
     cursor: pointer;
 }
-img{
-    height: inherit;
-    width: inherit;
-    margin: 0px auto;
-}
-i{
-    width: 32px;
-    margin: 84px 2px;
-}
 #left-arrow-container{
-    top: 52px; 
+    top: 0px; 
     left: 0px;
     position: absolute;
     font-size: 32px;
     z-index: 1;
     display: none;
+    align-items: center;
+    justify-content: center; 
+    height: 307px;
+    width: 36px;
+
 }
 #right-arrow-container{
-    top: 52px;
+    top: 0px;
     right: 0px;
     position: absolute;
     font-size: 32px;
     z-index: 1;
     display: none;
+    align-items: center;
+    justify-content: center; 
+    height: 307px;
+    width: 36px;
 }
 #left-arrow-container:hover, #right-arrow-container:hover {
     background-color: rgb(214, 216, 219, 0.9);
@@ -64,33 +63,14 @@ i{
     #products-main-container{
         width: 768px;
         margin: 0px auto;
-        height: 208px;
-    }
-    #products-container{
-        width: 2088px;
-    }
-    #product{
-        float: left;
-        height: 200px;
-        width: 200px;
     }
     #left-arrow-container{
-        display: inline;
-        height: 200px;
-        width: 36px;
-        /* top: 84px; */
-        top: 0px;
-        margin: 4px 0px;
+        display: flex;
     }
     #right-arrow-container{
-        display: inline;
-        height: 200px;
-        width: 36px;
-        /* top: 84px; */
-        top: 0px;
-        margin: 4px 0px;
+        display: flex;
     }
-    #arrows-wrapper{
+    #main-wrapper{
         position: relative;
         width: 768px;
         margin: 0px auto;
@@ -98,9 +78,17 @@ i{
 }
 @media only screen and (min-width: 1024px){
     #products-main-container{
+        width: 1008px;
+    }
+    #main-wrapper{
         width: 1024px;
     }
-    #arrows-wrapper{
-        width: 1024px;
+}
+@media only screen and (min-width: 1366px){
+    #products-main-container{
+        width: 1350px;
+    }
+    #main-wrapper{
+        width: 1366px;
     }
 }
