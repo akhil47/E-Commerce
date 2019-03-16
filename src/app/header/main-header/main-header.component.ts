@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HeaderService } from '../../services/header.service';
+import { DropdownList } from 'src/app/modals/dropdown-list.modal';
 
 @Component({
   selector: 'app-main-header',
@@ -11,12 +12,15 @@ export class MainHeaderComponent implements OnInit {
   logoURL: string = 'https://www.gstatic.com/webp/gallery3/2.png'
   sideBarIconColor: boolean = false;
   searchBar: boolean = false;
-  menuItems: string[] = ['Men', 'Women', 'Kids', 'Accessories']
+  menuItems: string[] = ['Men', 'Women', 'Kids', 'Accessories', 'Sports', 'Home Appliances']
+
   constructor(private headerService: HeaderService) { }
 
   ngOnInit() {
   }
-
+  getDropDown(dropDownName: string){
+    return this.headerService.getDropDownList(dropDownName)
+  }
   onOpenSideBar(){
     if(this.sideBarIconColor){
       this.closeSidebar()

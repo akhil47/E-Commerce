@@ -1,0 +1,26 @@
+<div id="main-container">
+  <div *ngFor="let list of dropDownLists" class="list-container">
+    <a><p class="list-heading"><strong>{{ list.listName }}</strong></p></a>
+    <ul>
+      <li *ngFor="let item of list.listItems">
+        <a>{{ item }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

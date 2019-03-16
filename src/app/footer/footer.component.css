@@ -2,7 +2,9 @@
     margin: 4px 0px 0px 0px;
     float: left;
     width: 100%;
-    background-color: #c2c3c4;
+    /* background-color: #9237e8; */
+    background-color: #6a22ad;
+    color: white;
 }
 #links-sections-container{
     width: 304px;
@@ -29,7 +31,7 @@ ul{
 }
 li{
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    color: #4c4b4b;
+    
     
 }
 li a{
