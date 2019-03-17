@@ -15,6 +15,8 @@ import { HorizontalScrollComponent } from './horizontal-scroll/horizontal-scroll
 import { ProductComponent } from './product/product.component';
 import { TitleComponent } from './title/title.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { HomePageComponent } from './Pages/home-page/home-page.component';
+import { SearchPageComponent } from './Pages/search-page/search-page.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { DropdownComponent } from './dropdown/dropdown.component';
     HorizontalScrollComponent,
     ProductComponent,
     TitleComponent,
-    DropdownComponent
+    DropdownComponent,
+    HomePageComponent,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule
