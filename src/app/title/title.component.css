@@ -30,7 +30,8 @@ a{
 }
 a:hover{
     /* border: 1px solid black; */
-    box-shadow: 5px 5px 20px black;
+    box-shadow: 0px 0px 10px black;
+    border-radius: 8px;
 }
 @media only screen and (min-width: 375px){
     p{
