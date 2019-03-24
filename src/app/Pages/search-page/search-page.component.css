@@ -4,6 +4,60 @@
     background: red;
     position: relative;
 }
+#filters-section{
+    width: 250px;
+    height: 100%;
+    background: black;
+    padding: 16px;
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+label{
+    margin: 0px 8px;
+}
+input{
+    margin: 4px;
+}
+.list-items{
+    float: left;
+}
+::-webkit-scrollbar {
+    height: 0px;
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+.filter{
+    display: inline-block;
+    border: 1px solid white;
+    height: 256px;
+    width: 100%;
+}
+.filter-header{
+    color: white;
+    display: block;
+    text-align: left;
+    padding: 8px;
+}
+.filter-contents{
+    text-align: left;
+    padding: 0px 8px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: calc(100% - 53px);
+}
+.scroll-view{
+    height: 1000px;
+}
+.seperator{
+    margin: 8px 0px;
+    background: grey;
+    height: 1px;
+    width: 100%;
+}
 @media only screen and (min-width: 768px){
     #main-container{
         margin: 90px 0px 0px 0px;
