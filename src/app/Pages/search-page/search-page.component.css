@@ -7,7 +7,7 @@
 #filters-section{
     width: 250px;
     height: 100%;
-    background: black;
+    background: blueviolet;
     padding: 16px;
     text-align: center;
 }
@@ -17,7 +17,7 @@ ul{
     padding: 0px;
 }
 label{
-    margin: 0px 8px;
+    margin: 1px 8px;
 }
 input{
     margin: 4px;
@@ -50,7 +50,7 @@ input{
     height: calc(100% - 53px);
 }
 .scroll-view{
-    height: 1000px;
+    display: table-row;
 }
 .seperator{
     margin: 8px 0px;
