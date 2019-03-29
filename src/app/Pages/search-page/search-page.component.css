@@ -7,7 +7,6 @@
 #filters-section{
     width: 250px;
     height: 100%;
-    background: blueviolet;
     padding: 16px;
     text-align: center;
 }
@@ -41,6 +40,7 @@ input{
     display: block;
     text-align: left;
     padding: 8px;
+    background-color: #9237e8;
 }
 .filter-contents{
     text-align: left;

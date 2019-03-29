@@ -17,6 +17,7 @@ import { TitleComponent } from './title/title.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { HomePageComponent } from './Pages/home-page/home-page.component';
 import { SearchPageComponent } from './Pages/search-page/search-page.component';
+import { CheckboxFilterComponent } from './checkbox-filter/checkbox-filter.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SearchPageComponent } from './Pages/search-page/search-page.component';
     TitleComponent,
     DropdownComponent,
     HomePageComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    CheckboxFilterComponent
   ],
   imports: [
     BrowserModule
