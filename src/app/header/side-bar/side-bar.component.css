@@ -32,7 +32,7 @@ a{
 .side-bar{
     position: fixed;
     overflow: auto;
-    height: 100%;
+    height: calc(100% - 50px);
     width: 200px;
     background-color: whitesmoke;
     color: black;
@@ -42,7 +42,8 @@ a{
     z-index: 2;
 }
 #side-bar-scroll{
-    height: 1000px;
+    /* height: 1000px; */
+    display: table-row;
     overflow-y: scroll;
     overflow-x: hidden;
 }

@@ -1,24 +1,22 @@
 #main-container{
     margin: 50px 0px 0px 0px;
     width: 100%;
-    /* background: red; */
     position: relative;
 }
 #filters-section{
     z-index: 3;
     position: fixed;
-    width: 300px;
+    width: 320px;
     height: 100%;
-    left: -300px;
+    left: -320px;
     transition: 0.5s all;
 }
 .filters-section-active{
     left: 0px !important;
 }
 #wrapper{
-    width: 768px;
     margin: 0px auto;
-    /* background: grey; */
+    padding: 24px 0px;
 }
 .header-text{
     display: block;
@@ -40,7 +38,8 @@
     text-align: center;
     position: fixed;
     top: 50%;
-    left: 5%;
+    left: 12px;
+    z-index: 1;
 }
 #filter-toggle{
     height: 36px;
@@ -74,15 +73,17 @@ a{
     margin: 4px 0px;
 }
 #search-results-container{
-    /* text-align: center; */
+    text-align: center;
 }
 .result{
-    /* display: inline-block; */
-    float: left;
+    display: inline-block;
 }
 @media only screen and (min-width: 768px){
     #main-container{
         margin: 90px 0px 0px 0px;
+    }
+    #wrapper{
+        width: 768px;
     }
 }
 @media only screen and (min-width: 1024px){

@@ -10,34 +10,39 @@
 }
 #filters-scroll-container{
     width: 100%;
-    height: calc(100% - 138px);
+    height: calc(100% - 50px);
     overflow-x: hidden;
     overflow-y: scroll;
 }
-#scroll-view{
-    /* width: 100%; */
-}
-/* ::-webkit-scrollbar {
-    height: 0px;
-    width: 0px;
-    background: transparent;
-} */
+
 p{
     font-family: dinnextproregular, Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: bold;
     display: inline-block;
     float: left;
-    margin: 7px;
+    margin: 13px 8px;
 }
 i{
     display: inline-block;
-    font-size: 34px;
+    font-size: 20px;
     float: right;
-    margin: 7px;
+    margin: 14px 8px;
 }
 a{
     text-decoration: none;
     cursor: pointer;
     color: inherit;
+}
+@media only screen and (max-width: 767px){
+    ::-webkit-scrollbar {
+        height: 0px;
+        width: 0px;
+        background: transparent;
+    }
+}
+@media only screen and (min-width: 768px){
+    #filters-scroll-container{
+        height: calc(100% - 138px);
+    }
 }

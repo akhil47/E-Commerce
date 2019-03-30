@@ -1,26 +1,26 @@
 <div id="main-container">
-    <div id="wrapper">
     <div [ngClass]=" { 'filters-section-active': areFiltersActive } " id="filters-section">
         <app-filters-section (filterSectionClose)="closeFilters()"></app-filters-section>
     </div>
-    <a (click)="openFilters()">
-        <div id="filter-toggle-container">
-            <div id="filter-toggle">
-                <i class="fa fa-filter filter-icon" aria-hidden="true"></i>
+    <div id="wrapper">
+        <a (click)="openFilters()">
+            <div id="filter-toggle-container">
+                <div id="filter-toggle">
+                    <i class="fa fa-filter filter-icon" aria-hidden="true"></i>
+                </div>
+                    <p class="filter-text">Filters</p>
             </div>
-                <p class="filter-text">Filters</p>
-        </div>
-    </a>
-    <!-- Add Close button for filter section and add scroll to main filter section -->
-    <div id="search-results-header">
+        </a>
+        <div id="search-results-header">
             <p id="header-text-1" class="header-text"> MEN / Clothing / Shirts</p>
             <p id="header-text-2" class="header-text">Men Shirts - 13845 items</p>
             <div id="seperator"></div>
         </div>
         <div id="search-results-container">
-            <div class="result" *ngFor="let _ of [0,1,2,3,4,5,6,7,8,9,0,0,1,2,3,4,5,6,7,8,9,0]">
-                <a><app-product></app-product></a>
-            </div>
+                <div class="result" *ngFor="let _ of [0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0]">
+                    <a><app-product></app-product></a>
+                </div>
+
         </div>
     </div>
 </div>
