@@ -1,0 +1,23 @@
+<div id="main-container">
+    <a (click)="onExpand()">
+      <div class="filter-header">
+          <strong>Brands<span class="caret"></span></strong>
+        </div>
+    </a>
+    <div [ngClass]= "{ 'filter-expand' : isExpanded }" class="filter-contents">
+      <div class="scroll-view">
+        <ul>
+          <li *ngFor="let _ of [0,1,2,3,4,5,6,7,8,9]">
+            <div style="width: 100%;height: 32px;">
+              <div class="list-items">
+                <input type="radio" name="brand" value="">
+              </div>
+              <div class="list-items">
+                <label>Levis</label>
+              </div>
+            </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>

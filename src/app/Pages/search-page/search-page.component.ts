@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPageComponent implements OnInit {
 
+  areFiltersActive: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  openFilters(){
+    if(this.areFiltersActive){
+      this.areFiltersActive = false;
+    }
+    else{
+      this.areFiltersActive = true;
+    }
+  }
+  closeFilters(){
+    this.areFiltersActive = false;
+  }
 }

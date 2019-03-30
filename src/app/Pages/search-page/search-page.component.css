@@ -1,65 +1,97 @@
 #main-container{
     margin: 50px 0px 0px 0px;
     width: 100%;
-    background: red;
+    /* background: red; */
     position: relative;
 }
 #filters-section{
-    width: 250px;
+    z-index: 3;
+    position: fixed;
+    width: 300px;
     height: 100%;
-    padding: 16px;
+    left: -300px;
+    transition: 0.5s all;
+}
+.filters-section-active{
+    left: 0px !important;
+}
+#wrapper{
+    width: 768px;
+    margin: 0px auto;
+    /* background: grey; */
+}
+.header-text{
+    display: block;
+    margin: 8px;
+    padding: 0px;
+    font-family: "Times New Roman", Georgia, serif;
+}
+#header-text-1{
+    font-size: 14px;
+    font-weight: lighter;
+}
+#header-text-2{
+    font-size: 20px;
+    font-weight: bold;
+}
+#filter-toggle-container{
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 5%;
+}
+#filter-toggle{
+    height: 36px;
+    width: 36px;
+    background-color: #9237e8;
+    border-radius: 50%;
+    display: inline-block;
     text-align: center;
 }
-ul{
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
-}
-label{
-    margin: 1px 8px;
-}
-input{
-    margin: 4px;
-}
-.list-items{
-    float: left;
-}
-::-webkit-scrollbar {
-    height: 0px;
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
-}
-.filter{
-    display: inline-block;
-    border: 1px solid white;
-    height: 256px;
-    width: 100%;
-}
-.filter-header{
+.filter-icon{
+    font-size: 24px;
     color: white;
-    display: block;
-    text-align: left;
-    padding: 8px;
-    background-color: #9237e8;
+    display: inline-block;
+    margin: 6px 0px;
 }
-.filter-contents{
-    text-align: left;
-    padding: 0px 8px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    height: calc(100% - 53px);
+.filter-text{
+    display: inline-block;
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #9237e8;
 }
-.scroll-view{
-    display: table-row;
+a{
+    text-decoration: none;
+    cursor: pointer;
 }
-.seperator{
-    margin: 8px 0px;
-    background: grey;
-    height: 1px;
+#seperator{
+    height: 2px;
     width: 100%;
+    background-color: #9237e8;
+    margin: 4px 0px;
+}
+#search-results-container{
+    /* text-align: center; */
+}
+.result{
+    /* display: inline-block; */
+    float: left;
 }
 @media only screen and (min-width: 768px){
     #main-container{
         margin: 90px 0px 0px 0px;
+    }
+}
+@media only screen and (min-width: 1024px){
+    #wrapper{
+        width: 1024px;
+    }
+}
+@media only screen and (min-width: 1366px){
+    #wrapper{
+        width: 1366px;
     }
 }

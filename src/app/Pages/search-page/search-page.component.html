@@ -1,25 +1,25 @@
 <div id="main-container">
-    <div id="filters-section">
-        <div class="filter">
-            <div class="filter-header">
-                <strong>Brands<span class="caret"></span></strong>
-                <!-- <div class="seperator"></div> -->
+    <div id="wrapper">
+    <div [ngClass]=" { 'filters-section-active': areFiltersActive } " id="filters-section">
+        <app-filters-section (filterSectionClose)="closeFilters()"></app-filters-section>
+    </div>
+    <a (click)="openFilters()">
+        <div id="filter-toggle-container">
+            <div id="filter-toggle">
+                <i class="fa fa-filter filter-icon" aria-hidden="true"></i>
             </div>
-            <div class="filter-contents">
-                <div class="scroll-view">
-                    <ul>
-                        <li *ngFor="let _ of [0,1,2,3,4,5,6,7,8,9]">
-                            <div style="width: 100%;height: 32px;">
-                                <div class="list-items">
-                                    <input type="checkbox">
-                                </div>
-                                <div class="list-items">
-                                    <label>Levis</label>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                <p class="filter-text">Filters</p>
+        </div>
+    </a>
+    <!-- Add Close button for filter section and add scroll to main filter section -->
+    <div id="search-results-header">
+            <p id="header-text-1" class="header-text"> MEN / Clothing / Shirts</p>
+            <p id="header-text-2" class="header-text">Men Shirts - 13845 items</p>
+            <div id="seperator"></div>
+        </div>
+        <div id="search-results-container">
+            <div class="result" *ngFor="let _ of [0,1,2,3,4,5,6,7,8,9,0,0,1,2,3,4,5,6,7,8,9,0]">
+                <a><app-product></app-product></a>
             </div>
         </div>
     </div>

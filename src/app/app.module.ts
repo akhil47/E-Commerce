@@ -18,6 +18,8 @@ import { DropdownComponent } from './dropdown/dropdown.component';
 import { HomePageComponent } from './Pages/home-page/home-page.component';
 import { SearchPageComponent } from './Pages/search-page/search-page.component';
 import { CheckboxFilterComponent } from './checkbox-filter/checkbox-filter.component';
+import { RadioFilterComponent } from './radio-filter/radio-filter.component';
+import { FiltersSectionComponent } from './filters-section/filters-section.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { CheckboxFilterComponent } from './checkbox-filter/checkbox-filter.compo
     DropdownComponent,
     HomePageComponent,
     SearchPageComponent,
-    CheckboxFilterComponent
+    CheckboxFilterComponent,
+    RadioFilterComponent,
+    FiltersSectionComponent
   ],
   imports: [
     BrowserModule

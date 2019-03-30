@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-checkbox-filter',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckboxFilterComponent implements OnInit {
 
+  isExpanded: boolean = false;
   constructor() { }
 
   ngOnInit() {
   }
 
+  onExpand(){
+    if(this.isExpanded){
+      this.isExpanded = false;
+    }
+    else{
+      this.isExpanded = true;
+    }
+  }
 }
