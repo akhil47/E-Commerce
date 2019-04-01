@@ -10,7 +10,7 @@
 }
 #filters-scroll-container{
     width: 100%;
-    height: calc(100% - 50px);
+    height: calc(100% - 98px);
     overflow-x: hidden;
     overflow-y: scroll;
 }

@@ -1,0 +1,46 @@
+<div id="main-container">
+  <div id="wrapper">
+    <div id="images-container">
+      <app-image-display></app-image-display>
+    </div>
+    <div id="product-info-container">
+      <div id="product-title">
+        <ul>
+          <li><p><strong>DOROTHY PERKINS</strong></p></li>
+          <li><p>Beige & Black Regular Fit Printed Casual Shirt</p></li>
+          <li><p>Rs. 2990</p></li>
+        </ul>
+      </div>
+      <div class="seperator"></div>
+      <div id="product-size">
+        <div class="header"><strong><p style="margin: 0px;">SIZE</p></strong></div>
+        <div *ngFor="let i of ['S','M','L','XL','XXL', 'XXXL', 'XXXXL']" class="size-container">
+          <div class="radio-button">
+            <input type="radio" name="size" value="">
+          </div>
+          <div class="radio-button-name">
+              <p>{{ i }}</p>
+          </div>
+        </div>
+        <div id="buttons-section">
+            <div class="buttons">
+                <button class="btn btn-success" type="button">Add to Cart</button>
+            </div>
+            <div class="buttons">
+                <button class="btn btn-primary" type="button">Add to Wishlist</button>
+            </div>
+        </div>
+      </div>
+      <div class="seperator"></div>
+      <div id="product-delivery">
+        <div class="header"><strong><p style="margin: 0px;">Check Delivery Info</p></strong></div>
+        <div id="pincode-textfield">
+          <input type="text" class="form-control" placeholder="Pincode">
+        </div>
+        <div id="check-button">
+          <button type="button" class="btn btn-primary">Check</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

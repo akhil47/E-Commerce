@@ -1,0 +1,108 @@
+#main-container{
+    margin: 58px 8px 4px 8px;
+    position: relative;
+    font-family: dinnextproregular, Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+#wrapper{
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+}
+#images-container{
+    width: 100%;
+    /* background-color: bisque; */
+    display: inline-block;
+}
+#product-info-container{
+    width: 100%;
+    display: inline-block;
+}
+#product-title{
+    width: 100%;
+    float: left;
+    text-align: left;
+}
+#product-delivery{
+    width: 100%;
+    float: left;
+}
+.size-container{
+    padding: 8px;
+    width: 72px;;
+    float: left;
+}
+.radio-button{
+    margin: 0px 8px;
+}
+.radio-button-name{
+    margin: 0px 8px;
+}
+.header{
+    display: block;
+    text-align: left;
+    font-size: 16px;
+}
+.seperator{
+    display: inline-block;
+    height: 1px;
+    width: 100%;
+    background: grey;
+}
+ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+li p{
+    display: block;
+    margin: 0px;
+    font-weight: lighter;
+    font-size: 16px;
+}
+#buttons-section{
+    float: left;
+    width: 100%;
+}
+.buttons{
+    float: left;
+    padding: 0px 8px 0px 0px;
+}
+#pincode-textfield{
+    float: left;
+    width: 150px;
+    padding: 8px 8px 8px 0px;
+}
+#check-button{
+    float: left;
+    padding: 8px 0px;
+}
+@media only screen and (min-width: 768px){
+    #main-container{
+        margin: 98px 8px 4px 8px;
+        position: relative;
+        font-family: dinnextproregular, Helvetica Neue,Helvetica,Arial,sans-serif;
+    }
+}
+@media only screen and (min-width: 1024px){
+    #images-container{
+        width: 70%;
+        display: inline-block;
+    }
+    #product-info-container{
+        padding: 0px 0px 0px 8px;
+        vertical-align: top;
+        width: 30%;
+        display: inline-block;
+    }
+}
+@media only screen and (min-width: 1366px){
+    #images-container{
+        width: 944px;
+        display: inline-block;
+    }
+    #product-info-container{
+        vertical-align: top;
+        width: 406px;
+        display: inline-block;
+    }
+}

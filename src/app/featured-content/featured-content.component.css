@@ -1,7 +1,7 @@
 #main-container{
     margin: 50px 0px 0px 0px;
     width: 100%;
-    height: 200px;
+    height: 50%;
     background: black;
     position: relative;
     transition: 0.5s all;
@@ -14,13 +14,13 @@ img{
     font-size: 32px;
     position: absolute;
     left: 4px;
-    top: 84px;
+    top: 45%;
 }
 #arrow-right{
     font-size: 32px;
     position: absolute;
     right: 4px;
-    top: 84px;
+    top: 45%;
 }
 #circles-main-container{
     position: absolute;
@@ -49,68 +49,9 @@ a:hover{
 .circle-hover:hover{
     color: red;
 }
-@media only screen and (min-width: 375px){
-    #main-container{
-        height: 230px;
-    }
-    #arrow-left{
-        top: 99px;
-    }
-    #arrow-right{
-        top: 99px;
-    }
-}
 @media only screen and (min-width: 768px){
     #main-container{
-        height: 240px;
         margin: 90px 0px 0px 0px;
-    }
-    #main-container{
-        height: 420px;
-    }
-    #arrow-left{
-        top: 194px;
-    }
-    #arrow-right{
-        top: 194px;
-    }
-    #circles-container{
-        width: 84px;
-        margin: 0px auto;
-    }
-    .circles{
-        font-size: 10px;
-        margin: 4px;
-    }
-}
-@media only screen and (min-width: 1024px){
-    #main-container{
-        height: 500px;
-    }
-    #arrow-left{
-        top: 234px;
-    }
-    #arrow-right{
-        top: 234px;
-    }
-    #circles-container{
-        width: 84px;
-        margin: 0px auto;
-    }
-    .circles{
-        font-size: 10px;
-        margin: 4px;
-    }
-}
-@media only screen and (min-width: 1280px){
-    #main-container{
-        height: 50%;
-    }
-    #arrow-left{
-        top: 50%;
-    }
-    #arrow-right{
-        top: 50%;
     }
     #circles-container{
         width: 84px;

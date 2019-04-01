@@ -20,6 +20,11 @@ import { SearchPageComponent } from './Pages/search-page/search-page.component';
 import { CheckboxFilterComponent } from './checkbox-filter/checkbox-filter.component';
 import { RadioFilterComponent } from './radio-filter/radio-filter.component';
 import { FiltersSectionComponent } from './filters-section/filters-section.component';
+import { ProductPageComponent } from './Pages/product-page/product-page.component';
+import { ImageDisplayComponent } from './image-display/image-display.component';
+import { LoginRegisterPageComponent } from './Pages/login-register-page/login-register-page.component';
+import { WishlistPageComponent } from './Pages/wishlist-page/wishlist-page.component';
+import { CartPageComponent } from './Pages/cart-page/cart-page.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +45,12 @@ import { FiltersSectionComponent } from './filters-section/filters-section.compo
     SearchPageComponent,
     CheckboxFilterComponent,
     RadioFilterComponent,
-    FiltersSectionComponent
+    FiltersSectionComponent,
+    ProductPageComponent,
+    ImageDisplayComponent,
+    LoginRegisterPageComponent,
+    WishlistPageComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule

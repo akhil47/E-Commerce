@@ -1,0 +1,28 @@
+#main-container{
+    position: relative;
+}
+@media only screen and (max-width: 512px){
+    img{
+        width: 100%;
+        object-fit: contain;
+    }
+}
+.arrows{
+    position: absolute;
+    font-size: 32px;
+    color: grey;
+    top: 50%;
+}
+#left-arrow{
+    left: 4px;
+}
+#right-arrow{
+    right: 4px;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+i:hover{
+    color: black;
+}
