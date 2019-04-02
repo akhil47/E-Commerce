@@ -1,0 +1,117 @@
+#main-container{
+    margin: 50px 0px 0px 0px;
+    padding: 8px 8px 4px 8px;
+    text-align: center;
+    background-color: #e2edff;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+}
+#wrapper{
+    width: 400px;
+    height: 600px;
+    display: inline-block;
+    background-color: white;
+    padding: 16px;
+    box-shadow: 0px 0px 30px 2px rgb(219, 219, 219, 0.9);
+    border-radius: 8px;
+}
+#form-container{
+    text-align: left;
+}
+input{
+    margin-bottom: 8px;
+}
+#main-text{
+    text-align: center;
+    font-size: 24px;
+    font-weight: lighter;
+    margin-bottom: 16px;
+}
+.text{
+    color: #bdbdbd;
+    font-size: 16px;
+    margin: 0px;
+    margin-bottom: 16px;
+}
+#signup-methods-container{
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 4px;
+    text-align: center;
+}
+.signup-method-buttons{
+    display: inline-block;
+    margin: 0px 8px;
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 48px;
+    width: 150px;
+    background-color: white;
+}
+.buttons-wrapper{
+    width: 118px;
+    margin: 0px auto;
+}
+.button-text{
+    margin: 0px;
+    font-size: 16px;
+    font-weight: lighter;
+    color: black;
+}
+.button-container{
+    display: inline-block;
+    width: 74px;
+    margin: 12px 8px;
+}
+.logo{
+    vertical-align: top;
+    height: 46px;
+    width: 28px;
+    display: inline-block;
+    padding: 9px 0px;
+}
+img{
+    height: 28px;
+    width: 28px;
+}
+#radio-group{
+    width: 100%;
+}
+.size-container{
+    display: inline-block;
+}
+.radio-button{
+    float: left;
+    margin-right: 8px;
+}
+.radio-button-name{
+    float: left;
+    margin-right: 8px;
+}
+button{
+    background-color: blueviolet;
+    width: 100%;
+}
+button:hover{
+    background-color: black;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+#login:hover{
+    color: black;
+}
+@media only screen and (min-width: 768px){
+    #main-container{
+        margin: 90px 0px 0px 0px;
+    }
+}
+@media only screen and (max-width: 416px){
+    #wrapper{
+        width: 100%;
+    }
+    .signup-method-buttons{
+        margin: 0px 2px;
+        width: 128px;
+    }
+}
