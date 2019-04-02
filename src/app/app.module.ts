@@ -25,6 +25,7 @@ import { ImageDisplayComponent } from './image-display/image-display.component';
 import { LoginRegisterPageComponent } from './Pages/login-register-page/login-register-page.component';
 import { WishlistPageComponent } from './Pages/wishlist-page/wishlist-page.component';
 import { CartPageComponent } from './Pages/cart-page/cart-page.component';
+import { AppRoutingModule } from './app-routes.module';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { CartPageComponent } from './Pages/cart-page/cart-page.component';
     CartPageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [HeaderService],
   bootstrap: [AppComponent]
