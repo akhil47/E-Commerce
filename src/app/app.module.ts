@@ -26,6 +26,8 @@ import { LoginRegisterPageComponent } from './Pages/login-register-page/login-re
 import { WishlistPageComponent } from './Pages/wishlist-page/wishlist-page.component';
 import { CartPageComponent } from './Pages/cart-page/cart-page.component';
 import { AppRoutingModule } from './app-routes.module';
+import { ProductCartViewComponent } from './product-cart-view/product-cart-view.component';
+import { DropdownMenuFullscreenComponent } from './product-cart-view/dropdown-menu-fullscreen/dropdown-menu-fullscreen.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { AppRoutingModule } from './app-routes.module';
     ImageDisplayComponent,
     LoginRegisterPageComponent,
     WishlistPageComponent,
-    CartPageComponent
+    CartPageComponent,
+    ProductCartViewComponent,
+    DropdownMenuFullscreenComponent
   ],
   imports: [
     BrowserModule,
