@@ -28,6 +28,7 @@ import { CartPageComponent } from './Pages/cart-page/cart-page.component';
 import { AppRoutingModule } from './app-routes.module';
 import { ProductCartViewComponent } from './product-cart-view/product-cart-view.component';
 import { DropdownMenuFullscreenComponent } from './product-cart-view/dropdown-menu-fullscreen/dropdown-menu-fullscreen.component';
+import { AddressViewComponent } from './address-view/address-view.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { DropdownMenuFullscreenComponent } from './product-cart-view/dropdown-me
     WishlistPageComponent,
     CartPageComponent,
     ProductCartViewComponent,
-    DropdownMenuFullscreenComponent
+    DropdownMenuFullscreenComponent,
+    AddressViewComponent
   ],
   imports: [
     BrowserModule,
