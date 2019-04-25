@@ -85,13 +85,13 @@ li p{
 }
 @media only screen and (min-width: 1024px){
     #images-container{
-        width: 70%;
+        width: 60%;
         display: inline-block;
     }
     #product-info-container{
         padding: 0px 0px 0px 8px;
         vertical-align: top;
-        width: 30%;
+        width: 40%;
         display: inline-block;
     }
 }
