@@ -4,12 +4,12 @@
         <div id="user-tools">
             <div style="float: left;"><img src="https://www.gstatic.com/webp/gallery/4.jpg" alt=""></div>
             <div id="user-login-container">
-                <h6><a>Login</a> | <a>Register</a></h6>       
+                <h6><a>Login</a> | <a routerLink="/register">Register</a></h6>       
             </div>
           </div>
           <ul id="main-nav" class="list-unstyled">
             <li>
-              <a (click)="showMenMenu()">Men <span class="caret"></span></a>
+              <a routerLink = "/search" (click)="showMenMenu()">Men <span class="caret"></span></a>
               <ul [ngClass] = "{'show': menMenu}">
                 <li><a>Page 1</a></li>
                 <li><a>Page 2</a></li>
@@ -30,7 +30,7 @@
               </ul>
             </li>
             <li>
-              <a (click)="showAccessoriesMenu()">Accessories <span class="caret"></span></a>
+              <a  (click)="showAccessoriesMenu()">Accessories <span class="caret"></span></a>
               <ul [ngClass] = "{'show': accessoriesMenu}">
                   <li><a>Page 1</a></li>
                   <li><a>Page 2</a></li>

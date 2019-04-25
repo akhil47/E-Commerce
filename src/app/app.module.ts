@@ -25,6 +25,10 @@ import { ImageDisplayComponent } from './image-display/image-display.component';
 import { LoginRegisterPageComponent } from './Pages/login-register-page/login-register-page.component';
 import { WishlistPageComponent } from './Pages/wishlist-page/wishlist-page.component';
 import { CartPageComponent } from './Pages/cart-page/cart-page.component';
+import { AppRoutingModule } from './app-routes.module';
+import { ProductCartViewComponent } from './product-cart-view/product-cart-view.component';
+import { DropdownMenuFullscreenComponent } from './product-cart-view/dropdown-menu-fullscreen/dropdown-menu-fullscreen.component';
+import { AddressViewComponent } from './address-view/address-view.component';
 
 @NgModule({
   declarations: [
@@ -50,10 +54,14 @@ import { CartPageComponent } from './Pages/cart-page/cart-page.component';
     ImageDisplayComponent,
     LoginRegisterPageComponent,
     WishlistPageComponent,
-    CartPageComponent
+    CartPageComponent,
+    ProductCartViewComponent,
+    DropdownMenuFullscreenComponent,
+    AddressViewComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [HeaderService],
   bootstrap: [AppComponent]

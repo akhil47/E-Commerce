@@ -146,6 +146,10 @@ li:hover .dropdown{
         display: none;
     }
     #logo{
+        position: fixed;
+        top: 40px;
+        left: 0px;
+        z-index: 2;
         margin: 5px 8px;
     }
     #main-menu-container{
