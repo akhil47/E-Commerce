@@ -7,6 +7,7 @@ import { LoginRegisterPageComponent } from './Pages/login-register-page/login-re
 import { WishlistPageComponent } from './Pages/wishlist-page/wishlist-page.component';
 import { CartPageComponent } from './Pages/cart-page/cart-page.component';
 import { AddressPageComponent } from './Pages/address-page/address-page.component';
+import { ProfilePageComponent } from './Pages/profile-page/profile-page.component';
 
 const appRoutes = [
     { path: '', component: HomePageComponent},
@@ -15,7 +16,8 @@ const appRoutes = [
     { path: 'register', component: LoginRegisterPageComponent},
     { path: 'wishlist', component: WishlistPageComponent},
     { path: 'cart', component: CartPageComponent},
-    { path: 'address', component: AddressPageComponent}
+    { path: 'address', component: AddressPageComponent},
+    { path: 'profile', component: ProfilePageComponent}
 ]
 
 @NgModule({

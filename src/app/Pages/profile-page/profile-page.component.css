@@ -1,0 +1,55 @@
+#main-container{
+    margin: 58px 8px 4px 8px;
+    /* background: black; */
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+}
+#profile-header{
+    width: 100%;
+    text-align: center;
+}
+#profile-picture{
+    display: inline-block;
+    text-align: left;
+    width: 20%;
+}
+#profile-name{
+    display: inline-block;
+    text-align: left;
+    width: 80%;
+    font-size: 18px;
+    vertical-align: middle;
+    padding-top: 8px;
+}
+#picture{
+    width: 48px;
+    margin: 0px auto;
+}
+#seperator{
+    height: 1px;
+    background: grey;
+    width: 100%;
+    margin-bottom: 8px;
+}
+#menu{
+    width: 100%;
+}
+.menu-item{
+    /* background-color: red; */
+    font-size: 16px;
+    margin: 8px 0px;
+}
+img{
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+@media only screen and (min-width: 768px){
+    #main-container{
+        margin-top: 98px;
+    }
+}

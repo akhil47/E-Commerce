@@ -30,6 +30,10 @@ import { ProductCartViewComponent } from './product-cart-view/product-cart-view.
 import { DropdownMenuFullscreenComponent } from './product-cart-view/dropdown-menu-fullscreen/dropdown-menu-fullscreen.component';
 import { AddressViewComponent } from './address-view/address-view.component';
 import { AddressPageComponent } from './Pages/address-page/address-page.component';
+import { ProfilePageComponent } from './Pages/profile-page/profile-page.component';
+import { ProfileEditComponent } from './Pages/profile-page/profile-edit/profile-edit.component';
+import { MyAddressComponent } from './Pages/profile-page/my-address/my-address.component';
+import { MyOrdersComponent } from './Pages/profile-page/my-orders/my-orders.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +63,11 @@ import { AddressPageComponent } from './Pages/address-page/address-page.componen
     ProductCartViewComponent,
     DropdownMenuFullscreenComponent,
     AddressViewComponent,
-    AddressPageComponent
+    AddressPageComponent,
+    ProfilePageComponent,
+    ProfileEditComponent,
+    MyAddressComponent,
+    MyOrdersComponent
   ],
   imports: [
     BrowserModule,
