@@ -1,11 +1,6 @@
 <div id="main-container">
   <div id="wrapper">
     <div id="products-container">
-        <div class="address-view-container">
-            <input class="address-items address-radio" type="radio" name="address">
-            <app-address-view class="address-items"></app-address-view>
-            
-        </div>
         <div class="product-view-container" *ngFor="let _ of [0,1,2,3,4]">
             <app-product-cart-view></app-product-cart-view>
         </div>

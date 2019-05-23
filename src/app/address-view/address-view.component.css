@@ -1,8 +1,65 @@
-#main-container{
-    background-color: black;
+#wrapper{
+    padding: 0px 8px 8px 8px;
 }
-@media only screen and (min-width: 768px){
+#main-container{
+    box-shadow: 0px 0px 30px 2px rgb(219, 219, 219, 0.9);
+}
+p{
+    margin: 0px;
+    font-size: 14px;
+}
+#content{
+    text-align: center;
+}
+#name-text{
+    font-size: 16px;
+}
+#radio{
+    display: inline-block;
+    padding: 8px;
+    width: 20%;
+    text-align: left;
+    vertical-align: top;
+}
+.radio-btn{
+    vertical-align: top;
+    height: 14px;
+    width: 14px !important;
+    text-align: left;
+}
+#address{
+    display: inline-block;
+    padding: 8px 8px 8px 0px;
+    width: 80%;
+    text-align: left;
+}
+#seperator{
+    height: 1px;
+    background: grey;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+#buttons{
+    text-align: center;
+    vertical-align: bottom;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+a:hover{
+    color: #9237e8;
+}
+.btn{
+    display: inline-block;
+    width: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px;
+}
+@media only screen and (min-width: 960px){
     #main-container{
-        
+        width: 304px;
     }
 }

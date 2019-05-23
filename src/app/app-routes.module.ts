@@ -6,6 +6,7 @@ import { ProductPageComponent } from './Pages/product-page/product-page.componen
 import { LoginRegisterPageComponent } from './Pages/login-register-page/login-register-page.component';
 import { WishlistPageComponent } from './Pages/wishlist-page/wishlist-page.component';
 import { CartPageComponent } from './Pages/cart-page/cart-page.component';
+import { AddressPageComponent } from './Pages/address-page/address-page.component';
 
 const appRoutes = [
     { path: '', component: HomePageComponent},
@@ -13,7 +14,8 @@ const appRoutes = [
     { path: 'product', component: ProductPageComponent},
     { path: 'register', component: LoginRegisterPageComponent},
     { path: 'wishlist', component: WishlistPageComponent},
-    { path: 'cart', component: CartPageComponent}
+    { path: 'cart', component: CartPageComponent},
+    { path: 'address', component: AddressPageComponent}
 ]
 
 @NgModule({
