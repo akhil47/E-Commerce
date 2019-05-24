@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HeaderService } from '../../services/header.service';
+import { AccountService } from 'src/app/services/account.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -8,7 +9,7 @@ import { HeaderService } from '../../services/header.service';
 })
 export class SideBarComponent implements OnInit {
 
-  constructor(private headerService: HeaderService) { }
+  constructor(private headerService: HeaderService, private accountService: AccountService) { }
 
   sidebarActive : boolean = false;
 
@@ -51,5 +52,8 @@ export class SideBarComponent implements OnInit {
     }else{
       this.accessoriesMenu= true;
     }
+  }
+  goToAccount(){
+    this.accountService.mobileMenuItemSelectedState.next(false)
   }
 }

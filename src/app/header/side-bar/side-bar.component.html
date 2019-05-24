@@ -2,7 +2,7 @@
   <div class="side-bar" [ngClass]="{ 'open': sidebarActive }">
     <div id="side-bar-scroll">
         <div id="user-tools">
-            <div style="float: left;"><a routerLink="/account"><img src="https://www.gstatic.com/webp/gallery/4.jpg" alt=""></a></div>
+            <div style="float: left;"><a (click)="goToAccount()" routerLink="/account"><img src="https://www.gstatic.com/webp/gallery/4.jpg" alt=""></a></div>
             <div id="user-login-container">
                 <h6><a>Login</a> | <a routerLink="/register">Register</a></h6>       
             </div>

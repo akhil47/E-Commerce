@@ -30,6 +30,11 @@ export class AccountPageComponent implements OnInit {
         this.mobileMenuItemSelected = flag;
       }
     )
+    this.accountService.mobileMenuItemSelectedState.subscribe(
+      (flag) => {
+        this.mobileMenuItemSelected = flag;
+      }
+    )
   }
   goToAccount(){
     if(this.mobileScreen){
