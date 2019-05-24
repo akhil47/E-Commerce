@@ -30,10 +30,14 @@ import { ProductCartViewComponent } from './product-cart-view/product-cart-view.
 import { DropdownMenuFullscreenComponent } from './product-cart-view/dropdown-menu-fullscreen/dropdown-menu-fullscreen.component';
 import { AddressViewComponent } from './address-view/address-view.component';
 import { AddressPageComponent } from './Pages/address-page/address-page.component';
-import { ProfilePageComponent } from './Pages/profile-page/profile-page.component';
-import { ProfileEditComponent } from './Pages/profile-page/profile-edit/profile-edit.component';
-import { MyAddressComponent } from './Pages/profile-page/my-address/my-address.component';
-import { MyOrdersComponent } from './Pages/profile-page/my-orders/my-orders.component';
+import { AccountPageComponent } from './Pages/account-page/account-page.component';
+import { MyOrdersComponent } from './Pages/account-page/my-orders/my-orders.component';
+import { ProfileEditComponent } from './Pages/account-page/profile-edit/profile-edit.component';
+import { MyAddressComponent } from './Pages/account-page/my-address/my-address.component';
+import { AddressView2Component } from './address-view2/address-view2.component';
+import { AddressEditComponent } from './Pages/address-edit/address-edit.component';
+
+
 
 @NgModule({
   declarations: [
@@ -64,10 +68,12 @@ import { MyOrdersComponent } from './Pages/profile-page/my-orders/my-orders.comp
     DropdownMenuFullscreenComponent,
     AddressViewComponent,
     AddressPageComponent,
-    ProfilePageComponent,
     ProfileEditComponent,
     MyAddressComponent,
-    MyOrdersComponent
+    MyOrdersComponent,
+    AccountPageComponent,
+    AddressView2Component,
+    AddressEditComponent
   ],
   imports: [
     BrowserModule,

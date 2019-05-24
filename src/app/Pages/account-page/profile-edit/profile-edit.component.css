@@ -1,0 +1,41 @@
+#main-container{
+    margin: 58px 8px 4px 8px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    text-align: center;
+}
+#header{
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    padding: 0px 8px;
+    margin-bottom: 8px;
+}
+#header-text{
+    font-size: 22px;
+    margin: 0px;
+}
+input{
+    margin-bottom: 8px;
+}
+#gender{
+    margin-bottom: 8px;
+}
+button{
+    margin-right: 8px;
+    cursor: pointer;
+}
+#profile-display{
+    padding: 0px 8px;
+    display: inline-block;
+    text-align: left;
+}
+#profile-edit{
+    padding: 0px 8px;
+    display: none;
+    text-align: left;
+}
+@media only screen and (min-width: 768px){
+    #main-container{
+        margin-top: 0px;
+    }
+}
