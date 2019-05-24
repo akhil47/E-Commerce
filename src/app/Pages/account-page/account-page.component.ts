@@ -1,5 +1,7 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, HostListener } from '@angular/core';
 import { AddressService } from 'src/app/services/address.service';
+import { AccountService } from 'src/app/services/account.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-account-page',
@@ -8,8 +10,31 @@ import { AddressService } from 'src/app/services/address.service';
 })
 export class AccountPageComponent implements OnInit {
 
-  constructor() { }
+  mobileScreen: boolean = false;
+  mobileMenuItemSelected: boolean = false;
+
+  constructor(private accountService: AccountService,
+    private router: Router) { }
 
   ngOnInit() {
+    if(window.innerWidth < 768){
+      this.mobileScreen = true;
+    }
+    else{
+      this.mobileScreen = false;
+    }
+    console.log(this.mobileScreen)
+
+    this.accountService.mobileMenuStateChanged.subscribe(
+      (flag) => {
+        this.mobileMenuItemSelected = flag;
+      }
+    )
+  }
+  goToAccount(){
+    if(this.mobileScreen){
+      this.mobileMenuItemSelected = false;
+      this.router.navigate(['account'])
+    }
   }
 }

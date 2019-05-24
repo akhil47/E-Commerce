@@ -1,0 +1,23 @@
+#menu{
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
+.menu-item{
+    font-size: 16px;
+    padding: 8px 0px;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+a:hover{
+    color: rgb(146, 55, 232);
+}
+@media only screen and (min-width: 768px){
+    #menu{
+        width: 20%;
+    }
+}

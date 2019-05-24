@@ -1,5 +1,4 @@
 #main-container{
-    margin: 58px 8px 4px 8px;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     text-align: center;
 }
@@ -7,6 +6,7 @@
     width: 100%;
     display: inline-block;
     text-align: left;
+    padding: 0px 8px;
     margin-bottom: 8px;
 }
 #header-text{

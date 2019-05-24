@@ -1,11 +1,11 @@
 #main-container{
     margin: 58px 8px 4px 8px;
-    /* background: black; */
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
 }
 #profile-header{
     width: 100%;
     text-align: center;
+    cursor: pointer;
 }
 #profile-picture{
     display: inline-block;
@@ -32,32 +32,16 @@
     margin-bottom: 8px;
 }
 #menu-wrapper{
+    display: inline-block;
     width: 100%;
     text-align: center;
-}
-#menu{
-    width: 100%;
-    display: inline-block;
-    vertical-align: top;
-    text-align: left;
-}
-.menu-item{
-    font-size: 16px;
-    padding: 8px 0px;
-}
-a:hover{
-    color: rgb(146, 55, 232);
 }
 img{
     height: inherit;
     width: inherit;
     border-radius: 50%;
 }
-a{
-    text-decoration: none;
-    cursor: pointer;
-    color: black;
-}
+
 #seperator-vertical{
     display: none;
 }
@@ -85,9 +69,6 @@ a{
         width: 128px;
         height: 128px;
         margin: 0px auto;
-    }
-    #menu{
-        width: 20%;
     }
     #seperator-vertical{
         display: inline-block;

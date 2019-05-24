@@ -40,6 +40,8 @@ import { AddressDisplayComponent } from './address-display/address-display.compo
 import { AddressService } from './services/address.service';
 import { ProfileComponent } from './Pages/account-page/profile/profile.component';
 import { ProfileDisplayComponent } from './Pages/profile-display/profile-display.component';
+import { MenuComponent } from './Pages/account-page/menu/menu.component';
+import { AccountService } from './services/account.service';
 
 
 
@@ -80,13 +82,14 @@ import { ProfileDisplayComponent } from './Pages/profile-display/profile-display
     AddressEditComponent,
     AddressDisplayComponent,
     ProfileComponent,
-    ProfileDisplayComponent
+    ProfileDisplayComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [HeaderService, AddressService],
+  providers: [HeaderService, AddressService, AccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

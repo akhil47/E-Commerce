@@ -14,6 +14,7 @@ import { AddressEditComponent } from './Pages/address-edit/address-edit.componen
 import { AddressDisplayComponent } from './address-display/address-display.component';
 import { ProfileComponent } from './Pages/account-page/profile/profile.component';
 import { ProfileDisplayComponent } from './Pages/profile-display/profile-display.component';
+import { MenuComponent } from './Pages/account-page/menu/menu.component';
 
 const appRoutes = [
     { path: '', component: HomePageComponent},
