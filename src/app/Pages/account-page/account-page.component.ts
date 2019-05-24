@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
+import { AddressService } from 'src/app/services/address.service';
 
 @Component({
   selector: 'app-account-page',
@@ -11,5 +12,4 @@ export class AccountPageComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

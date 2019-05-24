@@ -11,6 +11,9 @@ import { AccountPageComponent } from './Pages/account-page/account-page.componen
 import { ProfileEditComponent } from './Pages/account-page/profile-edit/profile-edit.component';
 import { MyAddressComponent } from './Pages/account-page/my-address/my-address.component';
 import { AddressEditComponent } from './Pages/address-edit/address-edit.component';
+import { AddressDisplayComponent } from './address-display/address-display.component';
+import { ProfileComponent } from './Pages/account-page/profile/profile.component';
+import { ProfileDisplayComponent } from './Pages/profile-display/profile-display.component';
 
 const appRoutes = [
     { path: '', component: HomePageComponent},
@@ -20,11 +23,17 @@ const appRoutes = [
     { path: 'wishlist', component: WishlistPageComponent},
     { path: 'cart', component: CartPageComponent},
     { path: 'address', component: AddressPageComponent},
-    { path: 'account', component: AccountPageComponent},
-    { path: 'profile', component: ProfileEditComponent},
-    { path: 'my-addresses', component: MyAddressComponent},
-    { path: 'address-edit', component: AddressEditComponent}
-
+    { path: 'account', component: AccountPageComponent, children:[
+        { path: 'profile', component: ProfileComponent, children:[
+            { path: 'profile-edit', component: ProfileEditComponent},
+            { path: 'profile-display', component: ProfileDisplayComponent},
+        ]},
+        { path: 'my-addresses', component: MyAddressComponent, children:[
+            { path: 'address-edit', component: AddressEditComponent},
+            { path: 'address-display', component: AddressDisplayComponent}
+        ]},
+        
+    ]},
 ]
 
 @NgModule({

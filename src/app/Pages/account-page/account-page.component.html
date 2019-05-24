@@ -14,19 +14,19 @@
     <div id="menu-wrapper">
       <div id="menu">
         <div class="menu-item">
-          <a><i class="fa fa-user" aria-hidden="true"></i>   Profile</a>
+          <a routerLink="profile/profile-display"><i class="fa fa-user" aria-hidden="true"></i>   Profile</a>
         </div>
         <div class="menu-item">
-          <a><i class="fa fa-address-book" aria-hidden="true"></i>   Addresses</a>
+          <a routerLink="my-addresses/address-display"><i class="fa fa-address-book" aria-hidden="true"></i>   Addresses</a>
         </div>
         <div class="menu-item">
+          <!-- Link route for below anchor tag -->
           <a><i class="fa fa-archive" aria-hidden="true"></i>   My Orders</a>
         </div>
       </div>
       <div id="seperator-vertical"></div>
       <div id="menu-item-detail">
-        <!-- <app-profile-edit></app-profile-edit> -->
-        <app-my-address></app-my-address>
+        <router-outlet></router-outlet>
       </div>
     </div>
   </div>

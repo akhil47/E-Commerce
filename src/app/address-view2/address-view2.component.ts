@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AddressService } from '../services/address.service';
 
 @Component({
   selector: 'app-address-view2',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddressView2Component implements OnInit {
 
-  constructor() { }
+  constructor(private addressService: AddressService) { }
 
   ngOnInit() {
+  }
+
+  onEdit(){
+    this.addressService.addressEditStatus.next(true)
   }
 
 }

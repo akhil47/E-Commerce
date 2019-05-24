@@ -36,6 +36,10 @@ import { ProfileEditComponent } from './Pages/account-page/profile-edit/profile-
 import { MyAddressComponent } from './Pages/account-page/my-address/my-address.component';
 import { AddressView2Component } from './address-view2/address-view2.component';
 import { AddressEditComponent } from './Pages/address-edit/address-edit.component';
+import { AddressDisplayComponent } from './address-display/address-display.component';
+import { AddressService } from './services/address.service';
+import { ProfileComponent } from './Pages/account-page/profile/profile.component';
+import { ProfileDisplayComponent } from './Pages/profile-display/profile-display.component';
 
 
 
@@ -73,13 +77,16 @@ import { AddressEditComponent } from './Pages/address-edit/address-edit.componen
     MyOrdersComponent,
     AccountPageComponent,
     AddressView2Component,
-    AddressEditComponent
+    AddressEditComponent,
+    AddressDisplayComponent,
+    ProfileComponent,
+    ProfileDisplayComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [HeaderService],
+  providers: [HeaderService, AddressService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
