@@ -70,16 +70,17 @@ img{
         height: 128px;
         margin: 0px auto;
     }
-    #seperator-vertical{
+    /* #seperator-vertical{
         display: inline-block;
         width: 1px;
         background: grey;
         height: 512px;
-    }
+    } */
     #menu-item-detail{
         display: inline-block;
         vertical-align: top;
-        width: calc(80% - 1px);
+        /* width: calc(80% - 1px); */
+        width: 80%;
     }
 }
 @media only screen and (min-width: 1024px){

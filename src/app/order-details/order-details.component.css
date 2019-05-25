@@ -1,0 +1,44 @@
+#main-container{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    text-align: left;
+    
+}
+.header{
+    width: 100%;
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+}
+.header-text{
+    font-size: 22px;
+    margin: 0px;
+}
+.basic-info{
+    display: block;
+}
+.seperator{
+    height: 1px;
+    width: 100%;
+    background: grey;
+}
+#shipping-address-container{
+    display: block;
+}
+#name-text{
+    font-size: 16px;
+}
+#address{
+    display: inline-block;
+    text-align: left;
+}
+p{
+    margin-bottom: 4px;
+}
+.order-item{
+    margin: 8px 0px;
+}
+@media only screen and (min-width: 768px){
+    #main-container{
+        padding: 8px;
+    }
+}

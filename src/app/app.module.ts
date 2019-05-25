@@ -42,6 +42,10 @@ import { ProfileComponent } from './Pages/account-page/profile/profile.component
 import { ProfileDisplayComponent } from './Pages/profile-display/profile-display.component';
 import { MenuComponent } from './Pages/account-page/menu/menu.component';
 import { AccountService } from './services/account.service';
+import { OrderComponent } from './order/order.component';
+import { OrderItemComponent } from './order-item/order-item.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
+import { OrdersListComponent } from './orders-list/orders-list.component';
 
 
 
@@ -83,7 +87,11 @@ import { AccountService } from './services/account.service';
     AddressDisplayComponent,
     ProfileComponent,
     ProfileDisplayComponent,
-    MenuComponent
+    MenuComponent,
+    OrderComponent,
+    OrderItemComponent,
+    OrderDetailsComponent,
+    OrdersListComponent
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,9 @@ import { AddressDisplayComponent } from './address-display/address-display.compo
 import { ProfileComponent } from './Pages/account-page/profile/profile.component';
 import { ProfileDisplayComponent } from './Pages/profile-display/profile-display.component';
 import { MenuComponent } from './Pages/account-page/menu/menu.component';
+import { MyOrdersComponent } from './Pages/account-page/my-orders/my-orders.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
+import { OrdersListComponent } from './orders-list/orders-list.component';
 
 const appRoutes = [
     { path: '', component: HomePageComponent},
@@ -25,6 +28,10 @@ const appRoutes = [
     { path: 'cart', component: CartPageComponent},
     { path: 'address', component: AddressPageComponent},
     { path: 'account', component: AccountPageComponent, children:[
+        { path: 'my-orders', component: MyOrdersComponent, children: [
+            { path: 'orders-list', component: OrdersListComponent},
+            { path: 'order-details', component: OrderDetailsComponent}
+        ]},
         { path: 'profile', component: ProfileComponent, children:[
             { path: 'profile-edit', component: ProfileEditComponent},
             { path: 'profile-display', component: ProfileDisplayComponent},
@@ -33,7 +40,6 @@ const appRoutes = [
             { path: 'address-edit', component: AddressEditComponent},
             { path: 'address-display', component: AddressDisplayComponent}
         ]},
-        
     ]},
 ]
 

@@ -1,0 +1,53 @@
+#main-container{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+p{
+    margin: 0px;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+a:hover{
+    color: rgb(146, 55, 232);
+}
+#order-number{
+    width: 70%;
+    display: inline-block;
+    text-align: left;
+}
+#order-details{
+    width: 30%;
+    display: inline-block;
+    text-align: right;
+}
+.order-details-text{
+    font-size: 12px;
+}
+.order-number-text{
+    font-size: 12px;
+}
+.order-item{
+    margin: 8px 0px;
+}
+@media only screen and (min-width: 768px){
+    #main-container{
+        padding: 0px 8px;
+    }
+    .order-details-text{
+        font-size: 14px;
+    }
+    .order-number-text{
+        font-size: 14px;
+    }
+    #order-number{
+        width: 80%;
+    }
+    #order-details{
+        width: 20%;
+    }
+}
