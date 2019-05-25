@@ -1,52 +1,7 @@
 import { NgModule } from "@angular/core";
-import {RouterModule } from "@angular/router";
-import { HomePageComponent } from './Pages/home-page/home-page.component';
-import { SearchPageComponent } from './Pages/search-page/search-page.component';
-import { ProductPageComponent } from './Pages/product-page/product-page.component';
-import { WishlistPageComponent } from './Pages/wishlist-page/wishlist-page.component';
-import { CartPageComponent } from './Pages/cart-page/cart-page.component';
-import { AddressPageComponent } from './Pages/address-page/address-page.component';
-import { AccountPageComponent } from './Pages/account-page/account-page.component';
-import { ProfileEditComponent } from './Pages/account-page/profile-edit/profile-edit.component';
-import { MyAddressComponent } from './Pages/account-page/my-address/my-address.component';
-import { AddressEditComponent } from './Pages/address-edit/address-edit.component';
-import { AddressDisplayComponent } from './address-display/address-display.component';
-import { ProfileComponent } from './Pages/account-page/profile/profile.component';
-import { ProfileDisplayComponent } from './Pages/profile-display/profile-display.component';
-import { MenuComponent } from './Pages/account-page/menu/menu.component';
-import { MyOrdersComponent } from './Pages/account-page/my-orders/my-orders.component';
-import { OrderDetailsComponent } from './order-details/order-details.component';
-import { OrdersListComponent } from './orders-list/orders-list.component';
-import { ChangePasswordComponent } from './change-password/change-password.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { RegisterPageComponent } from './register-page/register-page.component';
-import { LoginPageComponent } from './login-page/login-page.component';
+import { RouterModule } from "@angular/router";
 
 const appRoutes = [
-    { path: '', component: HomePageComponent},
-    { path: 'search', component: SearchPageComponent},
-    { path: 'product', component: ProductPageComponent},
-    { path: 'login', component: LoginPageComponent},
-    { path: 'register', component: RegisterPageComponent},
-    { path: 'wishlist', component: WishlistPageComponent},
-    { path: 'cart', component: CartPageComponent},
-    { path: 'address', component: AddressPageComponent},
-    { path: 'forgot-password', component: ForgotPasswordComponent},
-    { path: 'account', component: AccountPageComponent, children:[
-        { path: 'my-orders', component: MyOrdersComponent, children: [
-            { path: 'orders-list', component: OrdersListComponent},
-            { path: 'order-details', component: OrderDetailsComponent}
-        ]},
-        { path: 'profile', component: ProfileComponent, children:[
-            { path: 'profile-edit', component: ProfileEditComponent},
-            { path: 'profile-display', component: ProfileDisplayComponent},
-        ]},
-        { path: 'my-addresses', component: MyAddressComponent, children:[
-            { path: 'address-edit', component: AddressEditComponent},
-            { path: 'address-display', component: AddressDisplayComponent}
-        ]},
-        { path: 'change-password', component: ChangePasswordComponent}
-    ]},
 ]
 
 @NgModule({

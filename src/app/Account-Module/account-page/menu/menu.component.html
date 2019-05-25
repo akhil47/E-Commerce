@@ -1,0 +1,51 @@
+<div id="menu">
+  <table>
+    <tr>
+      <a (click)="onSelect()" routerLink="profile/profile-display">
+        <div class="menu-item">
+          <td><i style="font-size: 18px;" class="fa fa-user" aria-hidden="true"></i></td>
+          <td>&nbsp;&nbsp;&nbsp;</td>
+          <td>Profile</td>
+        </div>
+      </a>
+    </tr>
+    <tr>
+      <a (click)="onSelect()" routerLink="my-addresses/address-display">
+        <div class="menu-item">
+          <td><i class="fa fa-address-book" aria-hidden="true"></i></td>
+          <td>&nbsp;&nbsp;&nbsp;</td>
+          <td>My Addresses</td>
+        </div>
+      </a>
+    </tr>
+    <tr>
+      <a (click)="onSelect()" routerLink="my-orders/orders-list">
+        <div class="menu-item">
+          <td><i class="fa fa-archive" aria-hidden="true"></i></td>
+          <td>&nbsp;&nbsp;&nbsp;</td>
+          <td>My Orders</td>
+        </div>
+      </a>
+    </tr>
+    <tr>
+      <!-- Link route for below anchor tag -->
+      <a (click)="onSelect()" routerLink="change-password">
+        <div class="menu-item">
+          <td><i style="font-size: 22px;" class="fa fa-lock" aria-hidden="true"></i></td>
+          <td>&nbsp;&nbsp;&nbsp;</td>
+          <td>Change Password</td>
+        </div>
+      </a>
+    </tr>
+    <tr>
+      <!-- Link route for below anchor tag -->
+      <a (click)="onSelect()">
+        <div class="menu-item">
+          <td><i style="font-size: 18px;" class="fa fa-power-off" aria-hidden="true"></i></td>
+          <td>&nbsp;&nbsp;&nbsp;</td>
+          <td>Logout</td>
+        </div>
+      </a>
+    </tr>
+  </table>
+  </div>
