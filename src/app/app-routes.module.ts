@@ -3,7 +3,6 @@ import {RouterModule } from "@angular/router";
 import { HomePageComponent } from './Pages/home-page/home-page.component';
 import { SearchPageComponent } from './Pages/search-page/search-page.component';
 import { ProductPageComponent } from './Pages/product-page/product-page.component';
-import { LoginRegisterPageComponent } from './Pages/login-register-page/login-register-page.component';
 import { WishlistPageComponent } from './Pages/wishlist-page/wishlist-page.component';
 import { CartPageComponent } from './Pages/cart-page/cart-page.component';
 import { AddressPageComponent } from './Pages/address-page/address-page.component';
@@ -18,15 +17,21 @@ import { MenuComponent } from './Pages/account-page/menu/menu.component';
 import { MyOrdersComponent } from './Pages/account-page/my-orders/my-orders.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { OrdersListComponent } from './orders-list/orders-list.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { RegisterPageComponent } from './register-page/register-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 const appRoutes = [
     { path: '', component: HomePageComponent},
     { path: 'search', component: SearchPageComponent},
     { path: 'product', component: ProductPageComponent},
-    { path: 'register', component: LoginRegisterPageComponent},
+    { path: 'login', component: LoginPageComponent},
+    { path: 'register', component: RegisterPageComponent},
     { path: 'wishlist', component: WishlistPageComponent},
     { path: 'cart', component: CartPageComponent},
     { path: 'address', component: AddressPageComponent},
+    { path: 'forgot-password', component: ForgotPasswordComponent},
     { path: 'account', component: AccountPageComponent, children:[
         { path: 'my-orders', component: MyOrdersComponent, children: [
             { path: 'orders-list', component: OrdersListComponent},
@@ -40,6 +45,7 @@ const appRoutes = [
             { path: 'address-edit', component: AddressEditComponent},
             { path: 'address-display', component: AddressDisplayComponent}
         ]},
+        { path: 'change-password', component: ChangePasswordComponent}
     ]},
 ]
 

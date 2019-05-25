@@ -22,7 +22,6 @@ import { RadioFilterComponent } from './radio-filter/radio-filter.component';
 import { FiltersSectionComponent } from './filters-section/filters-section.component';
 import { ProductPageComponent } from './Pages/product-page/product-page.component';
 import { ImageDisplayComponent } from './image-display/image-display.component';
-import { LoginRegisterPageComponent } from './Pages/login-register-page/login-register-page.component';
 import { WishlistPageComponent } from './Pages/wishlist-page/wishlist-page.component';
 import { CartPageComponent } from './Pages/cart-page/cart-page.component';
 import { AppRoutingModule } from './app-routes.module';
@@ -46,6 +45,10 @@ import { OrderComponent } from './order/order.component';
 import { OrderItemComponent } from './order-item/order-item.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { OrdersListComponent } from './orders-list/orders-list.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { RegisterPageComponent } from './register-page/register-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 
 
@@ -71,7 +74,6 @@ import { OrdersListComponent } from './orders-list/orders-list.component';
     FiltersSectionComponent,
     ProductPageComponent,
     ImageDisplayComponent,
-    LoginRegisterPageComponent,
     WishlistPageComponent,
     CartPageComponent,
     ProductCartViewComponent,
@@ -91,7 +93,11 @@ import { OrdersListComponent } from './orders-list/orders-list.component';
     OrderComponent,
     OrderItemComponent,
     OrderDetailsComponent,
-    OrdersListComponent
+    OrdersListComponent,
+    ChangePasswordComponent,
+    ForgotPasswordComponent,
+    RegisterPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
