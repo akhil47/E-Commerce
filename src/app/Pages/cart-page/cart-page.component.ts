@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cart-page',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
 
+  onPlaceOrder(){
+    this.router.navigate(['/address'])
+  }
 }
