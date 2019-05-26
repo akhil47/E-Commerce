@@ -1,23 +1,23 @@
 <div #test id="outer-container">
     <div  id="product-image">
-      <img [src]="productImageURL" alt="">
+      <img [src]="product.imageUrl" alt="">
     </div>
     <div id="product-info">
       <div id="product-name-container">
-        <p id="product-name">{{ name }}</p>
+        <p id="product-name">{{ product.name }}</p>
       </div>
       <div id="product-price-container">
           <p id="product-price">
-            <s style="font-size: 14px; color: grey;">Rs.{{ oldPrice }}</s>
-            <b>  Rs.{{newPrice}}  </b>
-            <b style="color: red; font-size: 12px;"> {{ discount }}</b>
+            <s style="font-size: 14px; color: grey;">Rs.{{ product.oldPrice }}</s>
+            <b>  Rs.{{ product.newPrice }}  </b>
+            <b style="color: red; font-size: 12px;"> {{ product.discount }}</b>
           </p>
       </div>
       <div id="seperator"></div>
       <div id="product-size-container">
           <p id="product-size">
             <b>SIZES </b>
-            {{ sizes }}
+            {{ product.sizes }}
           </p>
       </div>
     </div>

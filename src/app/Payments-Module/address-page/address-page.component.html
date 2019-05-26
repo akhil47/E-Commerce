@@ -7,46 +7,13 @@
     <a>+ Add New Address</a>
   </div>
   <div id="address-container">
-      <app-address-view class="address_view"></app-address-view>
-      <app-address-view class="address_view"></app-address-view>
-      <app-address-view class="address_view"></app-address-view>
-      <app-address-view class="address_view"></app-address-view>
+      <app-address-view class="address_view" *ngFor="let address of addressList"
+        [address]="address">
+      </app-address-view>
   </div>
   <div id="summary-wrapper">
       <div id="order-summary-container">
-          <p class="price-text" style="font-weight: bold;">Price Details</p>
-          <div class="summary-item">
-              <p class="price-text">Total MRP</p>
-              <p class="price-text right"><i class="fa fa-inr" aria-hidden="true"></i>99,999</p>
-          </div>
-          <div class="summary-item">
-              <p class="price-text">Discount</p>
-              <p class="price-text right"><i class="fa fa-inr" aria-hidden="true"></i>99,999</p>
-          </div>
-          <div class="summary-item">
-              <p class="price-text">Tax</p>
-              <p class="price-text right"><i class="fa fa-inr" aria-hidden="true"></i>99,999</p>
-          </div>
-          <div class="summary-item">
-              <p class="price-text">Coupon Discount</p>
-              <!-- <p class="price-text right">
-                <i class="fa fa-inr" aria-hidden="true"></i>
-                99,999
-              </p> -->
-              <a class="price-text right" style="color: rgb(50, 209, 150);">Apply Coupon</a>
-          </div>
-          <div class="summary-item">
-              <p class="price-text">Delivery Charges</p>
-              <p class="price-text right"><i class="fa fa-inr" aria-hidden="true"></i>99,999</p>
-          </div>
-          <div id="seperator"></div>
-          <div class="summary-item">
-              <p class="price-text" style="font-weight: bold;">Total</p>
-              <p class="price-text right" style="font-weight: bold;">
-                <i class="fa fa-inr" aria-hidden="true"></i>
-                99,999
-              </p>
-          </div>
+          <app-order-summary [summary]="orderSummary"></app-order-summary>
           <button type="button" class="btn btn-success">Make Payment</button>
       </div>
   </div>

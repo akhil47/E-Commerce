@@ -29,16 +29,6 @@
     text-align: left;
     padding: 8px;
 }
-.price-text{
-    font-family: Whitney,Arial,sans-serif !important;
-    font-size: 14px;
-    display: inline-block;
-    color: #535766
-}
-.right{
-    float: right;
-    display: inline-block;
-}
 a{
     cursor: pointer;
     text-decoration: none;
@@ -46,9 +36,6 @@ a{
 button{
     width: 100%;
     font-size: 14px;
-}
-.summary-item{
-    display: block;
 }
 @media only screen and (min-width: 768px){
     #main-container{
@@ -59,22 +46,6 @@ button{
     }
     #order-summary-container{
         width: 752px;
-    }
-    .price-text{
-        font-family: Whitney,Arial,sans-serif !important;
-        font-size: 14px;
-        display: inline-block;
-        color: #535766
-    }
-    .right{
-        float: right;
-        display: inline-block;
-    }
-    #seperator{
-        height: 1px;
-        width: 100%;
-        background-color: grey;
-        margin-bottom: 8px;
     }
     .address-radio{
         height: 16px;

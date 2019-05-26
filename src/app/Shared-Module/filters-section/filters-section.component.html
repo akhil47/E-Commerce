@@ -4,9 +4,9 @@
         <a (click)="onCloseFilters()"><i class="fa fa-times" aria-hidden="true"></i></a>
     </div>
     <div id="filters-scroll-container">
-            <app-checkbox-filter></app-checkbox-filter>
-            <app-radio-filter></app-radio-filter>
-            <app-checkbox-filter></app-checkbox-filter>
-            <app-radio-filter></app-radio-filter>
+            <app-checkbox-filter [options]="brandFilters"
+                filterName="Brands"></app-checkbox-filter>
+            <app-radio-filter [options]="priceFilters"
+                filterName="Price Range"></app-radio-filter>
     </div>
 </div>

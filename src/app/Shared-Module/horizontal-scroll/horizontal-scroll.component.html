@@ -9,8 +9,7 @@
           <div #productsMainContainer id="products-main-container">
             <div id="products-container">
               <div id="product" *ngFor="let product of productList">
-                <a><app-product></app-product></a>
-                <!-- need product component like <app-product [property] = "product" > -->
+                <a><app-product [product]="product"></app-product></a>
               </div>
             </div>
           </div>

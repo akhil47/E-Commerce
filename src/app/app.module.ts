@@ -10,8 +10,8 @@ import { CoreModule } from './Core-Module/core.module';
 import { SharedModule } from './Shared-Module/shared.module';
 import { AppRoutingModule } from './app-routes.module';
 import { UserAuthenticationModule } from './User-Authentication-Module/user-authentication.module';
+
 import { AppComponent } from './app.component';
-import { PaymentsModule } from './Payments-Module/payments.module';
 
 
 
@@ -25,7 +25,6 @@ import { PaymentsModule } from './Payments-Module/payments.module';
     AppRoutingModule,
     AccountModule,
     UserAuthenticationModule,
-    PaymentsModule,
     CoreModule,
     SharedModule
   ],

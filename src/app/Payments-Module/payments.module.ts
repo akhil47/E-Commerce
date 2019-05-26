@@ -3,17 +3,17 @@ import { CommonModule } from '@angular/common';
 import { PaymentsRoutingModule } from './payments-routing.module';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { ProductCartViewComponent } from './cart-page/product-cart-view/product-cart-view.component';
-import { DropdownMenuFullscreenComponent } from './cart-page/product-cart-view/dropdown-menu-fullscreen/dropdown-menu-fullscreen.component';
 import { AddressPageComponent } from './address-page/address-page.component';
 import { AddressViewComponent } from './address-page/address-view/address-view.component';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 @NgModule({
     declarations: [
         CartPageComponent,
         ProductCartViewComponent,
-        DropdownMenuFullscreenComponent,
         AddressPageComponent,
-        AddressViewComponent
+        AddressViewComponent,
+        OrderSummaryComponent
     ],
     imports: [
         CommonModule,

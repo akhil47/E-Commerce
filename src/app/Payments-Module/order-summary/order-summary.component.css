@@ -1,0 +1,29 @@
+.price-text{
+    font-family: Whitney,Arial,sans-serif !important;
+    font-size: 14px;
+    display: inline-block;
+    color: #535766
+}
+.summary-item{
+    display: block;
+}
+.right{
+    float: right;
+    display: inline-block;
+}
+a{
+    cursor: pointer;
+    text-decoration: none;
+}
+#seperator{
+    height: 1px;
+    width: 100%;
+    background-color: grey;
+    margin-bottom: 8px;
+}
+@media only screen and (min-width: 768px){
+    .right{
+        float: right;
+        display: inline-block;
+    }
+}

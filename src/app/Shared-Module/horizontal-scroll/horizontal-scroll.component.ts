@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
-import { Product } from 'src/app/modals/product.modal';
+import { ProductDisplay } from 'src/app/modals/product-display.modal';
 
 
 @Component({
@@ -13,16 +13,24 @@ export class HorizontalScrollComponent implements OnInit, AfterViewInit {
   @ViewChild('leftArrowContainer') leftArrow: ElementRef;
   @ViewChild('rightArrowContainer') rightArrow: ElementRef;
   heightValue: string
-  productList : Product[] = []
+  productList : ProductDisplay[] = []
 
   constructor(private renderer: Renderer2) {
     // temporary code will be replaced by service
     for(let i = 0; i < 10; i++){
-      this.productList.push(new Product())
+      this.productList.push(new ProductDisplay())
     }
   }
 
   ngOnInit() {
+    for(let i = 0; i < 10; i++){
+      this.productList[i].name = 'Tommy Hilfiger White Regular Fit Solid Casual Shirt';
+      this.productList[i].imageUrl = 'https://snow-commerce.imgix.net/aetv/history/products/the_curse_of_oak_island/apparel/merch//COOI-tShirt-Men-Cotton-Charcoal.jpg?auto=compress&fm=pjpg&q=80&cs=strip&h=200&w=200'
+      this.productList[i].oldPrice = 4799
+      this.productList[i].newPrice = 3999
+      this.productList[i].discount = ' ( 17% Off )'
+      this.productList[i].sizes = 'S M L XL XXL'
+    }
   }
   ngAfterViewInit(){
     

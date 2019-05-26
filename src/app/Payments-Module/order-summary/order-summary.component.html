@@ -1,0 +1,39 @@
+<div>
+    <p class="price-text" style="font-weight: bold;">Price Details</p>
+    <div class="summary-item">
+        <p class="price-text">MRP</p>
+        <p class="price-text right"><i class="fa fa-inr" aria-hidden="true"></i>
+            {{ summary.MRP }}</p>
+    </div>
+    <div class="summary-item">
+        <p class="price-text">Shipping Charges</p>
+        <p class="price-text right"><i class="fa fa-inr" aria-hidden="true"></i>
+            {{ summary.shippingCharges }}</p>
+    </div>
+    <div class="summary-item">
+        <p class="price-text">GST</p>
+        <p class="price-text right"><i class="fa fa-inr" aria-hidden="true"></i>
+            {{ summary.GST }}</p>
+    </div>
+    <div class="summary-item">
+        <p class="price-text">Discount</p>
+        <p class="price-text right"><i class="fa fa-inr" aria-hidden="true"></i>
+            {{ summary.discount }}</p>
+    </div>
+    <div class="summary-item">
+        <p class="price-text">Coupon Discount</p>
+        <!-- <p class="price-text right">
+            <i class="fa fa-inr" aria-hidden="true"></i>
+            99,999
+        </p> -->
+        <a class="price-text right" style="color: rgb(50, 209, 150);">Apply Coupon</a>
+    </div>
+    <div id="seperator"></div>
+    <div class="summary-item">
+        <p class="price-text" style="font-weight: bold;">Total</p>
+        <p class="price-text right" style="font-weight: bold;">
+          <i class="fa fa-inr" aria-hidden="true"></i>
+          {{ summary.total }}
+        </p>
+    </div>
+</div>

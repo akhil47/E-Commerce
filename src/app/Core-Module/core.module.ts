@@ -13,6 +13,7 @@ import { SearchPageComponent } from './search-page/search-page.component';
 import { CoreRoutingModule } from './core-routing.module';
 import { SharedModule } from '../Shared-Module/shared.module';
 import { ImageDisplayComponent } from './product-page/image-display/image-display.component';
+import { PaymentsModule } from '../Payments-Module/payments.module';
 
 @NgModule({
     declarations: [
@@ -29,6 +30,7 @@ import { ImageDisplayComponent } from './product-page/image-display/image-displa
     ],
     imports: [
         CommonModule,
+        PaymentsModule,
         CoreRoutingModule,
         SharedModule
     ],

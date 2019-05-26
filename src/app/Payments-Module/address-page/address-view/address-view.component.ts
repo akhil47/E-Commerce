@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Address } from 'src/app/modals/address.modal';
 
 @Component({
   selector: 'app-address-view',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddressViewComponent implements OnInit {
 
+  @Input() address: Address
+  
   constructor() { }
 
   ngOnInit() {

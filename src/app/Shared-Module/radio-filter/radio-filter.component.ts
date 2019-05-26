@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-radio-filter',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class RadioFilterComponent implements OnInit {
 
   isExpanded: boolean = false;
+  @Input() filterName: string ='' 
+  @Input() options: string[] = []
   constructor() { }
 
   ngOnInit() {
