@@ -2,17 +2,6 @@
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     text-align: center;
 }
-#header{
-    width: 100%;
-    display: inline-block;
-    text-align: left;
-    padding: 0px 8px;
-    margin-bottom: 8px;
-}
-#header-text{
-    font-size: 22px;
-    margin: 0px;
-}
 #address-container{
     text-align: center;
     display: inline-block;

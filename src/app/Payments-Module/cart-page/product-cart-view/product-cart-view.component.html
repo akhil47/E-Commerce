@@ -15,11 +15,10 @@
       </div>
     </div>
     <div id="quantity-size-container">
-          <a class="quantity-size-buttons">Size: {{ product.size }} 
+          <a (click)="openSizeDropdown()" class="quantity-size-buttons">Size: {{ product.size }} 
             <span class="caret"></span></a>
-          <a class="quantity-size-buttons">Quantity: {{ product.quantity }} 
+          <a (click)="openQuantityDropdown()" class="quantity-size-buttons">Quantity: {{ product.quantity }} 
             <span class="caret"></span></a>
-          <!-- <app-dropdown-menu-fullscreen></app-dropdown-menu-fullscreen> -->
     </div>
     <div id="large-screen">
         <div id="seperator-large"></div>

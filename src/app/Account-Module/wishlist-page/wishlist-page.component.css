@@ -27,7 +27,11 @@
     margin-bottom: 8px;
     margin-right: 8px;
 }
-#close-button{
+.item{
+    height: inherit;
+    width: inherit;
+}
+.close-button{
     position: absolute;
     top: 4px;
     right: 4px;

@@ -1,16 +1,21 @@
 <div id="main-container">
-  <div id="header">
-    <p id="header-text">Edit Address</p>
-  </div>
+  <app-menu-header headerText="Edit Address"></app-menu-header>
   <div id="address-form">
     <form>
-      <input type="text" name="name" placeholder="Full Name" class="form-control">
-      <input type="text" name="mobile" placeholder="Mobile No" class="form-control">
-      <input type="text" name="address" placeholder="Address" class="form-control">
-      <input type="text" name="town" placeholder="Town" class="form-control">
-      <input type="text" name="city" placeholder="City" class="form-control">
-      <input type="text" name="state" placeholder="State" class="form-control">
-      <input type="text" name="pincode" placeholder="Pincode" class="form-control">
+      <input type="text" name="name" placeholder="Full Name" class="form-control"
+        [(ngModel)]="address.name">
+      <input type="text" name="mobile" placeholder="Mobile No" class="form-control"
+        [(ngModel)]="address.mobile">
+      <input type="text" name="address" placeholder="Address" class="form-control"
+        [(ngModel)]="address.address">
+      <input type="text" name="town" placeholder="Town" class="form-control"
+        [(ngModel)]="address.town">
+      <input type="text" name="city" placeholder="City" class="form-control"
+        [(ngModel)]="address.city">
+      <input type="text" name="state" placeholder="State" class="form-control"
+        [(ngModel)]="address.state">
+      <input type="text" name="pincode" placeholder="Pincode" class="form-control"
+        [(ngModel)]="address.pincode">
       <button (click)="onSave()" type="button" class="btn btn-success">Save</button>
       <button (click)="onCancel()" type="button" class="btn btn-danger">Cancel</button>
     </form>

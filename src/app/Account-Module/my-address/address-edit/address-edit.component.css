@@ -3,16 +3,7 @@
     text-align: center;
     display: inline-block;
     width: 304px;
-}
-#header{
-    width: 100%;
-    display: inline-block;
-    text-align: left;
-    margin-bottom: 8px;
-}
-#header-text{
-    font-size: 22px;
-    margin: 0px;
+    background-color: white;
 }
 #address-form{
     display: inline-block;

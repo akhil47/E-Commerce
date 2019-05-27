@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AccountService } from 'src/app/services/account.service';
+import { Address } from 'src/app/modals/address.modal';
 
 
 @Component({
@@ -11,6 +12,7 @@ export class AddressView2Component implements OnInit {
 
   constructor(private accountService: AccountService) { }
 
+  @Input() address: Address
   ngOnInit() {
   }
 

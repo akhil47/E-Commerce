@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Address } from 'src/app/modals/address.modal';
 
 @Component({
@@ -9,10 +9,13 @@ import { Address } from 'src/app/modals/address.modal';
 export class AddressViewComponent implements OnInit {
 
   @Input() address: Address
+  @Output() onEditAddress = new EventEmitter<Address>()
   
   constructor() { }
 
   ngOnInit() {
   }
-
+  onEdit(){
+    this.onEditAddress.emit(this.address)
+  }
 }

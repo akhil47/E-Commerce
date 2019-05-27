@@ -1,15 +1,15 @@
 <div id="main-container">
   <div id="wrapper">
     <div id="header-container">
-      <p id="header-text">My Wishlist - 7 items</p>
+      <p id="header-text">My Wishlist - {{ wishListProducts.length }} items</p>
     </div>
-    <div *ngFor="let _ of [1,2,3,4,5,6,7]" id="item-container">
-      <div id="close-button">
+    <div *ngFor="let product of wishListProducts" id="item-container">
+      <div class="close-button">
           <a><i class="fa fa-times-circle close" aria-hidden="true"></i></a>
       </div>
       <a>
-        <div id="item">
-          <app-product></app-product>
+        <div class="item">
+          <app-product [product]="product"></app-product>
         </div>
       </a>
       <div id="text-container">

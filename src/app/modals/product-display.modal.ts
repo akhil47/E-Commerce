@@ -5,8 +5,16 @@ export class ProductDisplay{
     oldPrice: number
     newPrice: number
     discount: string
-    sizes: string
+    sizes: string[]
 
     constructor(){
+    }
+
+    sizesToString(){
+        let sizes = ''
+        for(let size of this.sizes){
+            sizes += size + ' '
+        }
+        return sizes
     }
 }

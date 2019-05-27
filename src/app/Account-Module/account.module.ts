@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { AccountPageComponent } from './account-page/account-page.component';
 import { MenuComponent } from './account-page/menu/menu.component';
@@ -20,6 +21,8 @@ import { AccountRoutingModule } from './account-routing.module';
 
 import { WishlistPageComponent } from './wishlist-page/wishlist-page.component';
 import { SharedModule } from '../Shared-Module/shared.module';
+import { MenuHeaderComponent } from './menu-header/menu-header.component';
+
 
 
 @NgModule({
@@ -39,14 +42,18 @@ import { SharedModule } from '../Shared-Module/shared.module';
         AddressEditComponent,
         AddressView2Component,
         ChangePasswordComponent,
-        WishlistPageComponent
+        WishlistPageComponent,
+        MenuHeaderComponent
     ],
     imports: [
         AccountRoutingModule,
         CommonModule,
+        FormsModule,
         SharedModule
     ],
-    exports: []
+    exports: [
+        AddressEditComponent
+    ]
 })
 export class AccountModule{
 

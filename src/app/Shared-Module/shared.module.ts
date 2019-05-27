@@ -8,6 +8,8 @@ import { DropdownComponent } from './dropdown/dropdown.component';
 import { CheckboxFilterComponent } from './checkbox-filter/checkbox-filter.component';
 import { FiltersSectionComponent } from './filters-section/filters-section.component';
 import { RadioFilterComponent } from './radio-filter/radio-filter.component';
+import { PopupComponent } from './popup/popup.component';
+import { ListSelectionMenuComponent } from './list-selection-menu/list-selection-menu.component';
 
 @NgModule({
     declarations: [
@@ -18,7 +20,9 @@ import { RadioFilterComponent } from './radio-filter/radio-filter.component';
         HorizontalScrollComponent,
         FeaturedContentComponent,
         BannersSectionComponent,
-        DropdownComponent
+        DropdownComponent,
+        PopupComponent,
+        ListSelectionMenuComponent
     ],
     imports: [
         CommonModule,
@@ -32,6 +36,8 @@ import { RadioFilterComponent } from './radio-filter/radio-filter.component';
         CheckboxFilterComponent,
         FiltersSectionComponent,
         RadioFilterComponent,
+        PopupComponent,
+        ListSelectionMenuComponent
     ]
 })
 export class SharedModule { }

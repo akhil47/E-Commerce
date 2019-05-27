@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HeaderService } from 'src/app/services/header.service';
-import { DropdownList } from 'src/app/modals/dropdown-list.modal';
 
 
 @Component({

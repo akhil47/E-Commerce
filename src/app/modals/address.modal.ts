@@ -5,6 +5,6 @@ export class Address{
     town: string
     city: string
     state: string
-    pincode: number
+    pincode: string
     constructor(){}
 }

@@ -13,6 +13,12 @@ export class CartPageComponent implements OnInit {
   cartProducts: ProductCart[] = []
   orderSummary: OrderSummary
 
+  popupActive: boolean = false;
+  popupActiveMenu: string = ''
+  popupItemIndex: number = 0
+  popupTitle: string =''
+  popupData: any[] = []
+
   constructor(private router: Router, private route: ActivatedRoute) {
     for(let i = 0; i < 5; i++){
       this.cartProducts.push(new ProductCart())
@@ -39,5 +45,40 @@ export class CartPageComponent implements OnInit {
 
   onPlaceOrder(){
     this.router.navigate(['/address'])
+  }
+  openSizeMenu(event: any, index: number){
+    this.popupActive = true;
+    this.popupTitle = event['title']
+    this.popupData = event['listItems']
+    this.popupActiveMenu = 'Size'
+    this.popupItemIndex = index
+    console.log(this.popupItemIndex)
+  }
+  openQuantityMenu(event: any, index: number){
+    this.popupActive = true;
+    this.popupTitle = event['title']
+    this.popupData = event['listItems']
+    this.popupActiveMenu = 'Quantity'
+    this.popupItemIndex = index
+    console.log(this.popupItemIndex)
+  }
+  closeMenu(event){
+    this.popupActive = false;
+    switch(this.popupActiveMenu){
+      case 'Size':
+        this.closeSizeMenu(event)
+        break
+      case 'Quantity':
+        this.closeQuantityMenu(event)
+        break
+    }
+  }
+  closeSizeMenu(selectedItem){
+    this.cartProducts[this.popupItemIndex].size = selectedItem
+    console.log(selectedItem)
+  }
+  closeQuantityMenu(selectedItem){
+    this.cartProducts[this.popupItemIndex].quantity = selectedItem
+    console.log(selectedItem)
   }
 }

@@ -1,0 +1,13 @@
+<div id="main-container">
+  <div id="title">
+    <p id="title-text">{{ title }}</p>
+  </div>
+  <div id="seperator"></div>
+  <div id="list-items-container">
+    <div id="scroll-view">
+      <div class="list-item" *ngFor="let item of listItems">
+        <a (click)="onItemSelect(item)"><p class="item-text">{{ item }}</p></a>
+      </div>
+    </div>
+  </div>
+</div>

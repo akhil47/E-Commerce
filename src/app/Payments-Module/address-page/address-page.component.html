@@ -1,20 +1,33 @@
 <div id="main-container">
-  <div id="header">
-    <p id="header-text">Choose Delivery Address</p>
-  </div>
-  <div id="header-seperator"></div>
-  <div id="add-new-address">
-    <a>+ Add New Address</a>
-  </div>
-  <div id="address-container">
-      <app-address-view class="address_view" *ngFor="let address of addressList"
-        [address]="address">
-      </app-address-view>
-  </div>
-  <div id="summary-wrapper">
-      <div id="order-summary-container">
-          <app-order-summary [summary]="orderSummary"></app-order-summary>
-          <button type="button" class="btn btn-success">Make Payment</button>
-      </div>
+  <app-popup *ngIf="popupActive">
+    <div id="address-edit-wrapper">
+      <app-address-edit [address]="popupData"
+        (editCompleted)="onEditSuccess($event)"
+        (editCancelled)="onEditFail()"
+        >
+      </app-address-edit>
+    </div>
+  </app-popup>
+  <div id="wrapper">
+    <div id="header">
+      <p id="header-text">Choose Delivery Address</p>
+    </div>
+    <div id="header-seperator"></div>
+    <div id="add-new-address">
+      <a>+ Add New Address</a>
+    </div>
+    <div id="address-container">
+        <app-address-view class="address_view" *ngFor="let address of addressList; index as i"
+          [address]="address"
+          (onEditAddress) ="editAddress($event, i)"
+          >
+        </app-address-view>
+    </div>
+    <div id="summary-wrapper">
+        <div id="order-summary-container">
+            <app-order-summary [summary]="orderSummary"></app-order-summary>
+            <button type="button" class="btn btn-success">Make Payment</button>
+        </div>
+    </div>
   </div>
 </div>

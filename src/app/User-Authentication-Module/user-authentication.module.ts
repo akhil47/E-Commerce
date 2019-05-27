@@ -16,6 +16,8 @@ import { UserAuthenticationRoutingModule } from './user-authentication-routing.m
     imports: [
         CommonModule,
         UserAuthenticationRoutingModule
+    ],
+    exports: [
     ]
 })
 export class UserAuthenticationModule{

@@ -1,11 +1,22 @@
 <div id="main-container">
+    <app-popup *ngIf="popupActive">
+      <app-list-selection-menu 
+        [title]="popupTitle"
+        [listItems]="popupData"
+        (itemSelected)="closeMenu($event)"
+        >
+      </app-list-selection-menu>
+    </app-popup>
   <div id="wrapper">
     <div id="header">
         <p id="header-text">My Cart</p>
     </div>
     <div id="products-container">
-        <div class="product-view-container" *ngFor="let product of cartProducts">
-            <app-product-cart-view [product]="product"></app-product-cart-view>
+        <div class="product-view-container" *ngFor="let product of cartProducts; index as i">
+            <app-product-cart-view 
+            (showSizeMenu)="openSizeMenu($event, i)"
+            (showQuantityMenu)="openQuantityMenu($event, i)"
+            [product]="product"></app-product-cart-view>
         </div>
     </div>
     <div id="order-summary-container">

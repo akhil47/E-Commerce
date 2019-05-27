@@ -29,7 +29,7 @@ export class HorizontalScrollComponent implements OnInit, AfterViewInit {
       this.productList[i].oldPrice = 4799
       this.productList[i].newPrice = 3999
       this.productList[i].discount = ' ( 17% Off )'
-      this.productList[i].sizes = 'S M L XL XXL'
+      this.productList[i].sizes = ['S', 'M', 'L', 'XL', 'XXL']
     }
   }
   ngAfterViewInit(){
