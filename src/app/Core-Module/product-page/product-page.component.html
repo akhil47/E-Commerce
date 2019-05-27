@@ -1,25 +1,25 @@
 <div id="main-container">
   <div id="wrapper">
     <div id="images-container">
-      <app-image-display [images]="productImages"></app-image-display>
+      <app-image-display [images]="product.images"></app-image-display>
     </div>
     <div id="product-info-container">
       <div id="product-title">
         <ul>
-          <li><p><strong>DOROTHY PERKINS</strong></p></li>
-          <li><p>Beige & Black Regular Fit Printed Casual Shirt</p></li>
-          <li><p>Rs. 2990</p></li>
+          <li><p><strong>{{ product.getBrand() }}</strong></p></li>
+          <li><p>{{ product.getName() }}</p></li>
+          <li><p>Rs. {{ product.getSizeList()[0].newPrice }}</p></li>
         </ul>
       </div>
       <div class="seperator"></div>
       <div id="product-size">
         <div class="header"><strong><p style="margin: 0px;">SIZE</p></strong></div>
-        <div *ngFor="let i of ['S','M','L','XL','XXL', 'XXXL', 'XXXXL']" class="size-container">
+        <div *ngFor="let size of product.getSizeList()" class="size-container">
           <div class="radio-button">
             <input type="radio" name="size" value="">
           </div>
           <div class="radio-button-name">
-              <p>{{ i }}</p>
+              <p>{{ size.sizeName }}</p>
           </div>
         </div>
         <div id="buttons-section">

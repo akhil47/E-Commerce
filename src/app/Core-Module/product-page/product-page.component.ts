@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductDisplay } from 'src/app/modals/product-display.modal';
+
+import { Product } from 'src/app/Modals/Product/product.modal';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-page',
@@ -7,13 +9,11 @@ import { ProductDisplay } from 'src/app/modals/product-display.modal';
   styleUrls: ['./product-page.component.css']
 })
 export class ProductPageComponent implements OnInit {
-
-  productImages: string[] = [
-    //More images may added later stage
-    'https://assets.jassets.com/h_600,q_95,w_440/v1/assets/images/productImage/2018/7/6/cd37416d-5556-4024-9d7f-bb5ebde43a6a1530825330030-1.webp'
-  ]
-  productInfo: ProductDisplay //For later use
-  constructor() { }
+  
+  product: Product //For later use
+  constructor(private productService: ProductService) {
+    this.product = productService.products[0]
+  }
 
   ngOnInit() {
   }

@@ -13,6 +13,7 @@ import { UserAuthenticationModule } from './User-Authentication-Module/user-auth
 
 import { AppComponent } from './app.component';
 import { PaymentsModule } from './Payments-Module/payments.module';
+import { ProductService } from './services/product.service';
 
 
 
@@ -30,7 +31,7 @@ import { PaymentsModule } from './Payments-Module/payments.module';
     CoreModule,
     SharedModule
   ],
-  providers: [HeaderService, AccountService],
+  providers: [HeaderService, AccountService, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

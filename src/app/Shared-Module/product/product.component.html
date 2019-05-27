@@ -1,16 +1,16 @@
 <div #test id="outer-container">
     <div  id="product-image">
-      <img [src]="product.imageUrl" alt="">
+      <img [src]="product.getImages()[0]" alt="">
     </div>
     <div id="product-info">
       <div id="product-name-container">
-        <p id="product-name">{{ product.name }}</p>
+        <p id="product-name">{{ product.getName() }}</p>
       </div>
       <div id="product-price-container">
           <p id="product-price">
-            <s style="font-size: 14px; color: grey;">Rs.{{ product.oldPrice }}</s>
-            <b>  Rs.{{ product.newPrice }}  </b>
-            <b style="color: red; font-size: 12px;"> {{ product.discount }}</b>
+            <s style="font-size: 14px; color: grey;">Rs.{{ product.getSizeList()[0].newPrice }}</s>
+            <b>  Rs.{{ product.getSizeList()[0].oldPrice }}  </b>
+            <b style="color: red; font-size: 12px;">( {{ product.getSizeList()[0].discount }} % )</b>
           </p>
       </div>
       <div id="seperator"></div>

@@ -1,23 +1,23 @@
 <div id="main-container">
   <div id="image-container">
-      <img [src]="product.imageUrl" alt="">
+      <img [src]="product.getImages()[0]" alt="">
   </div>
   <div id="product-details-container">
     <div id="details">
       <div id="heading">
-        <a class="text">{{ product.name }}</a>
+        <a class="text">{{ product.getName() }}</a>
       </div>
       <div id="price-container">
         <p id="price-line-1"><i class="fa fa-inr" aria-hidden="true"></i> 
-          {{ product.newPrice}}</p>
+          {{ product.getSizeList()[0].newPrice }}</p>
         <p id="price-line-2"><i class="fa fa-inr" aria-hidden="true"></i> 
-          {{ product.oldPrice }} | {{ product.discount }}</p>
+          {{ product.getSizeList()[0].oldPrice }} | {{ product.getSizeList()[0].discount }}% </p>
       </div>
     </div>
     <div id="quantity-size-container">
-          <a (click)="openSizeDropdown()" class="quantity-size-buttons">Size: {{ product.size }} 
+          <a (click)="openSizeDropdown()" class="quantity-size-buttons">Size: {{ product.getSizeList()[0].sizeName }} 
             <span class="caret"></span></a>
-          <a (click)="openQuantityDropdown()" class="quantity-size-buttons">Quantity: {{ product.quantity }} 
+          <a (click)="openQuantityDropdown()" class="quantity-size-buttons">Quantity: {{ product.getSizeList()[0].availableQuantity }} 
             <span class="caret"></span></a>
     </div>
     <div id="large-screen">

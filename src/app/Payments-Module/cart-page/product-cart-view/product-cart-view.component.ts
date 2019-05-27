@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ProductCart } from 'src/app/modals/product-cart.model';
+import { Product } from 'src/app/Modals/Product/product.modal';
 
 @Component({
   selector: 'app-product-cart-view',
@@ -8,7 +8,7 @@ import { ProductCart } from 'src/app/modals/product-cart.model';
 })
 export class ProductCartViewComponent implements OnInit {
 
-  @Input() product: ProductCart
+  @Input() product: Product
   @Output() showSizeMenu = new EventEmitter<{title: string, listItems: string[]}>()
   @Output() showQuantityMenu = new EventEmitter<{title: string, listItems: string[]}>()
 

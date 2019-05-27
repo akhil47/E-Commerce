@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
-import { ProductDisplay } from 'src/app/modals/product-display.modal';
+import { Product } from 'src/app/Modals/Product/product.modal';
 
 @Component({
   selector: 'app-product',
@@ -8,7 +8,7 @@ import { ProductDisplay } from 'src/app/modals/product-display.modal';
 })
 export class ProductComponent implements OnInit {
 
-  @Input() product: ProductDisplay
+  @Input() product: Product
 
   @ViewChild('test') test: ElementRef
 

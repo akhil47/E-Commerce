@@ -3,7 +3,7 @@ export class Size{
     availableQuantity: number
     oldPrice: number
     newPrice: number
-    discount: number
+    discount: number //percent eg: 20% = 20
     readonly dateAdded: string
     dateModified: string
     status: boolean
