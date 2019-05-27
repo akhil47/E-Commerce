@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Address } from 'src/app/modals/address.modal';
+import { Address } from 'src/app/Modals/Customer/address.modal';
 
 @Component({
   selector: 'app-address-view',

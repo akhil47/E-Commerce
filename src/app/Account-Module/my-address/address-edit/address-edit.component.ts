@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { AccountService } from 'src/app/services/account.service';
-import { Address } from 'src/app/modals/address.modal';
+import { Address } from 'src/app/Modals/Customer/address.modal';
 
 @Component({
   selector: 'app-address-edit',
