@@ -8,9 +8,11 @@
           </a>
           <div #productsMainContainer id="products-main-container">
             <div id="products-container">
-              <div id="product" *ngFor="let product of productList">
-                <a><app-product [product]="product"></app-product></a>
-              </div>
+              <a (click)="onClick()" *ngFor="let product of productList">
+                <div id="product">
+                  <app-product [product]="product"></app-product>
+                </div>
+              </a>
             </div>
           </div>
           <a (click)="onRightScroll()">

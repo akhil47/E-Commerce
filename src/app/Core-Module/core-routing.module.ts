@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
 const appRoutes = [
     { path: '', component: HomePageComponent},
     { path: 'search', component: SearchPageComponent},
-    { path: 'product', component: ProductPageComponent}
+    { path: 'product/:id', component: ProductPageComponent}
 ]
 
 @NgModule({

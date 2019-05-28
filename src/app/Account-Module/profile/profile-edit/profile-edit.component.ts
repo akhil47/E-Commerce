@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AccountService } from 'src/app/services/account.service';
 
 @Component({
   selector: 'app-profile-edit',
@@ -8,11 +9,31 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ProfileEditComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  userInfo = {
+    name: '',
+    gender: '',
+    mobileNo: '',
+    mail: ''
+  }
 
+  constructor(private router: Router, private route: ActivatedRoute,
+    private accountService: AccountService) {
+      this.accountService.profileEdit.subscribe(
+        (userDetails)=>{
+          this.userInfo = {
+            name: userDetails['Name'],
+            gender: userDetails['Gender'],
+            mobileNo: userDetails['Mobile No'],
+            mail: userDetails['Mail']
+          }
+      })
+      
+  }
   ngOnInit() {
+    
   }
   onSave(){
+    this.accountService.updateProfile(this.userInfo)
     this.router.navigate(['profile-display'], { relativeTo: this.route.parent })
   }
   onCancel(){

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { AccountService } from 'src/app/services/account.service';
 import { Address } from 'src/app/Modals/Customer/address.modal';
 
@@ -7,24 +7,51 @@ import { Address } from 'src/app/Modals/Customer/address.modal';
   templateUrl: './address-edit.component.html',
   styleUrls: ['./address-edit.component.css']
 })
-export class AddressEditComponent implements OnInit {
+export class AddressEditComponent implements OnInit, OnDestroy {
 
-  @Input() address: Address
-  @Output() editCancelled = new EventEmitter<boolean>()
-  @Output() editCompleted = new EventEmitter<Address>()
-  
-  constructor(private accountService: AccountService) { }
+  title: string = ''
+
+  address: Address
+  addressIndex: number
+  subscription: any
+
+  editMode: boolean = false
+
+  constructor(private accountService: AccountService) {
+    this.address = new Address()
+    this.subscription = this.accountService.addressEdit.subscribe(
+      (data) =>{
+        this.address.name = data.address.name
+        this.address.mobile = data.address.mobile
+        this.address.doorNo = data.address.doorNo
+        this.address.area = data.address.area
+        this.address.city = data.address.city
+        this.address.state = data.address.state
+        this.address.pincode = data.address.pincode
+
+        this.addressIndex = data.index
+        this.title = data.title
+        this.editMode = data.editMode
+      }
+    )
+  }
 
   ngOnInit() {
   }
-
+  ngOnDestroy(){
+    this.subscription.unsubscribe()
+  }
   onSave(){
     this.accountService.addressEditStatus.next(false)
-    this.editCompleted.emit(this.address)
+    if(this.editMode){
+      this.accountService.updateAddress(this.address, this.addressIndex)
+    }
+    else{
+      this.accountService.customer.addAddress(this.address)
+    }
   }
   onCancel(){
     this.accountService.addressEditStatus.next(false)
-    this.editCancelled.emit(false)
   }
 
 }

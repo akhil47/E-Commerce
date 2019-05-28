@@ -14,6 +14,7 @@ import { UserAuthenticationModule } from './User-Authentication-Module/user-auth
 import { AppComponent } from './app.component';
 import { PaymentsModule } from './Payments-Module/payments.module';
 import { ProductService } from './services/product.service';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -29,7 +30,8 @@ import { ProductService } from './services/product.service';
     UserAuthenticationModule,
     PaymentsModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   providers: [HeaderService, AccountService, ProductService],
   bootstrap: [AppComponent]

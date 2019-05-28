@@ -29,7 +29,7 @@ export class HorizontalScrollComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(){
     
     this.heightValue = (this.productsMainContainer.nativeElement.scrollHeight).toString() + 'px'
-    console.log(this.heightValue) // Working
+    // console.log(this.heightValue) // Working
     // this.renderer.setAttribute(this.leftArrow.nativeElement, 'height', this.heightValue)
     // this.renderer.setAttribute(this.rightArrow.nativeElement, 'height', this.heightValue)
   }
@@ -48,5 +48,8 @@ export class HorizontalScrollComponent implements OnInit, AfterViewInit {
   }
   onRightScroll(){
     this.scrollRight()
+  }
+  onClick(){
+    console.log('clicked')
   }
 }

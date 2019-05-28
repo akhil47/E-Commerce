@@ -1,4 +1,7 @@
 <div>
-  <app-address-view2 *ngFor="let addr of addressList" [address]="addr">
+  <app-address-view2 *ngFor="let addr of addressList; index as i"
+      [address]="addr"
+      [addressIndex] = "i"
+    >
     </app-address-view2>
 </div>

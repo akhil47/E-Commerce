@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Address } from 'src/app/Modals/Customer/address.modal';
+import { AccountService } from 'src/app/services/account.service';
 
 @Component({
   selector: 'app-address-display',
@@ -8,24 +9,18 @@ import { Address } from 'src/app/Modals/Customer/address.modal';
 })
 export class AddressDisplayComponent implements OnInit {
 
-  addressList: Address[] = []
+  addressList: Address[]
 
-  constructor() {
-    for(let i = 0; i < 4; i++){
-      this.addressList.push(new Address())
-    }
+  constructor(private accountService: AccountService) {
+    this.addressList = this.accountService.customer.getAddresses()
   }
 
   ngOnInit() {
-    for(let i = 0; i < 4; i++){
-      this.addressList[i].name = "Akhilesh Lingala"
-      this.addressList[i].mobile = '91XXXXXXXX'
-      this.addressList[i].doorNo = '12/Z, Sector - 10'
-      this.addressList[i].area = 'Ukkunagaram'
-      this.addressList[i].city = 'Visakhapatnam'
-      this.addressList[i].state = 'Andhra Pradesh'
-      this.addressList[i].pincode = '530036'
-    }
+    this.accountService.addressUpdates.subscribe(
+      (addresses: Address[]) => {
+        this.addressList = addresses
+      }
+    )
   }
 
 }

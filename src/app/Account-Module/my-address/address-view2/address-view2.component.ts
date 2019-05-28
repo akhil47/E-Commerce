@@ -13,11 +13,16 @@ export class AddressView2Component implements OnInit {
   constructor(private accountService: AccountService) { }
 
   @Input() address: Address
+  @Input() addressIndex: number
   ngOnInit() {
   }
 
   onEdit(){
     this.accountService.addressEditStatus.next(true)
+    this.accountService.pushEditAddressData(this.address, this.addressIndex, 'Edit Address')
+  }
+  onRemove(){
+    this.accountService.removeAddress(this.addressIndex)
   }
 
 }

@@ -27,7 +27,7 @@ export class ProductService{
             sizeList[i].status = true
         }
         for(let i = 0; i < 20; i++){
-            this.products[i].setName('Tommy Hilfiger White Regular Fit Solid Casual Shirt')
+            this.products[i].setName(i + 'Tommy Hilfiger White Regular Fit Solid Casual Shirt')
             this.products[i].setId(i)
             this.products[i].setDescription('100% Cotton')
             this.products[i].setImages([
@@ -38,6 +38,24 @@ export class ProductService{
             this.products[i].setSubCategory('Causal Shirts')
             this.products[i].setSizeList(sizeList)
             this.products[i].setStatus(true)
+        }
+    }
+    getWishListItems(wishListProductId: number[]){
+        let products: Product[] = []
+        for(let product of this.products){
+            for(let id of wishListProductId){
+                if(id == product.getId()){
+                    products.push(product)
+                }
+            }
+        }
+        return products
+    }
+    getProduct(id: number){
+        for(let product of this.products){
+            if(id == product.getId()){
+                return product
+            }
         }
     }
 }

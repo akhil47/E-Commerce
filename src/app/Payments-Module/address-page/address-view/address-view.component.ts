@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Address } from 'src/app/Modals/Customer/address.modal';
+import { AccountService } from 'src/app/services/account.service';
 
 @Component({
   selector: 'app-address-view',
@@ -9,13 +10,17 @@ import { Address } from 'src/app/Modals/Customer/address.modal';
 export class AddressViewComponent implements OnInit {
 
   @Input() address: Address
-  @Output() onEditAddress = new EventEmitter<Address>()
+  @Input() addressIndex: number
   
-  constructor() { }
+  constructor(private accountService: AccountService) { }
 
   ngOnInit() {
   }
   onEdit(){
-    this.onEditAddress.emit(this.address)
+    this.accountService.addressEditStatus.next(true)
+    this.accountService.pushEditAddressData(this.address, this.addressIndex, 'Edit Address')
+  }
+  onRemove(){
+    this.accountService.removeAddress(this.addressIndex)
   }
 }

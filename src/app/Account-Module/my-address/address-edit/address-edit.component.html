@@ -1,9 +1,9 @@
 <div id="main-container">
-  <app-menu-header headerText="Edit Address"></app-menu-header>
+  <app-menu-header [headerText]="title"></app-menu-header>
   <div id="address-form">
     <form>
       <input type="text" name="name" placeholder="Full Name" class="form-control"
-        [(ngModel)]="address.name">
+      [(ngModel)]="address.name">
       <input type="text" name="mobile" placeholder="Mobile No" class="form-control"
         [(ngModel)]="address.mobile">
       <input type="text" name="doorNo" placeholder="Door No." class="form-control"

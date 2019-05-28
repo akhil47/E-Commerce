@@ -1,6 +1,7 @@
 import { Component, OnInit, OnChanges, HostListener } from '@angular/core';
 import { AccountService } from 'src/app/services/account.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Customer } from 'src/app/Modals/Customer/customer.modal';
 
 @Component({
   selector: 'app-account-page',
@@ -8,12 +9,22 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./account-page.component.css']
 })
 export class AccountPageComponent implements OnInit {
+  
+  name: string
+  mail: string
+  mobileNo: string
+  gender: string
 
   mobileScreen: boolean = false;
   mobileMenuItemSelected: boolean = false;
 
   constructor(private accountService: AccountService,
-    private router: Router) { }
+    private router: Router) {
+      this.name = this.accountService.customer.getName()
+      this.mail = this.accountService.customer.getMail()
+      this.mobileNo = this.accountService.customer.getMobileNo()
+      this.gender = this.accountService.customer.getGender()
+    }
 
   ngOnInit() {
     if(window.innerWidth < 768){
@@ -22,7 +33,6 @@ export class AccountPageComponent implements OnInit {
     else{
       this.mobileScreen = false;
     }
-    console.log(this.mobileScreen)
 
     this.accountService.mobileMenuStateChanged.subscribe(
       (flag) => {

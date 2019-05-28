@@ -1,26 +1,11 @@
 <div id="main-container">
     <table>
-      <tr>
-        <td><p><b>Name</b></p></td>
-        <td><p><b>:</b></p></td>
-        <td><p>Akhilesh Lingala</p></td>
-      </tr>
-      <tr>
-        <td><p><b>Gender</b></p></td>
-        <td><p><b>:</b></p></td>
-        <td><p>Male</p></td>
-      </tr>
-      <tr>
-        <td><p><b>Mobile No &nbsp; &nbsp;</b></p></td>
+      <tr *ngFor="let key of objectkeys(userDetails)">
+        <td><p><b>{{ key }} &nbsp; &nbsp;</b></p></td>
         <td><p><b>:&nbsp;&nbsp;</b></p></td>
-        <td><p>+91 91xxx xxxxx</p></td>
-      </tr>
-      <tr>
-        <td><p><b>E-mail</b></p></td>
-        <td><p><b>:</b></p></td>
-        <td><p>akhil@gmail.com</p></td>
+        <td><p>{{ userDetails[key] }}</p></td>
       </tr>
     </table>
     <button (click)="onEdit()"type="button" class="btn btn-primary">Edit</button>
-    <button (click)="onEdit()"type="button" class="btn btn-danger">Delete Account</button>
+    <button (click)="onDelete()"type="button" class="btn btn-danger">Delete Account</button>
   </div>

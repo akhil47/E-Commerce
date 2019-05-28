@@ -25,5 +25,10 @@ export class MyAddressComponent implements OnInit {
       }
     )
   }
+  createAddress(){
+    this.accountService.addressEditStatus.next(true)
+    this.accountService.pushNewAddressData('New Address')
+  }
+
 
 }

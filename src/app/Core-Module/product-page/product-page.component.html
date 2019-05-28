@@ -1,7 +1,7 @@
 <div id="main-container">
   <div id="wrapper">
     <div id="images-container">
-      <app-image-display [images]="product.images"></app-image-display>
+      <app-image-display [images]="product.getImages()"></app-image-display>
     </div>
     <div id="product-info-container">
       <div id="product-title">
@@ -24,10 +24,10 @@
         </div>
         <div id="buttons-section">
             <div class="buttons">
-                <button class="btn btn-success" type="button">Add to Cart</button>
+                <button (click)="addToCart()" class="btn btn-success" type="button">Add to Cart</button>
             </div>
             <div class="buttons">
-                <button class="btn btn-primary" type="button">Add to Wishlist</button>
+                <button (click)="addToWishList()" class="btn btn-primary" type="button">Add to Wishlist</button>
             </div>
         </div>
       </div>

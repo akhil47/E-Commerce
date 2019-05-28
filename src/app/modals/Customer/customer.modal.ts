@@ -35,7 +35,7 @@ export class Customer extends User{
         this.name = name
     }
     setMobileNo(mobileNo: string){
-        this.name = name
+        this.mobileNo = mobileNo
     }
     setMail(mail: string){
         this.mail = mail
@@ -63,19 +63,23 @@ export class Customer extends User{
     addProductToWishlist(productId: number){
         this.wishlist.push(productId)
     }
-    removeProductFromWishlist(productId: number){
-        // Yet to write
+    removeProductFromWishlist(id: number){
+        let index = this.wishlist.indexOf(id) //Finding index of product Id first
+        this.wishlist.splice(index, 1)
     }
     addProductToCart(item: CartItem){
         this.cart.cartItems.push(item)
     }
-    removeProductFromCart(productId: number){
-        // yet to write
+    removeProductFromCart(index: number){
+        this.cart.cartItems.splice(index, 1)
     }
     addAddress(address: Address){
         this.addresses.push(address)
     }
-    removeAddress(){
-        // yet to write
+    removeAddress(index: number){
+        this.addresses.splice(index, 1)
+    }
+    updateAddress(address: Address, index: number){
+        this.addresses[index] = address
     }
 }

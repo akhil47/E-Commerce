@@ -5,7 +5,7 @@
     </div>
     <div *ngFor="let product of wishListProducts" id="item-container">
       <div class="close-button">
-          <a><i class="fa fa-times-circle close" aria-hidden="true"></i></a>
+          <a (click)="onRemove(product.getId())"><i class="fa fa-times-circle close" aria-hidden="true"></i></a>
       </div>
       <a>
         <div class="item">
