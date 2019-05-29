@@ -8,9 +8,10 @@
       </div>
       <div id="product-price-container">
           <p id="product-price">
-            <s style="font-size: 14px; color: grey;">Rs.{{ product.getSizeList()[0].newPrice }}</s>
-            <b>  Rs.{{ product.getSizeList()[0].oldPrice }}  </b>
-            <b style="color: red; font-size: 12px;">( {{ product.getSizeList()[0].discount }} % )</b>
+            <s style="font-size: 14px; color: grey;">
+              Rs.{{ price }}</s>
+            <b>  Rs.{{ discountPrice }}  </b>
+            <b style="color: red; font-size: 12px;">( {{ discount }} % Off)</b>
           </p>
       </div>
       <div id="seperator"></div>

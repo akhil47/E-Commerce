@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Address } from 'src/app/Modals/Customer/address.modal';
 import { AccountService } from 'src/app/services/account.service';
 
@@ -7,20 +7,25 @@ import { AccountService } from 'src/app/services/account.service';
   templateUrl: './address-display.component.html',
   styleUrls: ['./address-display.component.css']
 })
-export class AddressDisplayComponent implements OnInit {
+export class AddressDisplayComponent implements OnInit, OnDestroy {
 
   addressList: Address[]
 
+  addressUpdatesSubscription: any
+
   constructor(private accountService: AccountService) {
-    this.addressList = this.accountService.customer.getAddresses()
+    this.addressList = this.accountService.getAddresses()
   }
 
   ngOnInit() {
-    this.accountService.addressUpdates.subscribe(
+    this.addressUpdatesSubscription = this.accountService.addressUpdates.subscribe(
       (addresses: Address[]) => {
         this.addressList = addresses
       }
     )
+  }
+  ngOnDestroy(){
+    this.addressUpdatesSubscription.unsubscribe()
   }
 
 }

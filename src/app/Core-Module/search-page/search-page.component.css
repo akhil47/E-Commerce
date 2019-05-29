@@ -73,6 +73,7 @@ a{
     margin: 4px 0px;
 }
 #search-results-container{
+    /* text-align: justify; */
     text-align: center;
 }
 .result{

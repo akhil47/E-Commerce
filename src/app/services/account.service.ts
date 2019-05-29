@@ -1,10 +1,15 @@
 import { Subject } from 'rxjs';
 import { Customer } from '../Modals/Customer/customer.modal';
 import { Address } from '../Modals/Customer/address.modal';
+import { CartItem } from '../Modals/Customer/cart-item.modal';
+import { Cart } from '../Modals/Customer/cart.modal';
+import { Injectable } from '@angular/core';
+import { ProductService } from './product.service';
 
+@Injectable()
 export class AccountService{
 
-    customer: Customer
+    private customer: Customer
 
     mobileMenuStateChanged = new Subject<boolean>();
     mobileMenuItemSelectedState = new Subject<boolean>();
@@ -16,8 +21,9 @@ export class AccountService{
     profileEdit = new Subject<Object>()
 
     wishListUpdates = new Subject<number[]>()
+    cartUpdates = new Subject<Cart>()
     
-    constructor(){
+    constructor(private productService: ProductService){
         this.customer = new Customer()
         this.initCustomer()
         this.addressUpdates.next(this.customer.getAddresses())
@@ -43,6 +49,33 @@ export class AccountService{
         this.customer.setAddresses(addrs)
         this.customer.setWishlist([10, 1]) // set it dynamically
     }
+    // Basic Get and Set Methods of Customer
+    getCart(){
+        return this.customer.getCart()
+    }
+    getAddresses(){
+        return this.customer.getAddresses()
+    }
+    getWishlist(){
+        return this.customer.getWishlist()
+    }
+    getName(){
+        return this.customer.getName()
+    }
+    getMobileNo(){
+        return this.customer.getMobileNo()
+    }
+    getMail(){
+        return this.customer.getMail()
+    }
+    getGender(){
+        return this.customer.getGender()
+    }
+
+
+
+    // Update Methods
+
     pushProfileEditData(data: Object){
         // Solution function after major headache :)
         setTimeout(()=>{
@@ -65,6 +98,16 @@ export class AccountService{
             //Timeout will be applied only to the code placed inside this anonymous function
         }, 30)
     }
+
+    
+    addAddress(address: Address){
+        this.customer.addAddress(address)
+        this.addressUpdates.next(this.customer.getAddresses())
+    }
+    removeAddress(index: number){
+        this.customer.removeAddress(index)
+        this.addressUpdates.next(this.customer.getAddresses())
+    }
     updateAddress(address: Address, index: number){
         this.customer.updateAddress(address, index)
         this.addressUpdates.next(this.customer.getAddresses())
@@ -75,10 +118,7 @@ export class AccountService{
         this.customer.setMobileNo(data['mobileNo'])
         this.customer.setMail(data['mail'])
     }
-    removeAddress(index: number){
-        this.customer.removeAddress(index)
-        this.addressUpdates.next(this.customer.getAddresses())
-    }
+    
 
     addItemToWishList(id: number){
         this.customer.addProductToWishlist(id)
@@ -88,4 +128,34 @@ export class AccountService{
         this.customer.removeProductFromWishlist(id)
         this.wishListUpdates.next(this.customer.getWishlist())
     }
+    addItemToCart(item: CartItem){
+        this.customer.addProductToCart(item)
+        this.customer.updateCartSummary(0)
+        this.cartUpdates.next(this.customer.getCart())
+    }
+    removeItemFromCart(index: number){
+        this.customer.removeProductFromCart(index)
+        this.customer.updateCartSummary(0)
+        this.cartUpdates.next(this.customer.getCart())
+    }
+
+
+
+    updateSizeOfCartItem(index: number, productId: number, size: string){
+        let product = this.productService.getProduct(productId)
+        let sizeDetails = product.getSize(size)
+
+        this.customer.updateSizeOfCartItem(index, size, 1, sizeDetails.price, sizeDetails.discount)
+        this.customer.updateCartSummary(0)
+        this.cartUpdates.next(this.customer.getCart())
+    }
+    updateQuantityOfCartItem(index: number, productId: number, size: string, quantity: number){
+        let product = this.productService.getProduct(productId)
+        let sizeDetails = product.getSize(size)
+
+        this.customer.updateQuantityOfCartItem(index, sizeDetails.price, quantity)
+        this.customer.updateCartSummary(0)
+        this.cartUpdates.next(this.customer.getCart())
+    }
+
 }

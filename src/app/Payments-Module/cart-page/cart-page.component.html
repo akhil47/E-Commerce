@@ -12,15 +12,15 @@
         <p id="header-text">My Cart</p>
     </div>
     <div id="products-container">
-        <div class="product-view-container" *ngFor="let product of cartProducts; index as i">
+        <div class="product-view-container" *ngFor="let item of cart.getCartItems(); index as i">
             <app-product-cart-view 
-            (showSizeMenu)="openSizeMenu($event, i)"
-            (showQuantityMenu)="openQuantityMenu($event, i)"
-            [product]="product"></app-product-cart-view>
+            (showSizeMenu)="openMenu($event, i)"
+            (showQuantityMenu)="openMenu($event, i)"
+            [cartItem]="item"></app-product-cart-view>
         </div>
     </div>
     <div id="order-summary-container">
-        <app-order-summary [summary]="orderSummary"></app-order-summary>
+        <app-order-summary [summary]="cart"></app-order-summary>
         <button (click)="onPlaceOrder()" type="button" class="btn btn-success">Place Order</button>
     </div>
   </div>

@@ -1,43 +1,46 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Address } from 'src/app/Modals/Customer/address.modal';
-import { OrderSummary } from 'src/app/modals/order-summary.modal';
 import { AccountService } from 'src/app/services/account.service';
+import { Cart } from 'src/app/Modals/Customer/cart.modal';
 
 @Component({
   selector: 'app-address-page',
   templateUrl: './address-page.component.html',
   styleUrls: ['./address-page.component.css']
 })
-export class AddressPageComponent implements OnInit {
+export class AddressPageComponent implements OnInit, OnDestroy {
 
   addressList: Address[]
-  orderSummary: OrderSummary
+  cart: Cart
 
   popupActive: boolean = false;
   popupItemIndex: number = 0
   popupData: Address
 
+  addressEditStatusSubscription: any
+  addressUpdatesSubscription: any
+
   constructor(private accountService: AccountService) {
-    this.accountService.addressEditStatus.subscribe(
+    this.addressEditStatusSubscription = this.accountService.addressEditStatus.subscribe(
       (flag) =>{
         this.popupActive = flag;
       }
     )
-    this.addressList = this.accountService.customer.getAddresses()
-    this.orderSummary = new OrderSummary()
+    this.addressList = this.accountService.getAddresses()
+    this.cart = this.accountService.getCart()
   }
 
   ngOnInit() {
-    this.accountService.addressUpdates.subscribe(
+    this.addressUpdatesSubscription = this.accountService.addressUpdates.subscribe(
       (addresses: Address[]) => {
         this.addressList = addresses
       }
     )
-    this.orderSummary.MRP = 99999
-    this.orderSummary.shippingCharges = 99999
-    this.orderSummary.GST = 99999
-    this.orderSummary.discount = 99999
-    this.orderSummary.total = 99999
+  }
+  ngOnDestroy(){
+    this.addressEditStatusSubscription.unsubscribe()
+    this.addressUpdatesSubscription.unsubscribe()
+    console.log('done')
   }
   createAddress(){
     this.accountService.addressEditStatus.next(true)

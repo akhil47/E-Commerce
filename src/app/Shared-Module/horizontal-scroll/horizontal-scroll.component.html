@@ -8,7 +8,7 @@
           </a>
           <div #productsMainContainer id="products-main-container">
             <div id="products-container">
-              <a (click)="onClick()" *ngFor="let product of productList">
+              <a [routerLink]="'/product/'+ product.getId()" *ngFor="let product of productList">
                 <div id="product">
                   <app-product [product]="product"></app-product>
                 </div>

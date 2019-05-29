@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { HeaderService } from 'src/app/services/header.service';
 import { AccountService } from 'src/app/services/account.service';
 
@@ -8,7 +8,7 @@ import { AccountService } from 'src/app/services/account.service';
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.css']
 })
-export class SideBarComponent implements OnInit {
+export class SideBarComponent implements OnInit, OnDestroy {
 
   constructor(private headerService: HeaderService, private accountService: AccountService) { }
 
@@ -19,12 +19,18 @@ export class SideBarComponent implements OnInit {
   kidsMenu: boolean = false;
   accessoriesMenu: boolean = false;
 
+  sideBarStatusSubscription: any
+  
+
   ngOnInit() {
-    this.headerService.sideBarStatus.subscribe(
+    this.sideBarStatusSubscription = this.headerService.sideBarStatus.subscribe(
       (isActive) => {
         this.sidebarActive = isActive
       }
     )
+  }
+  ngOnDestroy(){
+    this.sideBarStatusSubscription.unsubscribe()
   }
   showMenMenu(){
     if(this.menMenu){

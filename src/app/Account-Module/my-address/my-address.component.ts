@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AccountService } from 'src/app/services/account.service';
 
@@ -7,14 +7,16 @@ import { AccountService } from 'src/app/services/account.service';
   templateUrl: './my-address.component.html',
   styleUrls: ['./my-address.component.css']
 })
-export class MyAddressComponent implements OnInit {
+export class MyAddressComponent implements OnInit, OnDestroy {
+
+  addressEditStatusSubscription: any
 
   constructor(private accountService: AccountService, private router: Router,
       private route: ActivatedRoute)
       { }
 
   ngOnInit() {
-    this.accountService.addressEditStatus.subscribe(
+    this.addressEditStatusSubscription = this.accountService.addressEditStatus.subscribe(
       (flag) => {
         if(flag){
           this.router.navigate(['address-edit'], {relativeTo: this.route })
@@ -24,6 +26,9 @@ export class MyAddressComponent implements OnInit {
         }
       }
     )
+  }
+  ngOnDestroy(){
+    this.addressEditStatusSubscription.unsubscribe()
   }
   createAddress(){
     this.accountService.addressEditStatus.next(true)

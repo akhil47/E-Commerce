@@ -23,6 +23,18 @@ export class Product{
     getCategory(){ return this.category }
     getSubCategory(){ return this.subCategory }
     getSizeList(){ return this.sizeList }
+    getSizeNamesList(){
+        let sizes = []
+        for(let size of this.sizeList){
+            sizes.push(size.sizeName)
+        }
+        return sizes
+    }
+    getSize(size: string): Size{
+        for(let s of this.sizeList){
+            if(s.sizeName == size) return s
+        }
+    }
     getStatus(){ return this.status }
 
     // Set Methods

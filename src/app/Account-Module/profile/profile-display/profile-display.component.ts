@@ -15,10 +15,10 @@ export class ProfileDisplayComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute,
     private accountService: AccountService) {
       this.userDetails = {
-        'Name': this.accountService.customer.getName(),
-        'Gender': this.accountService.customer.getGender(),
-        'Mobile No': this.accountService.customer.getMobileNo(),
-        'Mail': this.accountService.customer.getMail()
+        'Name': this.accountService.getName(),
+        'Gender': this.accountService.getGender(),
+        'Mobile No': this.accountService.getMobileNo(),
+        'Mail': this.accountService.getMail()
       }
   }
 

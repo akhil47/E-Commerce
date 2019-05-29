@@ -13,13 +13,13 @@ export class AddressEditComponent implements OnInit, OnDestroy {
 
   address: Address
   addressIndex: number
-  subscription: any
+  addressEditSubscription: any
 
   editMode: boolean = false
 
   constructor(private accountService: AccountService) {
     this.address = new Address()
-    this.subscription = this.accountService.addressEdit.subscribe(
+    this.addressEditSubscription = this.accountService.addressEdit.subscribe(
       (data) =>{
         this.address.name = data.address.name
         this.address.mobile = data.address.mobile
@@ -39,7 +39,7 @@ export class AddressEditComponent implements OnInit, OnDestroy {
   ngOnInit() {
   }
   ngOnDestroy(){
-    this.subscription.unsubscribe()
+    this.addressEditSubscription.unsubscribe()
   }
   onSave(){
     this.accountService.addressEditStatus.next(false)
@@ -47,7 +47,7 @@ export class AddressEditComponent implements OnInit, OnDestroy {
       this.accountService.updateAddress(this.address, this.addressIndex)
     }
     else{
-      this.accountService.customer.addAddress(this.address)
+      this.accountService.addAddress(this.address)
     }
   }
   onCancel(){

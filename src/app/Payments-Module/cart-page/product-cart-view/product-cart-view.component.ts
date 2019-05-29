@@ -1,5 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/app/Modals/Product/product.modal';
+import { CartItem } from 'src/app/Modals/Customer/cart-item.modal';
+import { AccountService } from 'src/app/services/account.service';
+import { ProductService } from 'src/app/services/product.service';
+import { initDomAdapter } from '@angular/platform-browser/src/browser';
 
 @Component({
   selector: 'app-product-cart-view',
@@ -8,18 +12,50 @@ import { Product } from 'src/app/Modals/Product/product.modal';
 })
 export class ProductCartViewComponent implements OnInit {
 
-  @Input() product: Product
+  @Input() cartItem: CartItem
   @Output() showSizeMenu = new EventEmitter<{title: string, listItems: string[]}>()
-  @Output() showQuantityMenu = new EventEmitter<{title: string, listItems: string[]}>()
+  @Output() showQuantityMenu = new EventEmitter<{title: string, listItems: number[]}>()
 
-  constructor() { }
+  price: number = 0
+  discount: number = 0
+  discountPrice: number = 0
+  image: string = ''
+  title: string = ''
+
+  sizes: string[] = []
+  quantity: number[] = []
+
+  constructor(private accountService: AccountService, private productService: ProductService) {
+    this.accountService.cartUpdates.subscribe(
+      (cart) => {
+        this.initialise()
+      }
+    )
+  }
 
   ngOnInit() {
+    this.initialise()
   }
   openSizeDropdown(){
-    this.showSizeMenu.emit({title: 'Select Size', listItems: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL']})
+    this.showSizeMenu.emit({title: 'Select Size', listItems: this.sizes})
   }
   openQuantityDropdown(){
-    this.showQuantityMenu.emit({title: 'Select Quantity', listItems: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']})
+    this.showQuantityMenu.emit({title: 'Select Quantity', listItems: this.quantity})
+  }
+  initialise(){
+    this.price = this.cartItem.price
+    this.discount = this.cartItem.discount
+    this.discountPrice = Math.round((this.price) - (this.price * ((this.discount)/100)))
+
+    let product = this.productService.getProduct(this.cartItem.productId)
+    this.image = product.getImages()[0]
+    this.title = product.getName()
+    this.sizes = product.getSizeNamesList()
+
+    let quantityList = []
+    for(let i = 1; i <= product.getSize(this.cartItem.size).availableQuantity; i++){
+      quantityList.push(i)
+    }
+    this.quantity =  quantityList
   }
 }

@@ -68,10 +68,10 @@ export class Customer extends User{
         this.wishlist.splice(index, 1)
     }
     addProductToCart(item: CartItem){
-        this.cart.cartItems.push(item)
+        this.cart.addCartItem(item)
     }
     removeProductFromCart(index: number){
-        this.cart.cartItems.splice(index, 1)
+        this.cart.removeCartItem(index)
     }
     addAddress(address: Address){
         this.addresses.push(address)
@@ -81,5 +81,15 @@ export class Customer extends User{
     }
     updateAddress(address: Address, index: number){
         this.addresses[index] = address
+    }
+    updateSizeOfCartItem(index: number, size: string, quantity: number,
+        price: number, discount: number){
+            this.cart.updateSizeOfCartItem(index, size, quantity, price, discount)
+    }
+    updateQuantityOfCartItem(index: number, price:number, quantity: number){
+        this.cart.updateQuantityOfCartItem(index, price, quantity)
+    }
+    updateCartSummary(shippingCharges: number){
+        this.cart.calculateCartValues(shippingCharges)
     }
 }

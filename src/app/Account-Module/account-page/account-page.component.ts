@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, HostListener } from '@angular/core';
+import { Component, OnInit, OnChanges, HostListener, OnDestroy } from '@angular/core';
 import { AccountService } from 'src/app/services/account.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Customer } from 'src/app/Modals/Customer/customer.modal';
@@ -8,7 +8,7 @@ import { Customer } from 'src/app/Modals/Customer/customer.modal';
   templateUrl: './account-page.component.html',
   styleUrls: ['./account-page.component.css']
 })
-export class AccountPageComponent implements OnInit {
+export class AccountPageComponent implements OnInit, OnDestroy {
   
   name: string
   mail: string
@@ -18,12 +18,14 @@ export class AccountPageComponent implements OnInit {
   mobileScreen: boolean = false;
   mobileMenuItemSelected: boolean = false;
 
+  mobileMenuStateChangedSubscription: any
+
   constructor(private accountService: AccountService,
     private router: Router) {
-      this.name = this.accountService.customer.getName()
-      this.mail = this.accountService.customer.getMail()
-      this.mobileNo = this.accountService.customer.getMobileNo()
-      this.gender = this.accountService.customer.getGender()
+      this.name = this.accountService.getName()
+      this.mail = this.accountService.getMail()
+      this.mobileNo = this.accountService.getMobileNo()
+      this.gender = this.accountService.getGender()
     }
 
   ngOnInit() {
@@ -34,16 +36,14 @@ export class AccountPageComponent implements OnInit {
       this.mobileScreen = false;
     }
 
-    this.accountService.mobileMenuStateChanged.subscribe(
+    this.mobileMenuStateChangedSubscription = this.accountService.mobileMenuStateChanged.subscribe(
       (flag) => {
         this.mobileMenuItemSelected = flag;
       }
     )
-    this.accountService.mobileMenuItemSelectedState.subscribe(
-      (flag) => {
-        this.mobileMenuItemSelected = flag;
-      }
-    )
+  }
+  ngOnDestroy(){
+    this.mobileMenuStateChangedSubscription.unsubscribe()
   }
   goToAccount(){
     if(this.mobileScreen){

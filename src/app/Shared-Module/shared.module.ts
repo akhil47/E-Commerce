@@ -10,6 +10,7 @@ import { FiltersSectionComponent } from './filters-section/filters-section.compo
 import { RadioFilterComponent } from './radio-filter/radio-filter.component';
 import { PopupComponent } from './popup/popup.component';
 import { ListSelectionMenuComponent } from './list-selection-menu/list-selection-menu.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import { ListSelectionMenuComponent } from './list-selection-menu/list-selection
     ],
     imports: [
         CommonModule,
+        RouterModule
     ],
     exports: [
         ProductComponent,

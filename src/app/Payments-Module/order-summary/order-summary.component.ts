@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { OrderSummary } from 'src/app/modals/order-summary.modal';
+
+import { Cart } from 'src/app/Modals/Customer/cart.modal';
 
 @Component({
   selector: 'app-order-summary',
@@ -8,7 +9,7 @@ import { OrderSummary } from 'src/app/modals/order-summary.modal';
 })
 export class OrderSummaryComponent implements OnInit {
 
-  @Input() summary: OrderSummary
+  @Input() summary: Cart
   constructor() { }
 
   ngOnInit() {

@@ -1,8 +1,7 @@
 export class Size{
     sizeName: string
     availableQuantity: number
-    oldPrice: number
-    newPrice: number
+    price: number // original price without discount, compute discount price on fly
     discount: number //percent eg: 20% = 20
     readonly dateAdded: string
     dateModified: string

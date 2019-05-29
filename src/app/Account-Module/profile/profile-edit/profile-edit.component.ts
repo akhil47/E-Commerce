@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AccountService } from 'src/app/services/account.service';
 
@@ -7,7 +7,7 @@ import { AccountService } from 'src/app/services/account.service';
   templateUrl: './profile-edit.component.html',
   styleUrls: ['./profile-edit.component.css']
 })
-export class ProfileEditComponent implements OnInit {
+export class ProfileEditComponent implements OnInit, OnDestroy {
 
   userInfo = {
     name: '',
@@ -16,9 +16,11 @@ export class ProfileEditComponent implements OnInit {
     mail: ''
   }
 
+  profileEditSubscription: any
+
   constructor(private router: Router, private route: ActivatedRoute,
     private accountService: AccountService) {
-      this.accountService.profileEdit.subscribe(
+      this.profileEditSubscription = this.accountService.profileEdit.subscribe(
         (userDetails)=>{
           this.userInfo = {
             name: userDetails['Name'],
@@ -31,6 +33,9 @@ export class ProfileEditComponent implements OnInit {
   }
   ngOnInit() {
     
+  }
+  ngOnDestroy(){
+    this.profileEditSubscription.unsubscribe()
   }
   onSave(){
     this.accountService.updateProfile(this.userInfo)
