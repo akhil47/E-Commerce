@@ -48,13 +48,11 @@ export class CartPageComponent implements OnInit, OnDestroy {
   }
   closeMenu(event){
     this.popupActive = false;
-    switch(this.popupTitle){
-      case 'Select Size':
-        this.closeSizeMenu(event)
-        break
-      case 'Select Quantity':
-        this.closeQuantityMenu(event)
-        break
+    if(this.popupTitle == 'Select Size'){
+      this.closeSizeMenu(event)
+    }
+    else if(this.popupTitle == 'Select Quantity'){
+      this.closeQuantityMenu(event)
     }
   }
   closeSizeMenu(selectedItem){

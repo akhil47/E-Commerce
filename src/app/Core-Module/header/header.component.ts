@@ -21,7 +21,6 @@ export class HeaderComponent implements OnInit {
     else{
       this.toggleSideBar = true;
     }
-    console.log('openSideBar()')
   }
 
 }

@@ -9,6 +9,9 @@
 #product-image{
     padding-bottom: 10px;
 }
+img{
+    width: 200px;
+}
 #product-info{
     width: 200px;
 }

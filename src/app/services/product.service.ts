@@ -30,7 +30,7 @@ export class ProductService{
             this.products[i].setId(i)
             this.products[i].setDescription('100% Cotton')
             this.products[i].setImages([
-                'https://snow-commerce.imgix.net/aetv/history/products/the_curse_of_oak_island/apparel/merch//COOI-tShirt-Men-Cotton-Charcoal.jpg?auto=compress&fm=pjpg&q=80&cs=strip&h=200&w=200'
+                'https://assets.jassets.com/h_600,q_95,w_440/v1/assets/images/productImage/2018/7/6/cd37416d-5556-4024-9d7f-bb5ebde43a6a1530825330030-1.webp'
             ])
             this.products[i].setBrand('Tommy Hilfiger')
             this.products[i].setCategory('Men')

@@ -7,7 +7,7 @@
       <div class="close-button">
           <a (click)="onRemove(product.getId())"><i class="fa fa-times-circle close" aria-hidden="true"></i></a>
       </div>
-      <a>
+      <a [routerLink]="'/product/'+ product.getId()">
         <div class="item">
           <app-product [product]="product"></app-product>
         </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 
 import { CartItem } from 'src/app/Modals/Customer/cart-item.modal';
 import { AccountService } from 'src/app/services/account.service';
@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
   templateUrl: './product-cart-view.component.html',
   styleUrls: ['./product-cart-view.component.css']
 })
-export class ProductCartViewComponent implements OnInit {
+export class ProductCartViewComponent implements OnInit, OnDestroy {
 
   @Input() cartItem: CartItem
   @Input() itemIndex: number
@@ -26,8 +26,10 @@ export class ProductCartViewComponent implements OnInit {
   sizes: string[] = []
   quantity: number[] = []
 
+  cartUpdatesSubscription: any
+
   constructor(private accountService: AccountService, private productService: ProductService) {
-    this.accountService.cartUpdates.subscribe(
+    this.cartUpdatesSubscription = this.accountService.cartUpdates.subscribe(
       (cart) => {
         this.initialise()
       }
@@ -36,6 +38,9 @@ export class ProductCartViewComponent implements OnInit {
 
   ngOnInit() {
     this.initialise()
+  }
+  ngOnDestroy(){
+    this.cartUpdatesSubscription.unsubscribe()
   }
   openSizeDropdown(){
     this.showSizeMenu.emit({title: 'Select Size', listItems: this.sizes})
