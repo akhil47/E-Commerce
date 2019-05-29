@@ -15,6 +15,9 @@ export class ProductPageComponent implements OnInit {
   
   product: Product //For later use
   productId: number
+  selectedSize: string
+  sizeNotSelected: boolean = false
+
   constructor(private productService: ProductService, private route: ActivatedRoute,
     private accountService: AccountService) {
     
@@ -25,17 +28,29 @@ export class ProductPageComponent implements OnInit {
     this.product = this.productService.getProduct(this.productId)
   }
   addToCart(){
-    let cartItem = new CartItem()
-    cartItem.productId = this.productId
-    cartItem.size = 'S'
-    cartItem.quantity = 1
-    cartItem.price = 4999
-    cartItem.discount = 20
-    this.accountService.addItemToCart(cartItem)
-    // Dynamic assignment is needed
+    if(typeof this.selectedSize === 'undefined'){
+      this.sizeNotSelected = true
+      return
+    }
+    else{
+      this.sizeNotSelected = false
+      this.addItemToCart()
+    }
+    
   }
   addToWishList(){
     this.accountService.addItemToWishList(this.productId)
+  }
+  addItemToCart(){
+    let item = this.productService.getProduct(this.productId).getSize(this.selectedSize)
+    let cartItem = new CartItem()
+
+    cartItem.productId = this.productId
+    cartItem.size = this.selectedSize
+    cartItem.quantity = 1
+    cartItem.price = item.price
+    cartItem.discount = item.discount
+    this.accountService.addItemToCart(cartItem)
   }
 
 }

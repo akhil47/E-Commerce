@@ -14,9 +14,10 @@
       <div class="seperator"></div>
       <div id="product-size">
         <div class="header"><strong><p style="margin: 0px;">SIZE</p></strong></div>
+        <p *ngIf="sizeNotSelected">Please select size</p>
         <div *ngFor="let size of product.getSizeList()" class="size-container">
           <div class="radio-button">
-            <input type="radio" name="size" value="">
+            <input [(ngModel)]="selectedSize" type="radio" name="size" [value]="size.sizeName">
           </div>
           <div class="radio-button-name">
               <p>{{ size.sizeName }}</p>
