@@ -19,7 +19,9 @@ export class Customer extends User{
         this.wishlist = []
         this.cart = new Cart()
     }
+    
     // Get methods
+
     getName(){ return this.name }
     getMobileNo(){ return this.mobileNo }
     getMail(){ return this.mail }
@@ -30,7 +32,10 @@ export class Customer extends User{
     getStatus() { return this.status }
     getJoinedOn() { return this.joinedOn }
 
+
+
     // Set methods
+
     setName(name: string){
         this.name = name
     }
@@ -59,7 +64,10 @@ export class Customer extends User{
         this.joinedOn = joinedOn
     }
 
-    // Update Methods
+
+
+    // Wishlist Modification Methods
+
     addProductToWishlist(productId: number){
         this.wishlist.push(productId)
     }
@@ -67,12 +75,11 @@ export class Customer extends User{
         let index = this.wishlist.indexOf(id) //Finding index of product Id first
         this.wishlist.splice(index, 1)
     }
-    addProductToCart(item: CartItem){
-        this.cart.addCartItem(item)
-    }
-    removeProductFromCart(index: number){
-        this.cart.removeCartItem(index)
-    }
+
+
+
+    // Address Modification Methods
+
     addAddress(address: Address){
         this.addresses.push(address)
     }
@@ -81,6 +88,17 @@ export class Customer extends User{
     }
     updateAddress(address: Address, index: number){
         this.addresses[index] = address
+    }
+
+
+
+    // Cart Modification Methods
+
+    addProductToCart(item: CartItem){
+        this.cart.addCartItem(item)
+    }
+    removeProductFromCart(index: number){
+        this.cart.removeCartItem(index)
     }
     updateSizeOfCartItem(index: number, size: string, quantity: number,
         price: number, discount: number){
@@ -92,4 +110,7 @@ export class Customer extends User{
     updateCartSummary(shippingCharges: number){
         this.cart.calculateCartValues(shippingCharges)
     }
+
+    
+    
 }

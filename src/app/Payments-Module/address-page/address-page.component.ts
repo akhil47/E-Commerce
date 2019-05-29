@@ -40,7 +40,6 @@ export class AddressPageComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
     this.addressEditStatusSubscription.unsubscribe()
     this.addressUpdatesSubscription.unsubscribe()
-    console.log('done')
   }
   createAddress(){
     this.accountService.addressEditStatus.next(true)

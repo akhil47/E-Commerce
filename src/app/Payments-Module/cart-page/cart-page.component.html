@@ -16,7 +16,9 @@
             <app-product-cart-view 
             (showSizeMenu)="openMenu($event, i)"
             (showQuantityMenu)="openMenu($event, i)"
-            [cartItem]="item"></app-product-cart-view>
+            [cartItem]="item"
+            [itemIndex]="i"
+            ></app-product-cart-view>
         </div>
     </div>
     <div id="order-summary-container">

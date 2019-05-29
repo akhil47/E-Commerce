@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Product } from 'src/app/Modals/Product/product.modal';
+
 import { CartItem } from 'src/app/Modals/Customer/cart-item.modal';
 import { AccountService } from 'src/app/services/account.service';
 import { ProductService } from 'src/app/services/product.service';
-import { initDomAdapter } from '@angular/platform-browser/src/browser';
+
 
 @Component({
   selector: 'app-product-cart-view',
@@ -13,6 +13,7 @@ import { initDomAdapter } from '@angular/platform-browser/src/browser';
 export class ProductCartViewComponent implements OnInit {
 
   @Input() cartItem: CartItem
+  @Input() itemIndex: number
   @Output() showSizeMenu = new EventEmitter<{title: string, listItems: string[]}>()
   @Output() showQuantityMenu = new EventEmitter<{title: string, listItems: number[]}>()
 
@@ -21,7 +22,7 @@ export class ProductCartViewComponent implements OnInit {
   discountPrice: number = 0
   image: string = ''
   title: string = ''
-
+  
   sizes: string[] = []
   quantity: number[] = []
 
@@ -48,14 +49,23 @@ export class ProductCartViewComponent implements OnInit {
     this.discountPrice = Math.round((this.price) - (this.price * ((this.discount)/100)))
 
     let product = this.productService.getProduct(this.cartItem.productId)
+
     this.image = product.getImages()[0]
     this.title = product.getName()
     this.sizes = product.getSizeNamesList()
 
-    let quantityList = []
+    this.quantity = []
+
     for(let i = 1; i <= product.getSize(this.cartItem.size).availableQuantity; i++){
-      quantityList.push(i)
+      this.quantity.push(i)
     }
-    this.quantity =  quantityList
+
+  }
+  onRemove(){
+    this.accountService.removeItemFromCart(this.itemIndex)
+  }
+  onMoveToWishlist(){
+    this.accountService.addItemToWishList(this.cartItem.productId)
+    this.accountService.removeItemFromCart(this.itemIndex)
   }
 }

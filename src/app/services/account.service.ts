@@ -13,8 +13,8 @@ export class AccountService{
 
     mobileMenuStateChanged = new Subject<boolean>();
     mobileMenuItemSelectedState = new Subject<boolean>();
-    addressEditStatus = new Subject<boolean>();
 
+    addressEditStatus = new Subject<boolean>();
     addressUpdates = new Subject<Address[]>()
     addressEdit = new Subject<{address: Address, index: number, title: string, editMode: boolean}>()
 
@@ -71,17 +71,28 @@ export class AccountService{
     getGender(){
         return this.customer.getGender()
     }
+    getJoinedOn(){
+        return this.customer.getJoinedOn()
+    }
+    getStatus(){
+        return this.customer.getStatus()
+    }
+    
 
 
+    // Address Modification methods
 
-    // Update Methods
-
-    pushProfileEditData(data: Object){
-        // Solution function after major headache :)
-        setTimeout(()=>{
-            this.profileEdit.next(data)
-            //Timeout will be applied only to the code placed inside this anonymous function
-        }, 50)
+    addAddress(address: Address){
+        this.customer.addAddress(address)
+        this.addressUpdates.next(this.customer.getAddresses())
+    }
+    removeAddress(index: number){
+        this.customer.removeAddress(index)
+        this.addressUpdates.next(this.customer.getAddresses())
+    }
+    updateAddress(address: Address, index: number){
+        this.customer.updateAddress(address, index)
+        this.addressUpdates.next(this.customer.getAddresses())
     }
     pushEditAddressData(addr: Address, i: number, header: string){
         // Solution function after major headache :)
@@ -99,26 +110,27 @@ export class AccountService{
         }, 30)
     }
 
-    
-    addAddress(address: Address){
-        this.customer.addAddress(address)
-        this.addressUpdates.next(this.customer.getAddresses())
-    }
-    removeAddress(index: number){
-        this.customer.removeAddress(index)
-        this.addressUpdates.next(this.customer.getAddresses())
-    }
-    updateAddress(address: Address, index: number){
-        this.customer.updateAddress(address, index)
-        this.addressUpdates.next(this.customer.getAddresses())
-    }
+
+
+    //Profile Modification Methods
+
     updateProfile(data: Object){
         this.customer.setName(data['name'])
         this.customer.setGender(data['gender'])
         this.customer.setMobileNo(data['mobileNo'])
         this.customer.setMail(data['mail'])
     }
-    
+    pushProfileEditData(data: Object){
+        // Solution function after major headache :)
+        setTimeout(()=>{
+            this.profileEdit.next(data)
+            //Timeout will be applied only to the code placed inside this anonymous function
+        }, 50)
+    }
+
+
+
+    // Wishlist Modification Methods
 
     addItemToWishList(id: number){
         this.customer.addProductToWishlist(id)
@@ -128,6 +140,11 @@ export class AccountService{
         this.customer.removeProductFromWishlist(id)
         this.wishListUpdates.next(this.customer.getWishlist())
     }
+
+
+
+    // Cart Modification Methods
+
     addItemToCart(item: CartItem){
         this.customer.addProductToCart(item)
         this.customer.updateCartSummary(0)
@@ -138,9 +155,6 @@ export class AccountService{
         this.customer.updateCartSummary(0)
         this.cartUpdates.next(this.customer.getCart())
     }
-
-
-
     updateSizeOfCartItem(index: number, productId: number, size: string){
         let product = this.productService.getProduct(productId)
         let sizeDetails = product.getSize(size)

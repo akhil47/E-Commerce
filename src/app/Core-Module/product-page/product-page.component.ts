@@ -32,6 +32,7 @@ export class ProductPageComponent implements OnInit {
     cartItem.price = 4999
     cartItem.discount = 20
     this.accountService.addItemToCart(cartItem)
+    // Dynamic assignment is needed
   }
   addToWishList(){
     this.accountService.addItemToWishList(this.productId)

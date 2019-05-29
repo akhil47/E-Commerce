@@ -14,6 +14,11 @@ export class Cart{
     getCartItems(){
         return this.cartItems;
     }
+
+
+    
+    // Cart Item Modification Methods
+
     addCartItem(item: CartItem){
         this.cartItems.push(item)
     }
@@ -31,6 +36,11 @@ export class Cart{
         this.cartItems[index].quantity = quantity
         this.cartItems[index].price = price * quantity
     }
+
+
+
+    // Cart Value Calculation Methods
+
     calculateCartValues(shippingCharges: number){
         this.MRP = Math.round(this.calculateMRP())
         this.shippingCharges = Math.round(shippingCharges)

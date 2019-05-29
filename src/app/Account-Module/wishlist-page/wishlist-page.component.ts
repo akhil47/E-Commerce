@@ -39,5 +39,8 @@ export class WishlistPageComponent implements OnInit, OnDestroy {
   onRemove(productId: number){
     this.accountService.removeItemFromWishList(productId)
   }
+  onMoveToCart(){
+    //need size selection for product to be moved to cart
+  }
 
 }
