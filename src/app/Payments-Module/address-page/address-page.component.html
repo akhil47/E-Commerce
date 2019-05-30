@@ -1,9 +1,16 @@
 <div id="main-container">
-    <app-popup *ngIf="popupActive">
-        <div id="address-edit-wrapper">
-          <app-address-edit></app-address-edit>
-        </div>
-      </app-popup>
+  <app-popup *ngIf="addressPopupActive">
+    <div id="address-edit-wrapper">
+      <app-address-edit></app-address-edit>
+    </div>
+  </app-popup>
+  <app-popup *ngIf="alertPopupActive">
+    <app-alert
+      [text]="alertText"
+      (alertChoice)="closeAlert($event)"
+      >
+    </app-alert>
+  </app-popup>
   <div id="wrapper">
     <div id="header">
       <p id="header-text">Choose Delivery Address</p>
@@ -16,6 +23,7 @@
         <app-address-view class="address_view" *ngFor="let address of addressList; index as i"
           [address] = "address"
           [addressIndex] = "i"
+          (deleteAddress)="openAlert($event)"
           >
         </app-address-view>
     </div>

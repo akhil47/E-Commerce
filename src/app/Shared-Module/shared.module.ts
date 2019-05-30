@@ -13,6 +13,8 @@ import { ListSelectionMenuComponent } from './list-selection-menu/list-selection
 import { RouterModule } from '@angular/router';
 import { CouponsComponent } from './coupons/coupons.component';
 import { FormsModule } from '@angular/forms';
+import { AlertComponent } from './alert/alert.component';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
     declarations: [
@@ -26,7 +28,9 @@ import { FormsModule } from '@angular/forms';
         DropdownComponent,
         PopupComponent,
         ListSelectionMenuComponent,
-        CouponsComponent
+        CouponsComponent,
+        AlertComponent,
+        NotificationComponent
     ],
     imports: [
         CommonModule,
@@ -44,7 +48,9 @@ import { FormsModule } from '@angular/forms';
         RadioFilterComponent,
         PopupComponent,
         ListSelectionMenuComponent,
-        CouponsComponent
+        CouponsComponent,
+        NotificationComponent,
+        AlertComponent
     ]
 })
 export class SharedModule { }

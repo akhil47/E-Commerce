@@ -1,7 +1,15 @@
 <div>
+  <app-popup *ngIf="alertPopupActive">
+    <app-alert
+      [text]="alertText"
+      (alertChoice)="closeAlert($event)"
+    >
+    </app-alert>
+  </app-popup>
   <app-address-view2 *ngFor="let addr of addressList; index as i"
       [address]="addr"
       [addressIndex] = "i"
+      (deleteAddress)="openAlert($event)"
     >
     </app-address-view2>
 </div>

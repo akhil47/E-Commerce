@@ -1,0 +1,33 @@
+#main-container{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    text-align: center;
+    background-color: white;
+    width: 304px;
+    padding: 8px;
+}
+#seperator{
+    background: grey;
+    height: 1px;
+    width: 100%;
+}
+#text{
+    font-size: 16px;
+}
+.tick{
+    padding: 15px;
+    font-size: 26px;
+    color: green;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 0px;
+    margin-top: 8px;
+}
+a:hover{
+    background-color: rgb(146, 55, 232, 0.2)
+}

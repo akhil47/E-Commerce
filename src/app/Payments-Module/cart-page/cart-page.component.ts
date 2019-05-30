@@ -14,10 +14,17 @@ export class CartPageComponent implements OnInit, OnDestroy {
 
   cart: Cart
 
-  popupActive: boolean = false;
-  popupItemIndex: number = 0
-  popupTitle: string =''
-  popupData: any[] = []
+  menuPopupActive: boolean = false;
+  menuPopupItemIndex: number = 0
+  menuPopupTitle: string =''
+  menuPopupData: any[] = []
+
+  notificationPopupActive: boolean = false
+  notifyText: string = ''
+
+  alertPopupActive: boolean = false
+  alertText: string = ''
+  alertItemIndex: number
 
   cartUpdatesSubscription: any
 
@@ -41,28 +48,46 @@ export class CartPageComponent implements OnInit, OnDestroy {
     this.router.navigate(['/address'])
   }
   openMenu(event: any, index: number){
-    this.popupActive = true;
-    this.popupTitle = event['title']
-    this.popupData = event['listItems']
-    this.popupItemIndex = index
+    this.menuPopupActive = true;
+    this.menuPopupTitle = event['title']
+    this.menuPopupData = event['listItems']
+    this.menuPopupItemIndex = index
   }
   closeMenu(event){
-    this.popupActive = false;
-    if(this.popupTitle == 'Select Size'){
+    this.menuPopupActive = false;
+    if(this.menuPopupTitle == 'Select Size'){
       this.closeSizeMenu(event)
     }
-    else if(this.popupTitle == 'Select Quantity'){
+    else if(this.menuPopupTitle == 'Select Quantity'){
       this.closeQuantityMenu(event)
     }
   }
   closeSizeMenu(selectedItem){
-    let productId = this.cart.getCartItems()[this.popupItemIndex].productId
-    this.accountService.updateSizeOfCartItem(this.popupItemIndex, productId, selectedItem)
+    let productId = this.cart.getCartItems()[this.menuPopupItemIndex].productId
+    this.accountService.updateSizeOfCartItem(this.menuPopupItemIndex, productId, selectedItem)
   }
   closeQuantityMenu(selectedItem){
-    let productId = this.cart.getCartItems()[this.popupItemIndex].productId
-    let size = this.cart.getCartItems()[this.popupItemIndex].size
+    let productId = this.cart.getCartItems()[this.menuPopupItemIndex].productId
+    let size = this.cart.getCartItems()[this.menuPopupItemIndex].size
 
-    this.accountService.updateQuantityOfCartItem(this.popupItemIndex, productId, size, selectedItem)
+    this.accountService.updateQuantityOfCartItem(this.menuPopupItemIndex, productId, size, selectedItem)
+  }
+  showNotification(text: string){
+    this.notifyText = text
+    this.notificationPopupActive = true
+  }
+  closeNotification(){
+    this.notifyText = ''
+    this.notificationPopupActive = false
+  }
+  showAlert(text: string, index: number){
+    this.alertText = text
+    this.alertPopupActive = true
+    this.alertItemIndex = index
+  }
+  closeAlert(choice: boolean){
+    this.alertText = ''
+    this.alertPopupActive = false
+    if(choice) this.accountService.removeItemFromCart(this.alertItemIndex)
   }
 }

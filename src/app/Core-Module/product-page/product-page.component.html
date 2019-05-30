@@ -1,4 +1,10 @@
 <div id="main-container">
+  <app-popup *ngIf="popupActive">
+    <app-notification
+      [text]="notifyText"
+      (messageRead)="closePopup()"
+    ></app-notification>
+  </app-popup>
   <div id="wrapper">
     <div id="images-container">
       <app-image-display [images]="product.getImages()"></app-image-display>

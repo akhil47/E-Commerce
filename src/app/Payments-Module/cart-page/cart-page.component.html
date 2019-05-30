@@ -1,11 +1,23 @@
 <div id="main-container">
-    <app-popup *ngIf="popupActive">
+    <app-popup *ngIf="menuPopupActive">
       <app-list-selection-menu 
-        [title]="popupTitle"
-        [listItems]="popupData"
+        [title]="menuPopupTitle"
+        [listItems]="menuPopupData"
         (itemSelected)="closeMenu($event)"
         >
       </app-list-selection-menu>
+    </app-popup>
+    <app-popup *ngIf="notificationPopupActive">
+      <app-notification
+      [text]="notifyText"
+      (messageRead)="closeNotification()"
+      ></app-notification>
+    </app-popup>
+    <app-popup *ngIf="alertPopupActive">
+      <app-alert
+        [text] = "alertText"
+        (alertChoice) = "closeAlert($event)"
+      ></app-alert>
     </app-popup>
   <div id="wrapper">
     <div id="header">
@@ -16,6 +28,8 @@
             <app-product-cart-view 
             (showSizeMenu)="openMenu($event, i)"
             (showQuantityMenu)="openMenu($event, i)"
+            (notification)="showNotification($event)"
+            (alert)="showAlert($event, i)"
             [cartItem]="item"
             [itemIndex]="i"
             ></app-product-cart-view>

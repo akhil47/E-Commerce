@@ -1,11 +1,19 @@
 <div id="main-container">
+  <app-popup *ngIf="alertPopupActive">
+    <app-alert
+      [text]="alertText"
+      (alertChoice)="closeAlert($event)"
+      ></app-alert>
+  </app-popup>
   <div id="wrapper">
     <div id="header-container">
       <p id="header-text">My Wishlist - {{ wishListProducts.length }} items</p>
     </div>
     <div *ngFor="let product of wishListProducts" id="item-container">
       <div class="close-button">
-          <a (click)="onRemove(product.getId())"><i class="fa fa-times-circle close" aria-hidden="true"></i></a>
+          <a (click)="openAlert(product.getId())">
+            <i class="fa fa-times-circle close" aria-hidden="true"></i>
+          </a>
       </div>
       <a [routerLink]="'/product/'+ product.getId()">
         <div class="item">

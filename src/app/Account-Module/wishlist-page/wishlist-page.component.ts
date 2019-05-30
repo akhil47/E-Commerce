@@ -13,6 +13,10 @@ export class WishlistPageComponent implements OnInit, OnDestroy {
   wishListProductId: number[] 
   wishListProducts: Product[]
 
+  alertPopupActive: boolean = false
+  alertText: string = ''
+  alertProductId: number
+
   wishListUpdatesSubscription: any
   
   constructor(private productService: ProductService, private accountService: AccountService) {
@@ -35,9 +39,17 @@ export class WishlistPageComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
     this.wishListUpdatesSubscription.unsubscribe()
   }
-
-  onRemove(productId: number){
-    this.accountService.removeItemFromWishList(productId)
+  openAlert(productId: number){
+    this.alertProductId = productId
+    let product = this.productService.getProduct(productId)
+    this.alertText = 'Do you want to remove ' + product.getName() + ' from your Wishlist?'
+    this.alertPopupActive = true
+  }
+  closeAlert(choice: boolean){
+    this.alertPopupActive = false
+    this.alertText = ''
+    this.alertProductId = undefined
+    if(choice) this.accountService.removeItemFromWishList(this.alertProductId)
   }
   onMoveToCart(){
     //need size selection for product to be moved to cart

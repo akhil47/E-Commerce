@@ -13,9 +13,13 @@ export class AddressPageComponent implements OnInit, OnDestroy {
   addressList: Address[]
   cart: Cart
 
-  popupActive: boolean = false;
-  popupItemIndex: number = 0
-  popupData: Address
+  addressPopupActive: boolean = false;
+  addressPopupItemIndex: number = 0
+  addressPopupData: Address
+
+  alertPopupActive: boolean = false
+  alertText: string = ''
+  alertAddressIndex: number
 
   addressEditStatusSubscription: any
   addressUpdatesSubscription: any
@@ -23,7 +27,7 @@ export class AddressPageComponent implements OnInit, OnDestroy {
   constructor(private accountService: AccountService) {
     this.addressEditStatusSubscription = this.accountService.addressEditStatus.subscribe(
       (flag) =>{
-        this.popupActive = flag;
+        this.addressPopupActive = flag;
       }
     )
     this.addressList = this.accountService.getAddresses()
@@ -44,5 +48,16 @@ export class AddressPageComponent implements OnInit, OnDestroy {
   createAddress(){
     this.accountService.addressEditStatus.next(true)
     this.accountService.pushNewAddressData('New Address')
+  }
+  openAlert(index: number){
+    this.alertAddressIndex = index
+    this.alertText = 'Do you want to delete this address?'
+    this.alertPopupActive = true
+  }
+  closeAlert(choice: boolean){
+    this.alertPopupActive = false
+    this.alertText = ''
+    if(choice) this.accountService.removeAddress(this.alertAddressIndex)
+    this.alertAddressIndex = undefined
   }
 }

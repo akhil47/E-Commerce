@@ -11,6 +11,8 @@ export class AddressViewComponent implements OnInit {
 
   @Input() address: Address
   @Input() addressIndex: number
+
+  @Output() deleteAddress = new EventEmitter<number>()
   
   constructor(private accountService: AccountService) { }
 
@@ -21,6 +23,6 @@ export class AddressViewComponent implements OnInit {
     this.accountService.pushEditAddressData(this.address, this.addressIndex, 'Edit Address')
   }
   onRemove(){
-    this.accountService.removeAddress(this.addressIndex)
+    this.deleteAddress.emit(this.addressIndex)
   }
 }

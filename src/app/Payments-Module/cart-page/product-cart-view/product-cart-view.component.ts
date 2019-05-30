@@ -16,6 +16,8 @@ export class ProductCartViewComponent implements OnInit, OnDestroy {
   @Input() itemIndex: number
   @Output() showSizeMenu = new EventEmitter<{title: string, listItems: string[]}>()
   @Output() showQuantityMenu = new EventEmitter<{title: string, listItems: number[]}>()
+  @Output() notification = new EventEmitter<string>()
+  @Output() alert = new EventEmitter<string>()
 
   price: number = 0
   discount: number = 0
@@ -66,10 +68,11 @@ export class ProductCartViewComponent implements OnInit, OnDestroy {
     }
 
   }
-  onRemove(){
-    this.accountService.removeItemFromCart(this.itemIndex)
+  removeCheck(){
+    this.alert.emit('Do you want to remove ' + this.title + ' from your Cart?')
   }
   onMoveToWishlist(){
+    this.notification.emit(this.title + ' has been successfully moved to your Wishlist')
     this.accountService.addItemToWishList(this.cartItem.productId)
     this.accountService.removeItemFromCart(this.itemIndex)
   }

@@ -13,10 +13,13 @@ import { CartItem } from 'src/app/Modals/Customer/cart-item.modal';
 })
 export class ProductPageComponent implements OnInit {
   
-  product: Product //For later use
+  product: Product
   productId: number
   selectedSize: string
   sizeNotSelected: boolean = false
+
+  popupActive: boolean = false
+  notifyText: string
 
   constructor(private productService: ProductService, private route: ActivatedRoute,
     private accountService: AccountService) {
@@ -40,6 +43,9 @@ export class ProductPageComponent implements OnInit {
   }
   addToWishList(){
     this.accountService.addItemToWishList(this.productId)
+    this.notifyText = this.product.getName() + 
+      ' has been added to your Wishlist successfully'
+    this.popupActive = true
   }
   addItemToCart(){
     let item = this.productService.getProduct(this.productId).getSize(this.selectedSize)
@@ -51,6 +57,13 @@ export class ProductPageComponent implements OnInit {
     cartItem.price = item.price
     cartItem.discount = item.discount
     this.accountService.addItemToCart(cartItem)
-  }
 
+    this.notifyText = this.product.getName() + 
+      ' has been added to your Cart successfully'
+    this.popupActive = true
+  }
+  closePopup(){
+    this.popupActive = false
+    this.notifyText = ''
+  }
 }

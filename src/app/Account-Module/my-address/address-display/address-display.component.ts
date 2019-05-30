@@ -11,6 +11,10 @@ export class AddressDisplayComponent implements OnInit, OnDestroy {
 
   addressList: Address[]
 
+  alertPopupActive: boolean = false
+  alertText: string = ''
+  alertAddressIndex: number
+
   addressUpdatesSubscription: any
 
   constructor(private accountService: AccountService) {
@@ -27,5 +31,15 @@ export class AddressDisplayComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
     this.addressUpdatesSubscription.unsubscribe()
   }
-
+  openAlert(index: number){
+    this.alertAddressIndex = index
+    this.alertText = 'Do you want to delete this address ?'
+    this.alertPopupActive = true
+  }
+  closeAlert(choice: boolean){
+    this.alertPopupActive = false
+    this.alertText = ''
+    if(choice) this.accountService.removeAddress(this.alertAddressIndex)
+    this.alertAddressIndex = undefined
+  }
 }
