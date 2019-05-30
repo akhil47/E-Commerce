@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AccountService } from 'src/app/services/account.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-profile-edit',
@@ -37,7 +38,7 @@ export class ProfileEditComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
     this.profileEditSubscription.unsubscribe()
   }
-  onSave(){
+  onSubmit(form: NgForm){
     this.accountService.updateProfile(this.userInfo)
     this.router.navigate(['profile-display'], { relativeTo: this.route.parent })
   }

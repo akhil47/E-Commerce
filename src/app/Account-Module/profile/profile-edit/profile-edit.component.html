@@ -1,17 +1,24 @@
 <div id="main-container">
-    <form>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
       <label>Name:</label>
-      <input [(ngModel)]="userInfo.name" type="text" name="name" class="form-control">
+      <input [(ngModel)]="userInfo.name" type="text" name="name" class="form-control invalid" required #name="ngModel">
+        <span class="help-block error-msg" *ngIf="!name.valid && name.touched">Please enter your Full name!</span>
       <label>Gender:</label>
       <div id="gender">
-          <input [(ngModel)]="userInfo.gender" type="radio" name="gender" value="Male"> Male
-          <input [(ngModel)]="userInfo.gender" type="radio" name="gender" value="Female"> Female
+          <input [(ngModel)]="userInfo.gender" type="radio" name="gender" value="Male" required> Male
+          <input [(ngModel)]="userInfo.gender" type="radio" name="gender" value="Female" required> Female
       </div>
       <label>Mobile No:</label>
-      <input [(ngModel)]="userInfo.mobileNo" type="text" name="mobileNo" class="form-control">
+      <input [(ngModel)]="userInfo.mobileNo" type="text" name="mobileNo" 
+        class="form-control invalid" required #mobileno="ngModel">
+          <span class="help-block error-msg" *ngIf="!mobileno.valid && mobileno.touched">
+            Please enter your Mobile No.!</span>
       <label>E-Mail:</label>
-      <input [(ngModel)]="userInfo.mail" type="text" name="mail" class="form-control">
-      <button (click)="onSave()" type="button" class="btn btn-success">Save</button>
+      <input [(ngModel)]="userInfo.mail" type="text" name="mail" 
+        class="form-control invalid" required email #email="ngModel">
+          <span class="help-block error-msg" *ngIf="!email.valid && email.touched">
+            Please enter your Email!</span>
+      <button [disabled]="!f.form.valid" type="submit" class="btn btn-success">Save</button>
       <button (click)="onCancel()" type="button" class="btn btn-danger">Cancel</button>
     </form>
   </div>
