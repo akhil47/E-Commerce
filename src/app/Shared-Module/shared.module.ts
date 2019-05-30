@@ -11,6 +11,8 @@ import { RadioFilterComponent } from './radio-filter/radio-filter.component';
 import { PopupComponent } from './popup/popup.component';
 import { ListSelectionMenuComponent } from './list-selection-menu/list-selection-menu.component';
 import { RouterModule } from '@angular/router';
+import { CouponsComponent } from './coupons/coupons.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -23,10 +25,12 @@ import { RouterModule } from '@angular/router';
         BannersSectionComponent,
         DropdownComponent,
         PopupComponent,
-        ListSelectionMenuComponent
+        ListSelectionMenuComponent,
+        CouponsComponent
     ],
     imports: [
         CommonModule,
+        FormsModule,
         RouterModule
     ],
     exports: [
@@ -39,7 +43,8 @@ import { RouterModule } from '@angular/router';
         FiltersSectionComponent,
         RadioFilterComponent,
         PopupComponent,
-        ListSelectionMenuComponent
+        ListSelectionMenuComponent,
+        CouponsComponent
     ]
 })
 export class SharedModule { }

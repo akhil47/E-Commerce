@@ -1,4 +1,10 @@
 <div>
+    <app-popup *ngIf="popupActive">
+        <app-coupons 
+            (couponSelected)='couponSelected($event)'
+            (menuClosed)='closeCouponsPopup()'
+            ></app-coupons>
+    </app-popup>
     <p class="price-text" style="font-weight: bold;">Price Details</p>
     <div class="summary-item">
         <p class="price-text">MRP</p>
@@ -11,22 +17,30 @@
             {{ summary.shippingCharges }}</p>
     </div>
     <div class="summary-item">
-        <p class="price-text">GST</p>
-        <p class="price-text right"><i class="fa fa-inr" aria-hidden="true"></i>
-            {{ summary.GST }}</p>
-    </div>
-    <div class="summary-item">
         <p class="price-text">Discount</p>
-        <p class="price-text right"><i class="fa fa-inr" aria-hidden="true"></i>
+        <p class="price-text discount-text right">- 
+            <i class="fa fa-inr" aria-hidden="true"></i>
             {{ summary.discount }}</p>
     </div>
     <div class="summary-item">
         <p class="price-text">Coupon Discount</p>
-        <!-- <p class="price-text right">
-            <i class="fa fa-inr" aria-hidden="true"></i>
-            99,999
-        </p> -->
-        <a class="price-text right" style="color: rgb(50, 209, 150);">Apply Coupon</a>
+        <a *ngIf="summary.couponDiscount != 0" 
+            (click)="removeCoupon()" class="remove-coupon-text right" 
+            >&nbsp; Remove    
+        </a>
+        <p *ngIf="summary.couponDiscount != 0" class="price-text discount-text right">
+            - <i class="fa fa-inr" aria-hidden="true"></i>
+            {{ summary.couponDiscount }}
+        </p>
+        <a *ngIf="summary.couponDiscount == 0" 
+            (click)="openCouponsPopup()" class="price-text right discount-text" 
+            >Apply Coupon
+        </a>
+    </div>
+    <div class="summary-item">
+        <p class="price-text">GST</p>
+        <p class="price-text right"><i class="fa fa-inr" aria-hidden="true"></i>
+        {{ summary.GST }}</p>
     </div>
     <div id="seperator"></div>
     <div class="summary-item">

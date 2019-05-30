@@ -2,6 +2,7 @@ import { User } from './user.modal';
 import { Address } from './address.modal';
 import { Cart } from './cart.modal';
 import { CartItem } from './cart-item.modal';
+import { Coupon } from '../Order/coupon.modal';
 
 export class Customer extends User{
     private name: string
@@ -109,6 +110,9 @@ export class Customer extends User{
     }
     updateCartSummary(shippingCharges: number){
         this.cart.calculateCartValues(shippingCharges)
+    }
+    applyCouponToCart(coupon: Coupon){
+        this.cart.coupon = coupon
     }
 
     

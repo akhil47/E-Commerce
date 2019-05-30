@@ -1,22 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
+import { AppComponent } from './app.component';
 
 import { HeaderService } from './services/header.service';
 import { AccountService } from './services/account.service';
+import { ProductService } from './services/product.service';
+import { OrderService } from './services/order.service';
 
 import { AccountModule } from './Account-Module/account.module';
 import { CoreModule } from './Core-Module/core.module';
 import { SharedModule } from './Shared-Module/shared.module';
 import { AppRoutingModule } from './app-routes.module';
-import { UserAuthenticationModule } from './User-Authentication-Module/user-authentication.module';
-
-import { AppComponent } from './app.component';
 import { PaymentsModule } from './Payments-Module/payments.module';
-import { ProductService } from './services/product.service';
-import { FormsModule } from '@angular/forms';
-
-
+import { UserAuthenticationModule } from './User-Authentication-Module/user-authentication.module';
 
 
 @NgModule({
@@ -33,7 +31,7 @@ import { FormsModule } from '@angular/forms';
     SharedModule,
     FormsModule
   ],
-  providers: [HeaderService, AccountService, ProductService],
+  providers: [HeaderService, AccountService, ProductService, OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,6 +11,7 @@ export class ListSelectionMenuComponent implements OnInit {
   @Input() title: string
   @Input() listItems: any[]
   @Output() itemSelected = new EventEmitter<any>();
+  
   constructor() { }
 
   ngOnInit() {

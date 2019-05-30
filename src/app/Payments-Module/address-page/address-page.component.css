@@ -63,14 +63,13 @@ button{
     width: 100%;
     font-size: 14px;
 }
-
+#address-edit-wrapper{
+    background-color: white;
+    padding: 8px;
+}
 @media only screen and (min-width: 768px){
     #main-container{
         margin-top: 98px;
-    }
-    #address-edit-wrapper{
-        background-color: white;
-        padding: 8px;
     }
     .price-text{
         font-family: Whitney,Arial,sans-serif !important;

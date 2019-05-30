@@ -19,7 +19,7 @@ export class ProductService{
         }
         for(let i = 0; i < 6; i++){
             sizeList[i].sizeName = sizeNames[i % sizeNames.length]
-            sizeList[i].availableQuantity = (i % 2) + 1
+            sizeList[i].availableQuantity = (i % 2) + 6
             sizeList[i].price = 4999
             sizeList[i].discount = 20
             sizeList[i].dateModified = '27-05-2019'

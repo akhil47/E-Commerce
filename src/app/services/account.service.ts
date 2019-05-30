@@ -5,6 +5,7 @@ import { CartItem } from '../Modals/Customer/cart-item.modal';
 import { Cart } from '../Modals/Customer/cart.modal';
 import { Injectable } from '@angular/core';
 import { ProductService } from './product.service';
+import { Coupon } from '../Modals/Order/coupon.modal';
 
 @Injectable()
 export class AccountService{
@@ -168,6 +169,12 @@ export class AccountService{
         let sizeDetails = product.getSize(size)
 
         this.customer.updateQuantityOfCartItem(index, sizeDetails.price, quantity)
+        this.customer.updateCartSummary(0)
+        this.cartUpdates.next(this.customer.getCart())
+    }
+    applyCouponToCart(coupon: Coupon){
+        if(this.customer.getCart().getCartItems().length == 0) return 0
+        this.customer.applyCouponToCart(coupon)
         this.customer.updateCartSummary(0)
         this.cartUpdates.next(this.customer.getCart())
     }

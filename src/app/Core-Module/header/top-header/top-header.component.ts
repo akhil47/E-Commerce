@@ -13,7 +13,7 @@ export class TopHeaderComponent implements OnInit {
   
   ngOnInit() {
   }
-  onsSubmit(form: NgForm){
+  onSubmit(form: NgForm){
     console.log(form.form.value)
   }
 

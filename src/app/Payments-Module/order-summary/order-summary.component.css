@@ -1,11 +1,19 @@
 .price-text{
-    font-family: Whitney,Arial,sans-serif !important;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     font-size: 14px;
     display: inline-block;
     color: #535766
 }
+.remove-coupon-text{
+    padding-top: 1px;
+    font-size: 12px;
+    color: red;
+}
 .summary-item{
     display: block;
+}
+.discount-text{
+    color: rgb(50, 209, 150);
 }
 .right{
     float: right;

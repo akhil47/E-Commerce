@@ -1,0 +1,18 @@
+<div id="main-container">
+  <div id="wrapper">
+    <div id="header">
+        <p id="header-text">Apply Coupon</p>
+        <a (click)="closeMenu()"><i id="close-button" class="fa fa-times" aria-hidden="true"></i></a>
+        <input [(ngModel)]='couponInput' type="text" name="coupon" placeholder="Enter coupon code" class="form-control">
+        <a (click)="onCouponInput()" id="header-link">Apply</a>
+    </div>
+    <div id="seperator"></div>
+    <div id="coupons-container">
+        <div class="coupon" *ngFor="let coupon of couponsList; index as i">
+            <p class="coupon-header">{{ coupon.code }}</p><a (click)="onCouponSelect(i)" style="float: right;">Apply</a>
+            <p class="coupon-description">{{ coupon.description }}</p>
+            <div id="coupon-seperator"></div>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 import { CartItem } from './cart-item.modal';
+import { Coupon } from '../Order/coupon.modal';
 
 export class Cart{
     private cartItems: CartItem[]
@@ -6,10 +7,13 @@ export class Cart{
     shippingCharges: number
     GST: number
     discount: number
+    coupon: Coupon
     couponDiscount: number
     total: number
     constructor(){
         this.cartItems = []
+        this.coupon = new Coupon()
+        this.couponDiscount = 0
     }
     getCartItems(){
         return this.cartItems;
@@ -24,6 +28,8 @@ export class Cart{
     }
     removeCartItem(index: number){
         this.cartItems.splice(index, 1)
+        //No items left in cart case
+        if(this.cartItems.length == 0) this.coupon = new Coupon()
     }
     updateSizeOfCartItem(index: number, size: string, quantity: number,
         price: number, discount: number){
@@ -47,7 +53,9 @@ export class Cart{
         this.discount = Math.round(this.calculateDiscount())
         this.GST = Math.round((this.MRP - this.discount) * 0.05)
         
-        this.couponDiscount = Math.round(0) //Update Later to method call
+        this.couponDiscount = Math.round(
+            this.calculateCouponDiscount(this.MRP - this.discount))
+
         this.total = Math.round(this.calculateTotal())
     }
     private calculateMRP(){
@@ -64,6 +72,15 @@ export class Cart{
             totalDiscount += itemDiscount
         }
         return totalDiscount
+    }
+    private calculateCouponDiscount(cartValue: number){
+        //No Coupon Applied Case
+        if(this.coupon.discount == 0) return 0
+
+        let discount = cartValue * (this.coupon.discount / 100)
+
+        if(discount <= this.coupon.maxDiscountAmount) return discount;
+        else return this.coupon.maxDiscountAmount
     }
     private calculateTotal(){
         let total = this.MRP + this.shippingCharges + this.GST
