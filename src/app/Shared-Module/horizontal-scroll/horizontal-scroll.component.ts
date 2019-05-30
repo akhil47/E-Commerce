@@ -14,6 +14,7 @@ export class HorizontalScrollComponent implements OnInit, AfterViewInit {
   @ViewChild('productsMainContainer', { read: ElementRef }) public productsMainContainer: ElementRef;
   @ViewChild('leftArrowContainer') leftArrow: ElementRef;
   @ViewChild('rightArrowContainer') rightArrow: ElementRef;
+  
   heightValue: string
   productList : Product[] = []
 

@@ -21,6 +21,11 @@ export class MainHeaderComponent implements OnInit {
   getDropDown(dropDownName: string){
     return this.headerService.getDropDownList(dropDownName)
   }
+  
+
+
+  // Sidebar methods
+
   onOpenSideBar(){
     if(this.sideBarIconColor){
       this.closeSidebar()
@@ -31,6 +36,15 @@ export class MainHeaderComponent implements OnInit {
       this.closeSearch()
     }
   }
+  closeSidebar(){
+    this.sideBarIconColor = false;
+    this.headerService.sideBarStatus.next(false)
+  }
+
+
+
+  //Search methods
+  
   openSearch(){
     if(this.searchBar){
       this.closeSearch()
@@ -39,10 +53,6 @@ export class MainHeaderComponent implements OnInit {
       this.searchBar = true;
       this.closeSidebar()
     }
-  }
-  closeSidebar(){
-    this.sideBarIconColor = false;
-    this.headerService.sideBarStatus.next(false)
   }
   closeSearch(){
     this.searchBar = false;

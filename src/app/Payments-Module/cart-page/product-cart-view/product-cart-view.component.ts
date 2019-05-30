@@ -14,8 +14,10 @@ export class ProductCartViewComponent implements OnInit, OnDestroy {
 
   @Input() cartItem: CartItem
   @Input() itemIndex: number
+  
   @Output() showSizeMenu = new EventEmitter<{title: string, listItems: string[]}>()
   @Output() showQuantityMenu = new EventEmitter<{title: string, listItems: number[]}>()
+  
   @Output() notification = new EventEmitter<string>()
   @Output() alert = new EventEmitter<string>()
 
@@ -44,12 +46,6 @@ export class ProductCartViewComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
     this.cartUpdatesSubscription.unsubscribe()
   }
-  openSizeDropdown(){
-    this.showSizeMenu.emit({title: 'Select Size', listItems: this.sizes})
-  }
-  openQuantityDropdown(){
-    this.showQuantityMenu.emit({title: 'Select Quantity', listItems: this.quantity})
-  }
   initialise(){
     this.price = this.cartItem.price
     this.discount = this.cartItem.discount
@@ -68,6 +64,22 @@ export class ProductCartViewComponent implements OnInit, OnDestroy {
     }
 
   }
+
+
+
+  //Popup Menu methods
+
+  openSizeMenu(){
+    this.showSizeMenu.emit({title: 'Select Size', listItems: this.sizes})
+  }
+  openQuantityMenu(){
+    this.showQuantityMenu.emit({title: 'Select Quantity', listItems: this.quantity})
+  }
+  
+
+
+  //Alert and Notification methods
+
   removeCheck(){
     this.alert.emit('Do you want to remove ' + this.title + ' from your Cart?')
   }

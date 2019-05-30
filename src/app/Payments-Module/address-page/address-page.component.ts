@@ -49,6 +49,11 @@ export class AddressPageComponent implements OnInit, OnDestroy {
     this.accountService.addressEditStatus.next(true)
     this.accountService.pushNewAddressData('New Address')
   }
+
+
+
+  //Alert Methods
+  
   openAlert(index: number){
     this.alertAddressIndex = index
     this.alertText = 'Do you want to delete this address?'

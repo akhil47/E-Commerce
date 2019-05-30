@@ -47,6 +47,11 @@ export class CartPageComponent implements OnInit, OnDestroy {
   onPlaceOrder(){
     this.router.navigate(['/address'])
   }
+
+
+  
+  //Popup Menu methods
+
   openMenu(event: any, index: number){
     this.menuPopupActive = true;
     this.menuPopupTitle = event['title']
@@ -72,6 +77,10 @@ export class CartPageComponent implements OnInit, OnDestroy {
 
     this.accountService.updateQuantityOfCartItem(this.menuPopupItemIndex, productId, size, selectedItem)
   }
+
+
+  //Notification Methods
+
   showNotification(text: string){
     this.notifyText = text
     this.notificationPopupActive = true
@@ -80,6 +89,11 @@ export class CartPageComponent implements OnInit, OnDestroy {
     this.notifyText = ''
     this.notificationPopupActive = false
   }
+
+
+
+  //Alert Methods
+
   showAlert(text: string, index: number){
     this.alertText = text
     this.alertPopupActive = true

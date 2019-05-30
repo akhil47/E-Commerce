@@ -38,6 +38,9 @@ export class ProfileEditComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
     this.profileEditSubscription.unsubscribe()
   }
+
+
+  
   onSubmit(form: NgForm){
     this.accountService.updateProfile(this.userInfo)
     this.router.navigate(['profile-display'], { relativeTo: this.route.parent })

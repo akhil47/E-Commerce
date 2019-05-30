@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ImageDisplayComponent implements OnInit {
 
   @Input() images: string[]
+  
   constructor() { }
 
   ngOnInit() {

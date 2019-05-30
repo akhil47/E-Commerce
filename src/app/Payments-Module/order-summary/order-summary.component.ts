@@ -19,13 +19,17 @@ export class OrderSummaryComponent implements OnInit {
 
   ngOnInit() {
   }
+
   openCouponsPopup(){
     this.popupActive = true;
   }
   closeCouponsPopup(){
     this.popupActive = false;
   }
-  couponSelected(coupon: Coupon){
+
+
+  
+  applyCoupon(coupon: Coupon){
     this.accountService.applyCouponToCart(coupon)
   }
   removeCoupon(){

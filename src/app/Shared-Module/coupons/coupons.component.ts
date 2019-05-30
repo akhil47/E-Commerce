@@ -30,6 +30,7 @@ export class CouponsComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
     this.couponsListUpdatesSubscription.unsubscribe()
   }
+  
   onCouponSelect(index: number){
     this.couponSelected.emit(this.couponsList[index])
     this.closeMenu()

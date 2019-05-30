@@ -32,6 +32,14 @@ export class SideBarComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
     this.sideBarStatusSubscription.unsubscribe()
   }
+  goToAccount(){
+    this.accountService.mobileMenuItemSelectedState.next(false)
+  }
+
+
+
+  // Menu methods
+
   showMenMenu(){
     if(this.menMenu){
       this.menMenu = false;
@@ -59,8 +67,5 @@ export class SideBarComponent implements OnInit, OnDestroy {
     }else{
       this.accessoriesMenu= true;
     }
-  }
-  goToAccount(){
-    this.accountService.mobileMenuItemSelectedState.next(false)
   }
 }

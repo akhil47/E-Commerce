@@ -39,6 +39,13 @@ export class WishlistPageComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
     this.wishListUpdatesSubscription.unsubscribe()
   }
+  onMoveToCart(){
+    //need size selection for product to be moved to cart
+  }
+
+
+
+  //Alert methods
   openAlert(productId: number){
     this.alertProductId = productId
     let product = this.productService.getProduct(productId)
@@ -51,8 +58,6 @@ export class WishlistPageComponent implements OnInit, OnDestroy {
     this.alertProductId = undefined
     if(choice) this.accountService.removeItemFromWishList(this.alertProductId)
   }
-  onMoveToCart(){
-    //need size selection for product to be moved to cart
-  }
+  
 
 }

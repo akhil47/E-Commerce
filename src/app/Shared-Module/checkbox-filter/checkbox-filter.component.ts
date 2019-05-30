@@ -8,8 +8,10 @@ import { Component, OnInit, ViewChild, ElementRef, Renderer2, Input } from '@ang
 export class CheckboxFilterComponent implements OnInit {
 
   isExpanded: boolean = false;
+
   @Input() filterName: string = ''
   @Input() options: string[] = []
+  
   constructor() { }
 
   ngOnInit() {

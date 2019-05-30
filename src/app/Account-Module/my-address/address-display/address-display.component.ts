@@ -31,6 +31,11 @@ export class AddressDisplayComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
     this.addressUpdatesSubscription.unsubscribe()
   }
+
+
+
+  //Alert methods
+  
   openAlert(index: number){
     this.alertAddressIndex = index
     this.alertText = 'Do you want to delete this address ?'

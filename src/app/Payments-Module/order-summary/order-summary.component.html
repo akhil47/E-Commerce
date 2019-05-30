@@ -1,7 +1,7 @@
 <div>
     <app-popup *ngIf="popupActive">
         <app-coupons 
-            (couponSelected)='couponSelected($event)'
+            (couponSelected)='applyCoupon($event)'
             (menuClosed)='closeCouponsPopup()'
             ></app-coupons>
     </app-popup>

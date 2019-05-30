@@ -9,6 +9,7 @@ export class NotificationComponent implements OnInit {
 
   @Input() text: string = ''
   @Output() messageRead = new EventEmitter<boolean>()
+  
   constructor() { }
 
   ngOnInit() {

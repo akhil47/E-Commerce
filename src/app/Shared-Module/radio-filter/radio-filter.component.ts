@@ -8,8 +8,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class RadioFilterComponent implements OnInit {
 
   isExpanded: boolean = false;
+  
   @Input() filterName: string ='' 
   @Input() options: string[] = []
+
   constructor() { }
 
   ngOnInit() {

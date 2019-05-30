@@ -30,6 +30,17 @@ export class ProductPageComponent implements OnInit {
     this.productId = this.route.snapshot.params['id']
     this.product = this.productService.getProduct(this.productId)
   }
+
+
+
+  // Wishlist and Cart methods
+
+  addToWishList(){
+    this.accountService.addItemToWishList(this.productId)
+    this.notifyText = this.product.getName() + 
+      ' has been added to your Wishlist successfully'
+    this.popupActive = true
+  }
   addToCart(){
     if(typeof this.selectedSize === 'undefined'){
       this.sizeNotSelected = true
@@ -41,12 +52,6 @@ export class ProductPageComponent implements OnInit {
     }
     
   }
-  addToWishList(){
-    this.accountService.addItemToWishList(this.productId)
-    this.notifyText = this.product.getName() + 
-      ' has been added to your Wishlist successfully'
-    this.popupActive = true
-  }
   addItemToCart(){
     let item = this.productService.getProduct(this.productId).getSize(this.selectedSize)
     let cartItem = new CartItem()
@@ -57,9 +62,15 @@ export class ProductPageComponent implements OnInit {
     cartItem.price = item.price
     cartItem.discount = item.discount
     this.accountService.addItemToCart(cartItem)
+    this.openPopup()
+  }
 
-    this.notifyText = this.product.getName() + 
-      ' has been added to your Cart successfully'
+
+
+  //Notification methods
+
+  openPopup(){
+    this.notifyText = this.product.getName() + ' has been added to your Cart successfully'
     this.popupActive = true
   }
   closePopup(){
