@@ -12,6 +12,7 @@ import { AccountService } from 'src/app/services/account.service';
 export class OrderSummaryComponent implements OnInit {
 
   @Input() summary: Cart
+  
   popupActive: boolean = false
 
   constructor(private accountService: AccountService) { 

@@ -10,8 +10,6 @@ export class ProductComponent implements OnInit {
 
   @Input() product: Product
 
-  @ViewChild('test') test: ElementRef
-
   price: number = 0
   discount: number = 0
   discountPrice: number = 0
