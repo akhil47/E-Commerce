@@ -34,11 +34,13 @@
             <p class="text">--or using email--</p>
         </div>
           <div id="form-container">
-              <form>
-                <input type="text" class="form-control" placeholder="Email">
-                <input type="password" class="form-control" placeholder="Password">
+              <form (ngSubmit)=onSubmit(f) #f="ngForm">
+                <input ngModel type="text" name="mail" class="form-control invalid" placeholder="Email" required email #email="ngModel">
+                  <span class="help-block error-msg" *ngIf="!email.valid && email.touched">Please enter Email!</span>
+                <input ngModel type="password" name="password" class="form-control invalid" placeholder="Password" required #password="ngModel">
+                  <span class="help-block error-msg" *ngIf="!password.valid && password.touched">Please enter Password!</span>
                 <div style="display: inline-block; width: 100%; margin-bottom: 16px;">
-                  <button type="button" class="btn btn-primary">Login</button>
+                  <button type="submit" [disabled]="!f.form.valid" class="btn btn-primary">Login</button>
                 </div>
               </form>
           </div>

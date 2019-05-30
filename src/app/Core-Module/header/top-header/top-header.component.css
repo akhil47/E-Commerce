@@ -80,6 +80,12 @@ a:hover{
     top: 22px;
     right: -32px;
 }
+.invalid.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+.error-msg {
+    font-size: 12px;
+}
 .user-dropdown:hover .dropdown{
     display: inline-block;
 }

@@ -1,22 +1,43 @@
 <div id="main-container">
   <app-menu-header [headerText]="title"></app-menu-header>
   <div id="address-form">
-    <form>
-      <input type="text" name="name" placeholder="Full Name" class="form-control"
-      [(ngModel)]="address.name">
-      <input type="text" name="mobile" placeholder="Mobile No" class="form-control"
-        [(ngModel)]="address.mobile">
-      <input type="text" name="doorNo" placeholder="Door No." class="form-control"
-        [(ngModel)]="address.doorNo">
-      <input type="text" name="area" placeholder="Area" class="form-control"
-        [(ngModel)]="address.area">
-      <input type="text" name="city" placeholder="City" class="form-control"
-        [(ngModel)]="address.city">
-      <input type="text" name="state" placeholder="State" class="form-control"
-        [(ngModel)]="address.state">
-      <input type="text" name="pincode" placeholder="Pincode" class="form-control"
-        [(ngModel)]="address.pincode">
-      <button (click)="onSave()" type="button" class="btn btn-success">Save</button>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <input type="text" name="name" placeholder="Full Name" class="form-control invalid"
+        [(ngModel)]="address.name" required #name="ngModel">
+        <span class="help-block error-msg" *ngIf="!name.valid && name.touched">
+          Please enter Full Name!
+        </span>
+      <input type="text" name="mobile" placeholder="Mobile No" class="form-control invalid"
+        [(ngModel)]="address.mobile" required #mobileno="ngModel">
+        <span class="help-block error-msg" *ngIf="!mobileno.valid && mobileno.touched">
+            Please enter Mobile No.!
+        </span>
+      <input type="text" name="doorNo" placeholder="Door No." class="form-control invalid"
+        [(ngModel)]="address.doorNo" required #doorno="ngModel">
+        <span class="help-block error-msg" *ngIf="!doorno.valid && doorno.touched">
+            Please enter Door No.!
+        </span>
+      <input type="text" name="area" placeholder="Area" class="form-control invalid"
+        [(ngModel)]="address.area" required #area="ngModel">
+        <span class="help-block error-msg" *ngIf="!area.valid && area.touched">
+            Please enter Area!
+        </span>
+      <input type="text" name="city" placeholder="City" class="form-control invalid"
+        [(ngModel)]="address.city" required #city="ngModel">
+        <span class="help-block error-msg" *ngIf="!city.valid && city.touched">
+            Please enter City!
+        </span>
+      <input type="text" name="state" placeholder="State" class="form-control invalid"
+        [(ngModel)]="address.state" required #state="ngModel">
+        <span class="help-block error-msg" *ngIf="!state.valid && state.touched">
+            Please enter State!
+        </span>
+      <input type="text" name="pincode" placeholder="Pincode" class="form-control invalid"
+        [(ngModel)]="address.pincode" required #pincode="ngModel">
+        <span class="help-block error-msg" *ngIf="!pincode.valid && pincode.touched">
+            Please enter Pincode!
+        </span>
+      <button [disabled]="!f.form.valid" type="submit" class="btn btn-success">Save</button>
       <button (click)="onCancel()" type="button" class="btn btn-danger">Cancel</button>
     </form>
   </div>

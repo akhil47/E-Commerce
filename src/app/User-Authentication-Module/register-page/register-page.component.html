@@ -34,23 +34,28 @@
             <p class="text">--or using email--</p>
         </div>
           <div id="form-container">
-              <form>
-                <input type="text" class="form-control" placeholder="Username">
-                <input type="password" class="form-control" placeholder="Password">
-                <input type="text" class="form-control" placeholder="Email">
-                <input type="text" class="form-control" placeholder="Mobile No.">
+              <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <input ngModel type="text" class="form-control invalid" name="username" placeholder="Username" required #username="ngModel">
+                  <span class="help-block error-msg" *ngIf="!username.valid && username.touched">Please enter a vaild Username!</span>
+                <input ngModel type="password" class="form-control invalid" name="passwrod" placeholder="Password" required #password="ngModel">
+                  <span class="help-block error-msg" *ngIf="!password.valid && password.touched">Please enter a Password!</span>
+                <input ngModel type="text" class="form-control invalid" name="mail" placeholder="Email" required email #email="ngModel">
+                  <span class="help-block error-msg" *ngIf="!email.valid && email.touched">Please enter a vaild Email!</span>
+                <input ngModel type="text" class="form-control invalid" name="mobileno" placeholder="Mobile No." required #mobileno="ngModel">
+                  <span class="help-block error-msg" *ngIf="!mobileno.valid && mobileno.touched">Please enter a vaild Mobile No.!</span>
                 <div id="radio-group">
                     <div *ngFor="let i of ['Male', 'Female']" class="size-container">
                         <div class="radio-button">
-                          <input type="radio" name="gender" value="">
+                          <input ngModel type="radio" name="gender" [value]="i" required #gender="ngModel">
                         </div>
                         <div class="radio-button-name">
                             <p>{{ i }}</p>
                         </div>
                     </div>
+                    <!-- <span class="help-block error-msg" *ngIf="!gender.valid">Please select Gender!</span> -->
                 </div>
                 <div style="display: inline-block; width: 100%; margin-bottom: 16px;">
-                  <button type="button" class="btn btn-primary">Register</button>
+                  <button type="submit" [disabled]="!f.form.valid" class="btn btn-primary">Register</button>
                 </div>
               </form>
           </div>

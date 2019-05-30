@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { AccountService } from 'src/app/services/account.service';
 import { Address } from 'src/app/Modals/Customer/address.modal';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-address-edit',
@@ -41,7 +42,8 @@ export class AddressEditComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
     this.addressEditSubscription.unsubscribe()
   }
-  onSave(){
+
+  onSubmit(form: NgForm){
     this.accountService.addressEditStatus.next(false)
     if(this.editMode){
       this.accountService.updateAddress(this.address, this.addressIndex)

@@ -13,6 +13,12 @@
 input{
     margin-bottom: 8px;
 }
+.invalid.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+.error-msg {
+    font-size: 12px;
+}
 button{
     margin-right: 8px;
 }

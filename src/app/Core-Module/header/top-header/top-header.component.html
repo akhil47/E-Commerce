@@ -10,9 +10,13 @@
             <div id="login-container" class="dropdown">
                 <div id="login-form">
                     <label id="heading">Login</label>
-                    <input type="text" class="form-control" placeholder="E-mail">
-                    <input type="password" class="form-control" placeholder="Password">
-                    <button type="button" class="btn btn-primary">Sign in</button>
+                    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                        <input ngModel type="text" name="mail" class="form-control" placeholder="E-mail" email required #email="ngModel">
+                            <span class="help-block error-msg" *ngIf="!email.valid && email.touched"> Please enter Email!</span>
+                        <input ngModel type="password" name="password" class="form-control" placeholder="Password" required #password="ngModel">
+                            <span class="help-block error-msg" *ngIf="!password.valid && password.touched">Please enter Password!</span>
+                        <button type="submit" [disabled]="!f.form.valid" class="btn btn-primary">Sign in</button>
+                    </form>
                     <a routerLink="/forgot-password"><p class="link-hover" id="forgot-password">Forgot password?</p></a>
                 </div>
                 <a routerLink="/register"><p class="link-hover" id="register">New User? Register here</p></a>
