@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { Coupon } from 'src/app/Modals/Order/coupon.modal';
 import { OrderService } from 'src/app/services/order.service';
 
@@ -36,7 +36,8 @@ export class CouponsComponent implements OnInit, OnDestroy {
   }
   onCouponInput(){
     console.log(this.couponInput)
-    this.closeMenu()
+    //form check needed
+    // this.closeMenu()
     // Dynamic search of coupon using service and then return Coupon Object
     // Code to be updated later
   }

@@ -3,8 +3,11 @@
     <div id="header">
         <p id="header-text">Apply Coupon</p>
         <a (click)="closeMenu()"><i id="close-button" class="fa fa-times" aria-hidden="true"></i></a>
-        <input [(ngModel)]='couponInput' type="text" name="coupon" placeholder="Enter coupon code" class="form-control">
+        <input [(ngModel)]='couponInput' type="text" name="coupon" 
+          placeholder="Enter coupon code" class="form-control" required #code="ngModel">
         <a (click)="onCouponInput()" id="header-link">Apply</a>
+        <span class="help-block" style="font-size: 12px;" *ngIf="!code.valid && code.touched">
+            Please enter coupon code!</span>
     </div>
     <div id="seperator"></div>
     <div id="coupons-container">

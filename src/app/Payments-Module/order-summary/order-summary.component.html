@@ -24,14 +24,14 @@
     </div>
     <div class="summary-item">
         <p class="price-text">Coupon Discount</p>
-        <a *ngIf="summary.couponDiscount != 0" 
-            (click)="removeCoupon()" class="remove-coupon-text right" 
-            >&nbsp; Remove    
-        </a>
         <p *ngIf="summary.couponDiscount != 0" class="price-text discount-text right">
             - <i class="fa fa-inr" aria-hidden="true"></i>
             {{ summary.couponDiscount }}
         </p>
+        <a *ngIf="summary.couponDiscount != 0" 
+            (click)="removeCoupon()" class="remove-coupon-text right" 
+            > Remove &nbsp;
+        </a>
         <a *ngIf="summary.couponDiscount == 0" 
             (click)="openCouponsPopup()" class="price-text right discount-text" 
             >Apply Coupon

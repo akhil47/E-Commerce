@@ -29,6 +29,10 @@ a{
     cursor: pointer;
     color: #9237e8;
 }
+span{
+    text-align: left;
+    color: red;
+}
 #header-link{
     display: inline-block;
     padding-left: 16px;
