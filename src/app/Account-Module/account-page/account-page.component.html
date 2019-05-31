@@ -12,11 +12,15 @@
       <div id="seperator"></div>
     </div>
     <div *ngIf="mobileScreen" id="menu-wrapper">
-      <app-menu *ngIf="!mobileMenuItemSelected"></app-menu>
+      <div id="menu">
+        <app-menu *ngIf="!mobileMenuItemSelected"></app-menu>
+      </div>
       <router-outlet></router-outlet>
     </div>
     <div *ngIf="!mobileScreen" id="menu-wrapper">
-      <app-menu></app-menu>
+      <div id="menu">
+        <app-menu></app-menu>
+      </div>
       <!-- <div id="seperator-vertical"></div> -->
       <div id="menu-item-detail">
         <router-outlet></router-outlet>

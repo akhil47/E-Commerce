@@ -15,6 +15,10 @@ import { CouponsComponent } from './coupons/coupons.component';
 import { FormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
 import { NotificationComponent } from './notification/notification.component';
+import { UserDropdownComponent } from './user-dropdown/user-dropdown.component';
+import { UserDropdownMenuComponent } from './user-dropdown/user-dropdown-menu/user-dropdown-menu.component';
+import { SizesContainerComponent } from './sizes-container/sizes-container.component';
+import { SizeComponent } from './sizes-container/size/size.component';
 
 @NgModule({
     declarations: [
@@ -30,7 +34,11 @@ import { NotificationComponent } from './notification/notification.component';
         ListSelectionMenuComponent,
         CouponsComponent,
         AlertComponent,
-        NotificationComponent
+        NotificationComponent,
+        UserDropdownComponent,
+        UserDropdownMenuComponent,
+        SizesContainerComponent,
+        SizeComponent
     ],
     imports: [
         CommonModule,
@@ -50,7 +58,11 @@ import { NotificationComponent } from './notification/notification.component';
         ListSelectionMenuComponent,
         CouponsComponent,
         NotificationComponent,
-        AlertComponent
+        AlertComponent,
+        UserDropdownComponent,
+        UserDropdownMenuComponent,
+        SizesContainerComponent,
+        SizeComponent
     ]
 })
 export class SharedModule { }

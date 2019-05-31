@@ -1,0 +1,49 @@
+<div id="menu">
+    <table>
+      <tr>
+        <a (click)="goToOrders()">
+          <div class="menu-item">
+            <td><i class="fa fa-archive" aria-hidden="true"></i></td>
+            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td>Orders</td>
+          </div>
+        </a>
+      </tr>
+      <tr>
+        <a (click)="goToWishlist()">
+          <div class="menu-item">
+            <td><i class="fa fa-heart" aria-hidden="true"></i></td>
+            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td>Wishlist</td>
+          </div>
+        </a>
+      </tr>
+      <tr>
+        <a (click)="goToMyAddresses()">
+          <div class="menu-item">
+            <td><i class="fa fa-address-book" aria-hidden="true"></i></td>
+            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td>My Addresses</td>
+          </div>
+        </a>
+      </tr>
+      <tr>
+        <a (click)="goToChangePassword()">
+          <div class="menu-item">
+            <td><i style="font-size: 20px;" class="fa fa-lock" aria-hidden="true"></i></td>
+            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td>Change Password</td>
+          </div>
+        </a>
+      </tr>
+      <tr>
+        <a (click)="onLogout()">
+          <div class="menu-item">
+            <td><i style="font-size: 16px;" class="fa fa-power-off" aria-hidden="true"></i></td>
+            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td>Logout</td>
+          </div>
+        </a>
+      </tr>
+    </table>
+</div>

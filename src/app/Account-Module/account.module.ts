@@ -43,7 +43,7 @@ import { MenuHeaderComponent } from './menu-header/menu-header.component';
         AddressView2Component,
         ChangePasswordComponent,
         WishlistPageComponent,
-        MenuHeaderComponent
+        MenuHeaderComponent,
     ],
     imports: [
         AccountRoutingModule,
@@ -52,7 +52,7 @@ import { MenuHeaderComponent } from './menu-header/menu-header.component';
         SharedModule
     ],
     exports: [
-        AddressEditComponent
+        AddressEditComponent,
     ]
 })
 export class AccountModule{

@@ -1,0 +1,20 @@
+<div id="main-container">
+  <div id="header">
+    <p id="title">{{ title }}</p>
+    <p id="description">{{ description }}</p>
+    <div id="buttons-container">
+      <a routerLink="register" class="buttons">
+        <div class="button-container" style="margin-right: 8px;">Sign Up</div>
+      </a>
+      <a routerLink="login" class="buttons">
+        <div class="button-container">Login</div>
+      </a>
+    </div>
+  </div>
+  <div>
+      <div id="seperator"></div>
+      <div style="width: 100%;">
+          <app-user-dropdown-menu></app-user-dropdown-menu>
+      </div>
+  </div>
+</div>

@@ -1,9 +1,15 @@
 <div id="main-container">
-  <app-popup *ngIf="popupActive">
+  <app-popup *ngIf="notificationPopupActive">
     <app-notification
       [text]="notifyText"
-      (messageRead)="closePopup()"
+      (messageRead)="closeNotification()"
     ></app-notification>
+  </app-popup>
+  <app-popup *ngIf="alertPopupActive">
+    <app-alert
+      [text]="alertText"
+      (alertChoice)="closeAlert($event)"
+    ></app-alert>
   </app-popup>
   <div id="wrapper">
     <div id="images-container">
@@ -21,20 +27,19 @@
       <div id="product-size">
         <div class="header"><strong><p style="margin: 0px;">SIZE</p></strong></div>
         <p *ngIf="sizeNotSelected">Please select size</p>
-        <div *ngFor="let size of product.getSizeList()" class="size-container">
-          <div class="radio-button">
-            <input [(ngModel)]="selectedSize" type="radio" name="size" [value]="size.sizeName">
-          </div>
-          <div class="radio-button-name">
-              <p>{{ size.sizeName }}</p>
-          </div>
+        <div id="sizes-container">
+            <app-sizes-container [sizeList]="product.getSizeNamesList()">
+            </app-sizes-container>
         </div>
         <div id="buttons-section">
             <div class="buttons">
                 <button (click)="addToCart()" class="btn btn-success" type="button">Add to Cart</button>
             </div>
             <div class="buttons">
-                <button (click)="addToWishList()" class="btn btn-primary" type="button">Add to Wishlist</button>
+                <button (click)="addToWishList()" *ngIf="!itemInWishlist"
+                  class="btn btn-primary" type="button">Add to Wishlist</button>
+                <button (click)="removeFromWishList()" *ngIf="itemInWishlist"
+                  class="btn btn-danger" type="button">Remove from Wishlist</button>
             </div>
         </div>
       </div>

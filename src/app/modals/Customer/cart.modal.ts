@@ -31,6 +31,14 @@ export class Cart{
         //No items left in cart case
         if(this.cartItems.length == 0) this.coupon = new Coupon()
     }
+    checkIfCartItemExists(productId: number, size: string){
+        for(let item of this.cartItems){
+            if(item.productId == productId && item.size == size){
+                return true
+            }
+        }
+        return false
+    }
     updateSizeOfCartItem(index: number, size: string, quantity: number,
         price: number, discount: number){
             this.cartItems[index].size = size;

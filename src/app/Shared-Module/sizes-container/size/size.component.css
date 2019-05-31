@@ -1,0 +1,25 @@
+.size{
+    height: 48px;
+    width: 48px;
+    padding: 12px 0px;
+    padding-left: 2px;
+    margin: 4px;
+    border: 2px solid #9237e8;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+}
+.text{
+    font-size: 16px;
+    text-decoration: none;
+}
+.size:hover{
+    background-color: rgb(146, 55, 232, 0.2);
+}
+.active{
+    background-color: #9237e8;
+    color: white;
+}
+.active:hover{
+    background-color: #9237e8;
+}

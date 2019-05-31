@@ -10,8 +10,10 @@
 }
 #images-container{
     width: 100%;
-    /* background-color: bisque; */
     display: inline-block;
+}
+#sizes-container{
+    margin: 8px 0px;
 }
 #product-info-container{
     width: 100%;
@@ -25,17 +27,6 @@
 #product-delivery{
     width: 100%;
     float: left;
-}
-.size-container{
-    padding: 8px;
-    width: 72px;;
-    float: left;
-}
-.radio-button{
-    margin: 0px 8px;
-}
-.radio-button-name{
-    margin: 0px 8px;
 }
 .header{
     display: block;
@@ -80,7 +71,6 @@ li p{
     #main-container{
         margin: 98px 8px 4px 8px;
         position: relative;
-        font-family: dinnextproregular, Helvetica Neue,Helvetica,Arial,sans-serif;
     }
 }
 @media only screen and (min-width: 1024px){

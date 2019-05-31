@@ -8,7 +8,8 @@
         <div class="user-dropdown" id="user">
             <a routerLink="account/profile/profile-display"><i class="fa fa-user user" aria-hidden="true"></i></a>
             <div id="login-container" class="dropdown">
-                <div id="login-form">
+                <app-user-dropdown></app-user-dropdown>
+                <!-- <div id="login-form">
                     <label id="heading">Login</label>
                     <form (ngSubmit)="onSubmit(f)" #f="ngForm">
                         <input ngModel type="text" name="mail" class="form-control" placeholder="E-mail" email required #email="ngModel">
@@ -19,7 +20,7 @@
                     </form>
                     <a routerLink="/forgot-password"><p class="link-hover" id="forgot-password">Forgot password?</p></a>
                 </div>
-                <a routerLink="/register"><p class="link-hover" id="register">New User? Register here</p></a>
+                <a routerLink="/register"><p class="link-hover" id="register">New User? Register here</p></a> -->
             </div>
         </div>
         <div class="heart-dropdown" id="heart">

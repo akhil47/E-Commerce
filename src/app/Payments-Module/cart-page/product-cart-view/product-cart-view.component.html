@@ -1,11 +1,14 @@
 <div id="main-container">
-  <div id="image-container">
+  <a [routerLink]="'/product/'+ productId">
+    <div id="image-container">
       <img [src]="image" alt="">
-  </div>
+    </div>
+  </a>
   <div id="product-details-container">
     <div id="details">
       <div id="heading">
-        <a class="text">{{ title }}</a>
+        <a [routerLink]="'/product/'+ productId" class="text" (click)="test()">
+          {{ title }}</a>
       </div>
       <div id="price-container">
         <p id="price-line-1"><i class="fa fa-inr" aria-hidden="true"></i> 

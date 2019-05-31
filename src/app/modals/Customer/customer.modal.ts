@@ -76,6 +76,12 @@ export class Customer extends User{
         let index = this.wishlist.indexOf(id) //Finding index of product Id first
         this.wishlist.splice(index, 1)
     }
+    checkIfItemExistsInWishlist(productId: number){
+        for(let id of this.wishlist){
+            if(id == productId) return true
+        }
+        return false
+    }
 
 
 
@@ -100,6 +106,9 @@ export class Customer extends User{
     }
     removeProductFromCart(index: number){
         this.cart.removeCartItem(index)
+    }
+    checkIfProductExistsInCart(productId: number, size: string){
+        return this.cart.checkIfCartItemExists(productId, size)
     }
     updateSizeOfCartItem(index: number, size: string, quantity: number,
         price: number, discount: number){

@@ -5,6 +5,21 @@
       (alertChoice)="closeAlert($event)"
       ></app-alert>
   </app-popup>
+  <app-popup *ngIf="notificationPopupActive">
+    <app-notification
+      [text] = "notificationText"
+      (messageRead)="closeNotification()"
+      >
+    </app-notification>
+  </app-popup>
+  <app-popup *ngIf="sizePopupActive">
+    <app-list-selection-menu 
+      [title]="sizeText"
+      [listItems]="sizeListItems"
+      (itemSelected)="closeSizePopup($event)"
+    >
+    </app-list-selection-menu>
+  </app-popup>
   <div id="wrapper">
     <div id="header-container">
       <p id="header-text">My Wishlist - {{ wishListProducts.length }} items</p>
@@ -21,7 +36,7 @@
         </div>
       </a>
       <div id="text-container">
-        <a (click)="onMoveToCart()"><p id="cart-text">Move to Cart</p></a>
+        <a (click)="openSizePopup(product)"><p id="cart-text">Move to Cart</p></a>
       </div>
     </div>
   </div>

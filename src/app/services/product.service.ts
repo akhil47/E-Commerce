@@ -1,7 +1,13 @@
 import { Product } from '../Modals/Product/product.modal';
 import { Size } from '../Modals/Product/size.modal';
+import { Subject } from 'rxjs';
 
 export class ProductService{
+
+    // Only for <app-size> & <app-sizes-container> component
+    sizeSelected = new Subject<string>() 
+    sizeActive: string = 'none'
+
     products: Product[]
     constructor(){
         this.products = []
@@ -9,7 +15,7 @@ export class ProductService{
     }
     createProducts(){
         //Dummy Function
-        var sizeNames = ['S', 'M', 'L', 'XL', 'XXL', 'XXXL']
+        var sizeNames = ['S', 'M', 'L', 'XL', 'XXL', '3XL']
         var sizeList: Size[] = []
         for(let i = 0; i < 20; i++){
             this.products.push(new Product())

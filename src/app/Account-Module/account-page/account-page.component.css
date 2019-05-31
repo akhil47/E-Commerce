@@ -45,6 +45,10 @@ img{
 #seperator-vertical{
     display: none;
 }
+#menu{
+    width: 100%;
+    display: inline-block;
+}
 #menu-item-detail{
     display: none;
 }
@@ -79,8 +83,10 @@ img{
     #menu-item-detail{
         display: inline-block;
         vertical-align: top;
-        /* width: calc(80% - 1px); */
         width: 80%;
+    }
+    #menu{
+        width: 20%;
     }
 }
 @media only screen and (min-width: 1024px){

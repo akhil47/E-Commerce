@@ -18,8 +18,13 @@ export class ProductPageComponent implements OnInit {
   selectedSize: string
   sizeNotSelected: boolean = false
 
-  popupActive: boolean = false
+  itemInWishlist:boolean = false
+
+  notificationPopupActive: boolean = false
   notifyText: string
+
+  alertPopupActive: boolean = false
+  alertText: string
 
   constructor(private productService: ProductService, private route: ActivatedRoute,
     private accountService: AccountService) {
@@ -29,20 +34,32 @@ export class ProductPageComponent implements OnInit {
   ngOnInit() {
     this.productId = this.route.snapshot.params['id']
     this.product = this.productService.getProduct(this.productId)
+    this.itemInWishlist = this.accountService.checkIfItemExistsInWishlist(this.productId)
   }
 
 
 
-  // Wishlist and Cart methods
+  // Wishlist methods
 
   addToWishList(){
     this.accountService.addItemToWishList(this.productId)
     this.notifyText = this.product.getName() + 
       ' has been added to your Wishlist successfully'
-    this.popupActive = true
+    this.openNotification()
+    this.itemInWishlist = true
   }
+  removeFromWishList(){
+    this.alertText = 'Do you want to remove ' + this.product.getName() + ' from your Wishlist?'
+    this.openAlert()
+  }
+
+
+
+  //Cart methods
+
   addToCart(){
-    if(typeof this.selectedSize === 'undefined'){
+    this.selectedSize = this.productService.sizeActive
+    if(this.selectedSize == 'none'){
       this.sizeNotSelected = true
       return
     }
@@ -53,28 +70,47 @@ export class ProductPageComponent implements OnInit {
     
   }
   addItemToCart(){
-    let item = this.productService.getProduct(this.productId).getSize(this.selectedSize)
-    let cartItem = new CartItem()
+    if(!this.accountService.checkIfProductExistsInCart(
+      this.productId, this.selectedSize)){
+        let item = this.product.getSize(this.selectedSize)
+        let cartItem = new CartItem()
 
-    cartItem.productId = this.productId
-    cartItem.size = this.selectedSize
-    cartItem.quantity = 1
-    cartItem.price = item.price
-    cartItem.discount = item.discount
-    this.accountService.addItemToCart(cartItem)
-    this.openPopup()
+        cartItem.productId = this.productId
+        cartItem.size = this.selectedSize
+        cartItem.quantity = 1
+        cartItem.price = item.price
+        cartItem.discount = item.discount
+        this.accountService.addItemToCart(cartItem)
+      }
+      this.notifyText = this.product.getName() + ' has been added to your Cart successfully'
+      this.openNotification()
   }
 
 
 
   //Notification methods
 
-  openPopup(){
-    this.notifyText = this.product.getName() + ' has been added to your Cart successfully'
-    this.popupActive = true
+  openNotification(){
+    this.notificationPopupActive = true
   }
-  closePopup(){
-    this.popupActive = false
+  closeNotification(){
+    this.notificationPopupActive = false
     this.notifyText = ''
+  }
+
+
+
+  //Alert Methods
+
+  openAlert(){
+    this.alertPopupActive = true
+  }
+  closeAlert(value: boolean){
+    this.alertPopupActive = false
+    this.alertText = ''
+    if(value){
+      this.accountService.removeItemFromWishList(this.productId)
+      this.itemInWishlist = false
+    }
   }
 }

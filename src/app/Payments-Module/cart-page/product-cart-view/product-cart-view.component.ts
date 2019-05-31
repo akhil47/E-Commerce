@@ -21,6 +21,7 @@ export class ProductCartViewComponent implements OnInit, OnDestroy {
   @Output() notification = new EventEmitter<string>()
   @Output() alert = new EventEmitter<string>()
 
+  productId: number
   price: number = 0
   discount: number = 0
   discountPrice: number = 0
@@ -53,6 +54,7 @@ export class ProductCartViewComponent implements OnInit, OnDestroy {
 
     let product = this.productService.getProduct(this.cartItem.productId)
 
+    this.productId = product.getId()
     this.image = product.getImages()[0]
     this.title = product.getName()
     this.sizes = product.getSizeNamesList()
@@ -63,6 +65,9 @@ export class ProductCartViewComponent implements OnInit, OnDestroy {
       this.quantity.push(i)
     }
 
+  }
+  test(){
+    console.log('working')
   }
 
 
@@ -84,8 +89,10 @@ export class ProductCartViewComponent implements OnInit, OnDestroy {
     this.alert.emit('Do you want to remove ' + this.title + ' from your Cart?')
   }
   onMoveToWishlist(){
-    this.notification.emit(this.title + ' has been successfully moved to your Wishlist')
-    this.accountService.addItemToWishList(this.cartItem.productId)
+    if(!this.accountService.checkIfItemExistsInWishlist(this.cartItem.productId)){
+      this.accountService.addItemToWishList(this.cartItem.productId)
+    }
     this.accountService.removeItemFromCart(this.itemIndex)
+    this.notification.emit(this.title + ' has been successfully moved to your Wishlist')
   }
 }

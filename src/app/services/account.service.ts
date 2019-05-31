@@ -141,6 +141,9 @@ export class AccountService{
         this.customer.removeProductFromWishlist(id)
         this.wishListUpdates.next(this.customer.getWishlist())
     }
+    checkIfItemExistsInWishlist(productId: number){
+        return this.customer.checkIfItemExistsInWishlist(productId)
+    }
 
 
 
@@ -171,6 +174,9 @@ export class AccountService{
         this.customer.updateQuantityOfCartItem(index, sizeDetails.price, quantity)
         this.customer.updateCartSummary(0)
         this.cartUpdates.next(this.customer.getCart())
+    }
+    checkIfProductExistsInCart(productId: number, size: string){
+        return this.customer.checkIfProductExistsInCart(productId, size)
     }
     applyCouponToCart(coupon: Coupon){
         if(this.customer.getCart().getCartItems().length == 0) return 0

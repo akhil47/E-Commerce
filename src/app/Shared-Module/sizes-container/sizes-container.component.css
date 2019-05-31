@@ -1,0 +1,7 @@
+#main-container{
+    width: 100%;
+    text-align: center;
+}
+#sizes-container{
+    display: inline-block;
+}
