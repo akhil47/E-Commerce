@@ -82,6 +82,7 @@ export class ProductPageComponent implements OnInit {
         cartItem.discount = item.discount
         this.accountService.addItemToCart(cartItem)
       }
+      this.productService.sizeSelected.next('none')
       this.notifyText = this.product.getName() + ' has been added to your Cart successfully'
       this.openNotification()
   }
