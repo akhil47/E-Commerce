@@ -17,16 +17,18 @@
     </div>
     <div id="product-info-container">
       <div id="product-title">
-        <ul>
-          <li><p><strong>{{ product.getBrand() }}</strong></p></li>
-          <li><p>{{ product.getName() }}</p></li>
-          <li><p>Rs. {{ product.getSizeList()[0].price }}</p></li>
-        </ul>
+          <p id="brand-text">{{ product.getBrand() }}</p>
+          <p id="product-text">{{ product.getName() }}</p>
+          <div id="price-container">
+            <p class="price-text" id="discount-price">Rs. {{ productDiscount }}</p>
+            <p class="price-text" id="original-price"><s>Rs. {{ product.getSizeList()[0].price }}</s></p>
+            <p class="price-text" id="discount-text">( {{ product.getSizeList()[0].discount }}% OFF )</p>
+          </div>
       </div>
       <div class="seperator"></div>
       <div id="product-size">
         <div class="header"><strong><p style="margin: 0px;">SIZE</p></strong></div>
-        <p *ngIf="sizeNotSelected">Please select size</p>
+        <p *ngIf="sizeNotSelected" id="error-msg">Please select a size</p>
         <div id="sizes-container">
             <app-sizes-container [sizeList]="product.getSizeNamesList()">
             </app-sizes-container>

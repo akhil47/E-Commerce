@@ -30,7 +30,7 @@
     <div id="summary-wrapper">
         <div id="order-summary-container">
             <app-order-summary [summary]="cart"></app-order-summary>
-            <button type="button" class="btn btn-success">Make Payment</button>
+            <button (click)="makePayment()" type="button" class="btn btn-success">Make Payment</button>
         </div>
     </div>
   </div>

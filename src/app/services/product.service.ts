@@ -36,7 +36,11 @@ export class ProductService{
             this.products[i].setId(i)
             this.products[i].setDescription('100% Cotton')
             this.products[i].setImages([
-                'https://assets.jassets.com/h_600,q_95,w_440/v1/assets/images/productImage/2018/7/6/cd37416d-5556-4024-9d7f-bb5ebde43a6a1530825330030-1.webp'
+                'https://assets.jassets.com/h_600,q_95,w_440/v1/assets/images/productImage/2018/7/6/cd37416d-5556-4024-9d7f-bb5ebde43a6a1530825330030-1.webp',
+                'https://assets.jassets.com/h_600,q_95,w_440/v1/assets/images/productImage/2018/7/6/ad4f4bd5-b2ae-475d-98e0-7eae8971bda91530825330077-2.webp',
+                'https://assets.jassets.com/h_600,q_95,w_440/v1/assets/images/productImage/2018/7/6/8d0d56fe-4b3d-45cc-812a-6edeb9667c9b1530825330124-3.webp',
+                'https://assets.jassets.com/h_600,q_95,w_440/v1/assets/images/productImage/2018/7/6/17a8d5fd-559a-41ae-91f4-81529fecb83b1530825330137-4.webp',
+                'https://assets.jassets.com/h_600,q_95,w_440/v1/assets/images/productImage/2018/7/6/dd788a0b-6f7a-4e16-9623-3680e1f1ed2f1530825330150-5.webp'
             ])
             this.products[i].setBrand('Tommy Hilfiger')
             this.products[i].setCategory('Men')

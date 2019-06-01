@@ -7,11 +7,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ImageDisplayComponent implements OnInit {
 
+  imageSelected: string
   @Input() images: string[]
   
   constructor() { }
 
   ngOnInit() {
+    this.imageSelected = this.images[0]
+  }
+  changeImage(index: number){
+    this.imageSelected = this.images[index]
   }
 
 }

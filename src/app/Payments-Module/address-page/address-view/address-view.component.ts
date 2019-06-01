@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 import { Address } from 'src/app/Modals/Customer/address.modal';
 import { AccountService } from 'src/app/services/account.service';
+
 
 @Component({
   selector: 'app-address-view',

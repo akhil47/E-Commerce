@@ -1,5 +1,14 @@
 <div id="main-container">
-  <a><i id="left-arrow" class="fa fa-arrow-circle-left arrows" aria-hidden="true"></i></a>
-  <a><i id="right-arrow" class="fa fa-arrow-circle-right arrows" aria-hidden="true"></i></a>
-  <img [src]="images[0]" alt="">
+  <div id="images-container">
+    <div class="image-preview-container" *ngFor="let image of images; index as i">
+        <a (click)="changeImage(i)">
+            <img class="image-preview" [src]="image" alt="">
+        </a>
+    </div>
+  </div>
+  <div id="selected-image-container">
+      <a><i id="left-arrow" class="fa fa-arrow-circle-left arrows" aria-hidden="true"></i></a>
+      <a><i id="right-arrow" class="fa fa-arrow-circle-right arrows" aria-hidden="true"></i></a>
+      <img id="selected-image" [src]="imageSelected" alt="">
+  </div>
 </div>

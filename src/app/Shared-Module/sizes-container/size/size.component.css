@@ -11,6 +11,7 @@
 }
 .text{
     font-size: 16px;
+    color: black;
     text-decoration: none;
 }
 .size:hover{
@@ -22,4 +23,14 @@
 }
 .active:hover{
     background-color: #9237e8;
+}
+@media only screen and (max-width: 375px){
+    .size{
+        height: 42px;
+        width: 42px;
+        padding: 10px 0px;
+    }
+    .text{
+        font-size: 14px;
+    }
 }

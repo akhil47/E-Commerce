@@ -2,6 +2,7 @@ import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Address } from 'src/app/Modals/Customer/address.modal';
 import { AccountService } from 'src/app/services/account.service';
 import { Cart } from 'src/app/Modals/Customer/cart.modal';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-address-page',
@@ -48,6 +49,8 @@ export class AddressPageComponent implements OnInit, OnDestroy {
   createAddress(){
     this.accountService.addressEditStatus.next(true)
     this.accountService.pushNewAddressData('New Address')
+  }
+  makePayment(){
   }
 
 

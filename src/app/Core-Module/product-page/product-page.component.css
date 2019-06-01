@@ -2,6 +2,7 @@
     margin: 58px 8px 4px 8px;
     position: relative;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    
 }
 #wrapper{
     width: 100%;
@@ -24,6 +25,46 @@
     float: left;
     text-align: left;
 }
+#brand-text{
+    font-family: Arial Narrow, sans-serif;
+    margin: 0px;
+    font-size: 22px;
+    font-weight: 600;
+}
+#product-text{
+    font-family: Arial Narrow, sans-serif;
+    margin: 0px;
+    font-size: 18px;
+    font-weight: lighter;
+
+}
+#price-container{
+    margin-top: 8px;
+    font-family: Arial Narrow, sans-serif;
+}
+.price-text{
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 8px;
+    margin-bottom: 0px;
+}
+#discount-price{
+    font-size: 22px;
+    font-weight: 600;
+}
+#discount-text{
+    color: #00b758;
+    font-weight: 600;
+}
+#product-size{
+    text-align: left;
+}
+#error-msg{
+    margin: 4px 0px;
+    font-size: 16px;
+    font-weight: lighter;
+    color: red;
+}
 #product-delivery{
     width: 100%;
     float: left;
@@ -38,17 +79,6 @@
     height: 1px;
     width: 100%;
     background: grey;
-}
-ul{
-    list-style-type: none;
-    padding: 0px;
-    margin: 0px;
-}
-li p{
-    display: block;
-    margin: 0px;
-    font-weight: lighter;
-    font-size: 16px;
 }
 #buttons-section{
     float: left;

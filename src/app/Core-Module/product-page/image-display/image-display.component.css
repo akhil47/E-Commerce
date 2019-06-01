@@ -1,8 +1,45 @@
 #main-container{
     position: relative;
+    text-align: center;
+}
+::-webkit-scrollbar {
+    height: 0px;
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+#images-container{
+    display: none;
+    width: 116px;
+    height: 600px;
+    padding: 8px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background: white;
+    box-shadow: 0px 0px 30px 2px rgb(219, 219, 219, 0.9);
+}
+#selected-image-container{
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+.image-preview-container{
+    height: 128px;
+    width: 100px;
+    margin-bottom: 8px;
+}
+.image-preview{
+    height: inherit;
+    width: inherit;
+}
+a{
+    height: inherit;
+    width: inherit;
+    text-decoration: none;
+    cursor: pointer;
 }
 @media only screen and (max-width: 512px){
-    img{
+    #selected-image{
         width: 100%;
         object-fit: contain;
     }
@@ -25,4 +62,15 @@ a{
 }
 i:hover{
     color: black;
+}
+@media only screen and (min-width: 1024px){
+    #images-container{
+        display: inline-block;
+    }
+    #selected-image-container{
+        width: calc(100% - 116px);
+    }
+    .arrows{
+        display: none;
+    }
 }

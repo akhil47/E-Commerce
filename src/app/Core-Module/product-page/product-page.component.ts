@@ -15,6 +15,7 @@ export class ProductPageComponent implements OnInit {
   
   product: Product
   productId: number
+  productDiscount: number
   selectedSize: string
   sizeNotSelected: boolean = false
 
@@ -34,6 +35,10 @@ export class ProductPageComponent implements OnInit {
   ngOnInit() {
     this.productId = this.route.snapshot.params['id']
     this.product = this.productService.getProduct(this.productId)
+
+    let discount = this.product.getSizeList()[0].price * (this.product.getSizeList()[0].discount /100)
+    this.productDiscount = Math.round(this.product.getSizeList()[0].price - discount)
+
     this.itemInWishlist = this.accountService.checkIfItemExistsInWishlist(this.productId)
   }
 
