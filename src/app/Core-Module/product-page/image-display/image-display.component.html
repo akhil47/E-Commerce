@@ -7,8 +7,12 @@
     </div>
   </div>
   <div id="selected-image-container">
-      <a><i id="left-arrow" class="fa fa-arrow-circle-left arrows" aria-hidden="true"></i></a>
-      <a><i id="right-arrow" class="fa fa-arrow-circle-right arrows" aria-hidden="true"></i></a>
-      <img id="selected-image" [src]="imageSelected" alt="">
+      <a (click)="leftArrow()">
+        <i id="left-arrow" class="fa fa-arrow-circle-left arrows" aria-hidden="true"></i>
+      </a>
+      <a (click)="rightArrow()">
+        <i id="right-arrow" class="fa fa-arrow-circle-right arrows" aria-hidden="true"></i>
+      </a>
+      <img id="selected-image" [src]="images[imageSelected]" alt="">
   </div>
 </div>
