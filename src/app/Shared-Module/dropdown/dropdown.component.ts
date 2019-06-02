@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DropdownList } from 'src/app/modals/dropdown-list.modal';
+import { Category } from 'src/app/Modals/Product/category.modal';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { DropdownList } from 'src/app/modals/dropdown-list.modal';
 })
 export class DropdownComponent implements OnInit {
 
-  @Input() dropDownLists: DropdownList[] = []
+  @Input() categories: Category
 
   constructor() { }
 

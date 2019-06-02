@@ -19,6 +19,7 @@ import { UserDropdownComponent } from './user-dropdown/user-dropdown.component';
 import { UserDropdownMenuComponent } from './user-dropdown/user-dropdown-menu/user-dropdown-menu.component';
 import { SizesContainerComponent } from './sizes-container/sizes-container.component';
 import { SizeComponent } from './sizes-container/size/size.component';
+import { NotificationPageComponent } from './notification-page/notification-page.component';
 
 @NgModule({
     declarations: [
@@ -38,7 +39,8 @@ import { SizeComponent } from './sizes-container/size/size.component';
         UserDropdownComponent,
         UserDropdownMenuComponent,
         SizesContainerComponent,
-        SizeComponent
+        SizeComponent,
+        NotificationPageComponent,
     ],
     imports: [
         CommonModule,
@@ -62,7 +64,8 @@ import { SizeComponent } from './sizes-container/size/size.component';
         UserDropdownComponent,
         UserDropdownMenuComponent,
         SizesContainerComponent,
-        SizeComponent
+        SizeComponent,
+        NotificationPageComponent
     ]
 })
 export class SharedModule { }

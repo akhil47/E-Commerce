@@ -1,9 +1,9 @@
 <div id="main-container">
-  <div *ngFor="let list of dropDownLists" class="list-container">
-    <a><p class="list-heading"><strong>{{ list.listName }}</strong></p></a>
+  <div *ngFor="let category of categories" class="list-container">
+    <a><p class="list-heading"><strong>{{ category.name }}</strong></p></a>
     <ul>
-      <li *ngFor="let item of list.listItems">
-        <a>{{ item }}</a>
+      <li *ngFor="let subCategory of category.subCategories">
+        <a>{{ subCategory }}</a>
       </li>
     </ul>
   </div>
