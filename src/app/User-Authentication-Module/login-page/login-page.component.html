@@ -33,8 +33,9 @@
         <div style="display: inline-block; width: 100%;">
             <p class="text">--or using email--</p>
         </div>
-          <div id="form-container">
-              <form (ngSubmit)=onSubmit(f) #f="ngForm">
+        <p *ngIf="!isLoggedIn && loginTry" id="error-msg">Invalid Email or Password</p>
+        <div id="form-container">
+            <form (ngSubmit)=onSubmit(f) #f="ngForm">
                 <input ngModel type="text" name="mail" class="form-control invalid" placeholder="Email" required email #email="ngModel">
                   <span class="help-block error-msg" *ngIf="!email.valid && email.touched">Please enter Email!</span>
                 <input ngModel type="password" name="password" class="form-control invalid" placeholder="Password" required #password="ngModel">
@@ -42,8 +43,8 @@
                 <div style="display: inline-block; width: 100%; margin-bottom: 16px;">
                   <button type="submit" [disabled]="!f.form.valid" class="btn btn-primary">Login</button>
                 </div>
-              </form>
-          </div>
+            </form>
+        </div>
           <div style="display: inline-block; width: 100%;">
               <a routerLink="/register"><p class="text link-hover">Sign Up</p></a>
           </div>

@@ -15,6 +15,8 @@ import { SharedModule } from './Shared-Module/shared.module';
 import { AppRoutingModule } from './app-routes.module';
 import { PaymentsModule } from './Payments-Module/payments.module';
 import { UserAuthenticationModule } from './User-Authentication-Module/user-authentication.module';
+import { DummyServer } from './services/dummy-server.service';
+import { DummyGuard } from './services/dummy-guard.service';
 
 
 @NgModule({
@@ -31,7 +33,7 @@ import { UserAuthenticationModule } from './User-Authentication-Module/user-auth
     SharedModule,
     FormsModule
   ],
-  providers: [HeaderService, AccountService, ProductService, OrderService],
+  providers: [HeaderService, AccountService, ProductService, OrderService, DummyGuard, DummyServer],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

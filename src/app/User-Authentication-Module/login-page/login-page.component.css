@@ -25,6 +25,12 @@ input{
 .error-msg{
     font-size: 12px;
 }
+#error-msg{
+    margin: 4px 0px;
+    font-size: 16px;
+    font-weight: lighter;
+    color: red;
+}
 #main-text{
     text-align: center;
     font-size: 24px;

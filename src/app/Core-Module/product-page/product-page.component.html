@@ -37,8 +37,8 @@
             <div class="buttons">
                 <button (click)="addToCart()" class="btn btn-success" type="button">Add to Cart</button>
             </div>
-            <div class="buttons">
-                <button (click)="addToWishList()" *ngIf="!itemInWishlist"
+            <div class="buttons" >
+                <button (click)="addToWishList()" [disabled]="!isLoggedIn" *ngIf="!itemInWishlist"
                   class="btn btn-primary" type="button">Add to Wishlist</button>
                 <button (click)="removeFromWishList()" *ngIf="itemInWishlist"
                   class="btn btn-danger" type="button">Remove from Wishlist</button>

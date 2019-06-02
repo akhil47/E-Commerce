@@ -49,3 +49,8 @@
     margin: 8px 0px;
     background: grey;
 }
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}

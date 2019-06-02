@@ -13,12 +13,13 @@ import { AddressEditComponent } from './my-address/address-edit/address-edit.com
 import { AddressDisplayComponent } from './my-address/address-display/address-display.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { WishlistPageComponent } from './wishlist-page/wishlist-page.component';
+import { DummyGuard } from '../services/dummy-guard.service';
 
 
 
 const appRoutes = [
-    { path: 'wishlist', component: WishlistPageComponent},
-    { path: 'account', component: AccountPageComponent, children:[
+    { path: 'wishlist', canActivate:[DummyGuard], component: WishlistPageComponent},
+    { path: 'account', canActivate:[DummyGuard], component: AccountPageComponent, children:[
         { path: 'my-orders', component: MyOrdersComponent, children: [
             { path: 'orders-list', component: OrdersListComponent},
             { path: 'order-details', component: OrderDetailsComponent}

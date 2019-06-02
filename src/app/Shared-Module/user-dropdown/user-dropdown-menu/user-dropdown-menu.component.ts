@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { DummyServer } from 'src/app/services/dummy-server.service';
 
 @Component({
   selector: 'app-user-dropdown-menu',
@@ -8,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class UserDropdownMenuComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute, private server: DummyServer) { }
 
   ngOnInit() {
   }
@@ -26,6 +27,7 @@ export class UserDropdownMenuComponent implements OnInit {
     this.router.navigate(['/account', 'change-password'])
   }
   onLogout(){
-
+    this.server.signOut()
+    this.router.navigate(['/login'])
   }
 }

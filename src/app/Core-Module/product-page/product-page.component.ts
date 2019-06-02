@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { Product } from 'src/app/Modals/Product/product.modal';
 import { ProductService } from 'src/app/services/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { AccountService } from 'src/app/services/account.service';
 import { CartItem } from 'src/app/Modals/Customer/cart-item.modal';
+import { DummyServer } from 'src/app/services/dummy-server.service';
 
 @Component({
   selector: 'app-product-page',
   templateUrl: './product-page.component.html',
   styleUrls: ['./product-page.component.css']
 })
-export class ProductPageComponent implements OnInit {
+export class ProductPageComponent implements OnInit{
   
   product: Product
   productId: number
@@ -27,9 +28,11 @@ export class ProductPageComponent implements OnInit {
   alertPopupActive: boolean = false
   alertText: string
 
+  isLoggedIn: boolean = false
+
   constructor(private productService: ProductService, private route: ActivatedRoute,
-    private accountService: AccountService) {
-    
+    private accountService: AccountService, private server: DummyServer) {
+      this.isLoggedIn = this.server.isLoggedIn()
   }
 
   ngOnInit() {
@@ -41,7 +44,6 @@ export class ProductPageComponent implements OnInit {
 
     this.itemInWishlist = this.accountService.checkIfItemExistsInWishlist(this.productId)
   }
-
 
 
   // Wishlist methods

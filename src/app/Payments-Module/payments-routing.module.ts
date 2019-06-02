@@ -3,11 +3,12 @@ import { RouterModule } from '@angular/router';
 
 import { AddressPageComponent } from './address-page/address-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
+import { DummyGuard } from '../services/dummy-guard.service';
 
 
 const appRoutes = [
     { path: 'cart', component: CartPageComponent},
-    { path: 'address', component: AddressPageComponent},
+    { path: 'address', canActivate:[DummyGuard], component: AddressPageComponent},
 ]
 
 @NgModule({
