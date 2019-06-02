@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DropdownList } from 'src/app/modals/dropdown-list.modal';
 import { NgForm } from '@angular/forms';
 
 @Component({

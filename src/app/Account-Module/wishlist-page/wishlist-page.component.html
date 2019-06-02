@@ -1,43 +1,51 @@
 <div id="main-container">
-  <app-popup *ngIf="alertPopupActive">
-    <app-alert
-      [text]="alertText"
-      (alertChoice)="closeAlert($event)"
-      ></app-alert>
-  </app-popup>
-  <app-popup *ngIf="notificationPopupActive">
-    <app-notification
-      [text] = "notificationText"
-      (messageRead)="closeNotification()"
-      >
-    </app-notification>
-  </app-popup>
-  <app-popup *ngIf="sizePopupActive">
-    <app-list-selection-menu 
-      [title]="sizeText"
-      [listItems]="sizeListItems"
-      (itemSelected)="closeSizePopup($event)"
+  <div *ngIf="isWishlistEmpty">
+    <app-notification-page
+    [text]="'Your wishlist is empty!'"
     >
-    </app-list-selection-menu>
-  </app-popup>
-  <div id="wrapper">
-    <div id="header-container">
-      <p id="header-text">My Wishlist - {{ wishListProducts.length }} items</p>
-    </div>
-    <div *ngFor="let product of wishListProducts" id="item-container">
-      <div class="close-button">
-          <a (click)="openAlert(product.getId())">
-            <i class="fa fa-times-circle close" aria-hidden="true"></i>
-          </a>
-      </div>
-      <a [routerLink]="'/product/'+ product.getId()">
-        <div class="item">
-          <app-product [product]="product"></app-product>
+    </app-notification-page>
+  </div>
+  <div *ngIf="!isWishlistEmpty">
+      <app-popup *ngIf="alertPopupActive">
+          <app-alert
+            [text]="alertText"
+            (alertChoice)="closeAlert($event)"
+            ></app-alert>
+        </app-popup>
+        <app-popup *ngIf="notificationPopupActive">
+          <app-notification
+            [text] = "notificationText"
+            (messageRead)="closeNotification()"
+            >
+          </app-notification>
+        </app-popup>
+        <app-popup *ngIf="sizePopupActive">
+          <app-list-selection-menu 
+            [title]="sizeText"
+            [listItems]="sizeListItems"
+            (itemSelected)="closeSizePopup($event)"
+          >
+          </app-list-selection-menu>
+        </app-popup>
+        <div id="wrapper">
+          <div id="header-container">
+            <p id="header-text">My Wishlist - {{ wishListProducts.length }} items</p>
+          </div>
+          <div *ngFor="let product of wishListProducts" id="item-container">
+            <div class="close-button">
+                <a (click)="openAlert(product.getId())">
+                  <i class="fa fa-times-circle close" aria-hidden="true"></i>
+                </a>
+            </div>
+            <a [routerLink]="'/product/'+ product.getId()">
+              <div class="item">
+                <app-product [product]="product"></app-product>
+              </div>
+            </a>
+            <div id="text-container">
+              <a (click)="openSizePopup(product)"><p id="cart-text">Move to Cart</p></a>
+            </div>
+          </div>
         </div>
-      </a>
-      <div id="text-container">
-        <a (click)="openSizePopup(product)"><p id="cart-text">Move to Cart</p></a>
-      </div>
-    </div>
   </div>
 </div>

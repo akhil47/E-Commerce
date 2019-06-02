@@ -27,17 +27,26 @@ export class WishlistPageComponent implements OnInit, OnDestroy {
   sizeListItems: string[] = []
 
   wishListUpdatesSubscription: any
+
+  isWishlistEmpty: boolean
   
   constructor(private productService: ProductService, private accountService: AccountService) {
 
     this.wishListProductId = this.accountService.getWishlist()
     this.wishListProducts = this.productService.getWishListItems(this.wishListProductId)
 
+    this.isWishlistEmpty = (this.wishListProductId.length > 0)? false: true
 
     this.wishListUpdatesSubscription = this.accountService.wishListUpdates.subscribe(
       (ids: number[]) => {
         this.wishListProductId = ids
         this.wishListProducts = this.productService.getWishListItems(this.wishListProductId)
+        if(this.wishListProductId.length > 0){
+          this.isWishlistEmpty = false;
+        }
+        else{
+          this.isWishlistEmpty = true;
+        }
       }
     )
 

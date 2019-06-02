@@ -3,12 +3,13 @@ import { Customer } from '../Modals/Customer/customer.modal';
 import { Address } from '../Modals/Customer/address.modal';
 import { CartItem } from '../Modals/Customer/cart-item.modal';
 import { Cart } from '../Modals/Customer/cart.modal';
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { ProductService } from './product.service';
 import { Coupon } from '../Modals/Order/coupon.modal';
+import { DummyServer } from './dummy-server.service';
 
 @Injectable()
-export class AccountService{
+export class AccountService implements OnDestroy{
 
     private customer: Customer
 
@@ -23,11 +24,26 @@ export class AccountService{
 
     wishListUpdates = new Subject<number[]>()
     cartUpdates = new Subject<Cart>()
+
+    authUpdatesSubscription: any
     
-    constructor(private productService: ProductService){
+    constructor(private productService: ProductService, private server: DummyServer){
         this.customer = new Customer()
+        this.authUpdatesSubscription = this.server.authUpdates.subscribe(
+            (authenticated) => {
+                if(authenticated){
+                    this.initCustomer()
+                }
+                else{
+                    this.customer = new Customer()
+                }
+            }
+        )
         this.initCustomer()
         this.addressUpdates.next(this.customer.getAddresses())
+    }
+    ngOnDestroy(){
+        this.authUpdatesSubscription.unsubscribe()
     }
     initCustomer(){
         this.customer.setName('Akhilesh Lingala')

@@ -13,6 +13,7 @@ import { Cart } from 'src/app/Modals/Customer/cart.modal';
 export class CartPageComponent implements OnInit, OnDestroy {
 
   cart: Cart
+  isCartEmpty: boolean = true
 
   menuPopupActive: boolean = false;
   menuPopupItemIndex: number = 0
@@ -32,9 +33,16 @@ export class CartPageComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute, private productService: ProductService, 
     private accountService: AccountService) {
       this.cart = this.accountService.getCart()
+      this.isCartEmpty = (this.cart.getCartItems().length > 0)? false : true
       this.cartUpdatesSubscription = this.accountService.cartUpdates.subscribe(
         (cart) =>{
           this.cart = cart
+          if(cart.getCartItems().length != 0){
+            this.isCartEmpty = false
+          }
+          else{
+            this.isCartEmpty = true
+          }
         }
       )
   }

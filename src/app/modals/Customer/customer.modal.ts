@@ -13,7 +13,7 @@ export class Customer extends User{
     private wishlist: number[]
     private cart: Cart
     private status: boolean
-    private joinedOn: string  // Need to update to Date modal
+    private joinedOn: string 
     constructor(){
         super()
         this.addresses = []

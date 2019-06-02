@@ -10,7 +10,7 @@
             <li *ngFor="let item of menuItems">
               <a routerLink = "/search" >{{ item }}</a>
               <div class="menu-hover"></div>
-              <div class="dropdown"><app-dropdown [dropDownLists]="getDropDown(item)"></app-dropdown></div>
+              <div class="dropdown"><app-dropdown [categories]="getDropDown(item)"></app-dropdown></div>
             </li>
           </ul>
         </div>
