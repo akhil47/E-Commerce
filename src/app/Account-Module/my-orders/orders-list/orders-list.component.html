@@ -1,6 +1,3 @@
-<div class="order">
-  <app-order></app-order>
-</div>
-<div class="order">
-  <app-order></app-order>
+<div class="order" *ngFor="let order of ordersList; index as i">
+  <app-order [order]="order" [orderIndex]="i"></app-order>
 </div>

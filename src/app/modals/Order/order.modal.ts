@@ -7,6 +7,7 @@ export class Order{
     customerId: string
     timeline: OrderTimeline
     address: Address
+    pinCode: string
     orderDetails: Cart
     paymentMode: string
     paymentStatus: string

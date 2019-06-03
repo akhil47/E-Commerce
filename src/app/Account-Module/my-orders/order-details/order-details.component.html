@@ -7,22 +7,22 @@
           <tr>
                 <td><p>Order No</p></td>
                 <td><p>&nbsp;&nbsp;:&nbsp;</p></td>
-                <td><p>11532-52111</p></td>
+                <td><p>{{ order.id }}</p></td>
           </tr>
           <tr>
                 <td><p>Placed On</p></td>
                 <td><p>&nbsp;&nbsp;:&nbsp;</p></td>
-                <td><p>25 May 2019</p></td>
+                <td><p>{{ order.timeline.placementDate }}</p></td>
           </tr>
           <tr>
                 <td><p>Shipped On</p></td>
                 <td><p>&nbsp;&nbsp;:&nbsp;</p></td>
-                <td><p>26 May 2019</p></td>
+                <td><p>{{ order.timeline.shippedDate }}</p></td>
           </tr>
           <tr>
                 <td><p>Delievered On</p></td>
                 <td><p>&nbsp;&nbsp;:&nbsp;</p></td>
-                <td><p>29 May 2019</p></td>
+                <td><p>{{ order.timeline.deliveryDate }}</p></td>
           </tr>
         </table>
   </div>
@@ -35,23 +35,33 @@
       <tr>
         <td><p>MRP</p></td>
         <td><p>&nbsp;&nbsp;:&nbsp;</p></td>
-        <td><p>99,999</p></td>
+        <td><p><i class="fa fa-inr" aria-hidden="true"></i> {{ order.orderDetails.MRP }}</p></td>
       </tr>
       <tr>
         <td><p>Shipping Charges</p></td>
         <td><p>&nbsp;&nbsp;:&nbsp;</p></td>
-        <td><p>99,999</p></td>
+        <td><p><i class="fa fa-inr" aria-hidden="true"></i> {{ order.orderDetails.shippingCharges }}</p></td>
       </tr>
       <tr>
         <td><p>GST</p></td>
         <td><p>&nbsp;&nbsp;:&nbsp;</p></td>
-        <td><p>99,999</p></td>
+        <td><p ><i class="fa fa-inr" aria-hidden="true"></i> {{ order.orderDetails.GST }}</p></td>
       </tr>
       <tr>
         <td><p>Discount</p></td>
         <td><p>&nbsp;&nbsp;:&nbsp;</p></td>
-        <td><p>99,999</p></td>
+        <td><p class="discount-text">
+          <i class="fa fa-inr" aria-hidden="true"></i> {{ order.orderDetails.discount }}
+        </p></td>
       </tr>
+      <tr *ngIf="order.orderDetails.couponDiscount != 0">
+        <td><p>Coupon Discount</p></td>
+        <td><p>&nbsp;&nbsp;:&nbsp;</p></td>
+        <td><p class="discount-text">
+          <i class="fa fa-inr" aria-hidden="true"></i> 
+          {{ order.orderDetails.couponDiscount }} ({{ order.orderDetails.coupon.code }})
+        </p></td>
+        </tr>
       <tr>
         <td><div class="seperator"></div></td>
         <td><div class="seperator"></div></td>
@@ -61,7 +71,9 @@
       <tr>
         <td><p>Total</p></td>
         <td><p>&nbsp;&nbsp;:&nbsp;</p></td>
-        <td><p>99,999</p></td>
+        <td><p>
+          <i class="fa fa-inr" aria-hidden="true"></i> {{ order.orderDetails.total }}
+        </p></td>
       </tr>
       <br>
     </table>
@@ -72,11 +84,11 @@
   </div>
   <div id="shipping-address-container">
       <div id="address">
-          <p id="name-text"><b>Akhilesh Lingala</b></p>
-          <p>12/Z, Sector - 10
-          Ukkunagaram Visakhapatnam</p>
-          <p>Visakhapatnam - 530036</p>
-          <p>91XXXXXXXX</p>
+          <p id="name-text"><b>{{ order.address.name }}</b></p>
+          <p>{{ order.address.doorNo }}
+          {{ order.address.area }} {{ order.address.city }}</p>
+          <p>{{ order.address.state }} - {{ order.pinCode }}</p>
+          <p>{{ order.address.mobile }}</p>
       </div>
   </div>
   <div class="seperator"></div>
@@ -84,14 +96,8 @@
       <p class="header-text">Items in this order</p>
   </div>
   <div class="basic-info">
-      <div class="order-item">
-        <app-order-item ></app-order-item>
-      </div>
-      <div class="order-item">
-        <app-order-item ></app-order-item>
-      </div>
-      <div class="order-item">
-        <app-order-item ></app-order-item>
+      <div class="order-item" *ngFor="let orderItem of order.orderDetails.getCartItems()">
+        <app-order-item [orderItem]="orderItem"></app-order-item>
       </div>
   </div>
 </div>

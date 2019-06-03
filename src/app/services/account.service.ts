@@ -175,6 +175,9 @@ export class AccountService implements OnDestroy{
         this.customer.updateCartSummary(0)
         this.cartUpdates.next(this.customer.getCart())
     }
+    emptyCart(){
+        this.customer.setCart(new Cart())
+    }
     updateSizeOfCartItem(index: number, productId: number, size: string){
         let product = this.productService.getProduct(productId)
         let sizeDetails = product.getSize(size)

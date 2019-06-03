@@ -30,10 +30,12 @@
 #price-line-1{
     font-size: 14px;
     font-weight: bold;
+    display: inline-block;
     margin: 0px;
 }
 #price-line-2{
     font-size: 14px;
+    display: inline-block;
     margin: 0px;
 }
 #quantity-size-container{
@@ -53,7 +55,10 @@ a{
     cursor: pointer;
     text-decoration: none;
     color: black;
-    display: inline-block;
+    display: block;
+}
+.discount-text{
+    color: rgb(50, 209, 150);
 }
 @media only screen and (min-width: 768px){
     #product-details-container{

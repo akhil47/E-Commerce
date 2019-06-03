@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Order } from 'src/app/Modals/Order/order.modal';
 
 @Component({
   selector: 'app-order',
@@ -8,12 +9,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class OrderComponent implements OnInit {
 
+  @Input() order: Order
+  @Input() orderIndex: number
+
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
 
   openOrderDetails(){
-    this.router.navigate(['order-details'], { relativeTo: this.route.parent})
+    this.router.navigate(['order-details/', this.orderIndex], { relativeTo: this.route.parent})
   }
 }

@@ -3,6 +3,7 @@ import { Address } from 'src/app/Modals/Customer/address.modal';
 import { AccountService } from 'src/app/services/account.service';
 import { Cart } from 'src/app/Modals/Customer/cart.modal';
 import { NgForm } from '@angular/forms';
+import { OrderService } from 'src/app/services/order.service';
 
 @Component({
   selector: 'app-address-page',
@@ -12,6 +13,7 @@ import { NgForm } from '@angular/forms';
 export class AddressPageComponent implements OnInit, OnDestroy {
 
   addressList: Address[]
+  selectedAddressIndex: number = 0
   cart: Cart
 
   addressPopupActive: boolean = false;
@@ -25,7 +27,7 @@ export class AddressPageComponent implements OnInit, OnDestroy {
   addressEditStatusSubscription: any
   addressUpdatesSubscription: any
 
-  constructor(private accountService: AccountService) {
+  constructor(private accountService: AccountService, private orderService: OrderService) {
     this.addressEditStatusSubscription = this.accountService.addressEditStatus.subscribe(
       (flag) =>{
         this.addressPopupActive = flag;
@@ -50,7 +52,12 @@ export class AddressPageComponent implements OnInit, OnDestroy {
     this.accountService.addressEditStatus.next(true)
     this.accountService.pushNewAddressData('New Address')
   }
+  setSelectedAddress(index){
+    this.selectedAddressIndex = index
+  }
   makePayment(){
+    this.orderService.placeOrder(this.cart, this.addressList[this.selectedAddressIndex])
+    this.accountService.emptyCart()
   }
 
 
@@ -66,6 +73,7 @@ export class AddressPageComponent implements OnInit, OnDestroy {
     this.alertPopupActive = false
     this.alertText = ''
     if(choice) this.accountService.removeAddress(this.alertAddressIndex)
+    this.selectedAddressIndex = 0
     this.alertAddressIndex = undefined
   }
 }

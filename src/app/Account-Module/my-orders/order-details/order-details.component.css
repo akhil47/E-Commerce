@@ -1,7 +1,7 @@
 #main-container{
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     text-align: left;
-    
+    width: 100%;
 }
 .header{
     width: 100%;
@@ -15,6 +15,7 @@
 }
 .basic-info{
     display: block;
+    width: 100%;
 }
 .seperator{
     height: 1px;
@@ -36,6 +37,10 @@ p{
 }
 .order-item{
     margin: 8px 0px;
+    width: 100%;
+}
+.discount-text{
+    color: rgb(50, 209, 150);
 }
 @media only screen and (min-width: 768px){
     #main-container{

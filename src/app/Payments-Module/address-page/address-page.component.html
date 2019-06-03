@@ -21,10 +21,12 @@
     </div>
     <div id="address-container">
         <app-address-view class="address_view" *ngFor="let address of addressList; index as i"
-          [address] = "address"
-          [addressIndex] = "i"
-          (deleteAddress)="openAlert($event)"
-          >
+            [address] = "address"
+            [addressIndex] = "i"
+            [defaultSelectedAddressindex]="this.selectedAddressIndex"
+            (deleteAddress)="openAlert($event)"
+            (selectedAddressIndex)="setSelectedAddress($event)"
+            >
         </app-address-view>
     </div>
     <div id="summary-wrapper">
@@ -35,3 +37,4 @@
     </div>
   </div>
 </div>
+<!-- when address is removed selected address must be updated -->

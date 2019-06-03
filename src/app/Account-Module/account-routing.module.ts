@@ -22,7 +22,7 @@ const appRoutes = [
     { path: 'account', canActivate:[DummyGuard], component: AccountPageComponent, children:[
         { path: 'my-orders', component: MyOrdersComponent, children: [
             { path: 'orders-list', component: OrdersListComponent},
-            { path: 'order-details', component: OrderDetailsComponent}
+            { path: 'order-details/:id', component: OrderDetailsComponent}
         ]},
         { path: 'profile', component: ProfileComponent, children:[
             { path: 'profile-edit', component: ProfileEditComponent},

@@ -39,6 +39,9 @@ export class Cart{
         }
         return false
     }
+    updateStatusOfCartitem(index: number, status: string){
+        this.cartItems[index].status = status
+    }
     updateSizeOfCartItem(index: number, size: string, quantity: number,
         price: number, discount: number){
             this.cartItems[index].size = size;

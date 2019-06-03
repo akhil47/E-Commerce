@@ -2,7 +2,10 @@
     <div id="main-container">
         <div id="content">
           <div id="radio">
-            <input class="radio-btn" type="radio" name="address" id="address">
+            <input 
+              [checked]="addressIndex == defaultSelectedAddressindex" 
+              (click)="onClick(addressIndex)" class="radio-btn" type="radio" name="address"
+              id="address" [value]="addressIndex">
           </div>
           <div id="address">
               <p id="name-text"><b>{{ address.name }}</b></p>

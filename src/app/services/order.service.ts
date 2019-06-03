@@ -5,14 +5,15 @@ import { Coupon } from '../Modals/Order/coupon.modal';
 import { Order } from '../Modals/Order/order.modal';
 import { Cart } from '../Modals/Customer/cart.modal';
 import { AccountService } from './account.service';
+import { Address } from '../Modals/Customer/address.modal';
+import { OrderTimeline } from '../Modals/Order/order-timeline.modal';
 
 @Injectable()
 export class OrderService{
 
     private couponsList: Coupon[]
 
-    newOrder: Order
-    ordersList: Order[]
+    private ordersList: Order[] = []
 
     couponsListUpdates = new Subject<Coupon[]>()
 
@@ -34,7 +35,30 @@ export class OrderService{
     getCouponsList(){
         return this.couponsList
     }
-    placeOrder(cart: Cart){
+    getOrdersList(){
+        return this.ordersList
+    }
+    placeOrder(cart: Cart, address: Address){
+        let order = new Order()
+        order.id = Math.floor((Math.random() * 10000) + 1);
+        order.customerId = this.accountService.getMail()
+        order.pinCode = address.pincode
+        order.address = address
+        order.orderDetails = cart
+        order.paymentMode = "COD"
+        order.paymentStatus = "Pending"
+        order.orderStatus = "Placed"
+
+        order.timeline = new OrderTimeline()
+        order.timeline.placementDate = '03-06-2019'
+        order.timeline.shippedDate = 'N/A'
+        order.timeline.deliveryDate = 'N/A'
+
+        for(let i = 0; i < cart.getCartItems().length; i++){
+            order.orderDetails.updateStatusOfCartitem(i, "Placed")
+        }
+        this.ordersList.push(order)
+        console.log(this.ordersList)
     }
 
     
