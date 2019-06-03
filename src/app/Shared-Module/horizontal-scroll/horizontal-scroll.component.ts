@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, AfterViewInit, AfterViewChecked, Self } from '@angular/core';
 
 import { Product } from 'src/app/Modals/Product/product.modal';
 import { ProductService } from 'src/app/services/product.service';
@@ -20,20 +20,22 @@ export class HorizontalScrollComponent implements OnInit, AfterViewInit {
 
   constructor(private renderer: Renderer2, private productService: ProductService) {
     // temporary code will be replaced by service
-    for(let i = 0; i < 10; i++){
-      this.productList.push(productService.products[i])
+    for(let i = 0; i < 20; i++){
+      this.productList.push(this.productService.products[i])
     }
   }
 
   ngOnInit() {
   }
   ngAfterViewInit(){
+    setTimeout(()=>{
+      this.heightValue = (this.productsMainContainer.nativeElement.scrollHeight) + 'px'
+      this.renderer.setStyle(this.leftArrow.nativeElement, 'height', this.heightValue)
+      this.renderer.setStyle(this.rightArrow.nativeElement, 'height', this.heightValue)
+    }, 100)
     
-    this.heightValue = (this.productsMainContainer.nativeElement.scrollHeight).toString() + 'px'
-    // console.log(this.heightValue) // Working
-    // this.renderer.setAttribute(this.leftArrow.nativeElement, 'height', this.heightValue)
-    // this.renderer.setAttribute(this.rightArrow.nativeElement, 'height', this.heightValue)
   }
+
 
   public scrollRight(): void {
     this.productsMainContainer.nativeElement.scrollTo({ left: (this.productsMainContainer.nativeElement.scrollLeft + 200), behavior: 'smooth' });

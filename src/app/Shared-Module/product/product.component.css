@@ -20,6 +20,7 @@ img{
 }
 #product-name-container{
     width: 100%;
+    overflow-x: hidden;
 }
 #product-name{
     margin: 0px;

@@ -38,9 +38,9 @@
 #search-filters-container{
     display: none !important;
     margin: 8px 0px;
+    padding-left: 8px;
     width: 256px;
     height: calc(100vh - 114px);
-    background: black;
     display: inline-block;
     vertical-align: top;
 }

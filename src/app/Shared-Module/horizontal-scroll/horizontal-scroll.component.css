@@ -3,9 +3,12 @@
 }
 #products-main-container{
     width: 100%;
-    overflow-y: hidden;
-    overflow-x: scroll;
+    /* overflow-y: hidden;
+    overflow-x: scroll; */
+    overflow: auto;  /* New */
     position: relative;
+    text-align: justify; /* New */
+    white-space: nowrap; /* New  (This property made div wrap around width)*/ 
 }
 #content-wrapper{
     margin: 8px 8px 4px 8px;
@@ -17,12 +20,15 @@
     background: transparent; /* make scrollbar transparent */
 }
 #product{
-    float: left;
+    /* float: left; */
+    display: inline-block; /* New */
     width: 220px;
 }
 #products-container{
-    float: left;
-    width: 2200px;
+    /* float: left;
+    width: 2200px; */
+    overflow: auto; /* New */
+    display: inline-block; /* New */
 }
 div a{
     height: inherit;
@@ -40,7 +46,7 @@ div a{
     display: none;
     align-items: center;
     justify-content: center; 
-    height: 307px;
+    /* height: 307px; */
     width: 36px;
 
 }
@@ -53,7 +59,7 @@ div a{
     display: none;
     align-items: center;
     justify-content: center; 
-    height: 307px;
+    /* height: 307px; */
     width: 36px;
 }
 #left-arrow-container:hover, #right-arrow-container:hover {

@@ -11,9 +11,11 @@ a .list-heading{
     color: black;
 }
 .list-container{
-    margin: 16px 32px;
+    padding: 16px 32px;
     display: inline-block;
     vertical-align: top;
+    width: 20%;
+    max-width: 200px;
 }
 ul{
     list-style-type: none;
