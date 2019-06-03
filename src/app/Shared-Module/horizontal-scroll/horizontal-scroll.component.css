@@ -18,6 +18,7 @@
 }
 #product{
     float: left;
+    width: 220px;
 }
 #products-container{
     float: left;

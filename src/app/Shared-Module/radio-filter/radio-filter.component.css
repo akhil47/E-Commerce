@@ -8,6 +8,7 @@ label{
 }
 input{
     margin: 4px;
+    cursor: pointer;
 }
 .list-items{
     float: left;

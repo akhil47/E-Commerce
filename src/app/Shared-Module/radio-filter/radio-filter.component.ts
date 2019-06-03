@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RadioFilterComponent implements OnInit {
 
-  isExpanded: boolean = false;
+  isExpanded: boolean = true;
   
   @Input() filterName: string ='' 
   @Input() options: string[] = []

@@ -1,7 +1,16 @@
 <div id="main-container">
     <div id="header-container">
         <p>FILTER BY</p>
-        <a (click)="onCloseFilters()"><i class="fa fa-times" aria-hidden="true"></i></a>
+        <a style="height:inherit;" (click)="onCloseFilters()">
+            <div id="apply-button-container">
+                <p id="apply-button">Apply</p>
+            </div>
+        </a>
+        <a style="height:inherit;" (click)="onCloseFilters()">
+                <div id="clear-button-container">
+                    <p id="clear-button">Clear</p>
+                </div>
+            </a>
     </div>
     <div id="filters-scroll-container">
             <app-checkbox-filter [options]="brandFilters"

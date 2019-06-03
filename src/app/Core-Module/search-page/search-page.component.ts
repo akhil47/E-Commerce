@@ -12,8 +12,10 @@ export class SearchPageComponent implements OnInit {
   areFiltersActive: boolean = false;
   productList : Product[]
 
-  header_1: string = 'MEN / Clothing / Shirts'
-  header_2: string = 'Men Shirts - 13845 items'
+  headerNav: string = 'MEN / Clothing / Shirts'
+  headerTitle: string = 'Men Shirts'
+  resultCount: string = '13845 items'
+  
   constructor(private productService: ProductService) {
     this.productList = productService.products
   }

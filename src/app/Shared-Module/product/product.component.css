@@ -1,19 +1,22 @@
 #outer-container{
-    width: 220px;
-    padding: 10px 10px 0px 10px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    width: inherit;
+    padding: 8px;
     text-align: left;
 }
 #outer-container:hover{
     background-color: bisque;
 }
 #product-image{
+    width: inherit;
     padding-bottom: 10px;
 }
 img{
-    width: 200px;
+    display: block;
+    width: 100%;
+    height: auto;
 }
 #product-info{
-    width: 200px;
 }
 #product-name-container{
     width: 100%;
@@ -21,8 +24,9 @@ img{
 #product-name{
     margin: 0px;
     padding: 0px;
-    font-family: "Times New Roman", Georgia, serif;
     font-size: 14px;
+    color: black;
+    
 }
 #product-price-container{
     width: 100%;
@@ -31,8 +35,8 @@ img{
 #product-price{
     margin: 0px;
     padding: 0px;
-    font-family: "Times New Roman", Georgia, serif;
-    font-size: 16px;
+    color: black;
+    font-size: 14px;
 }
 #seperator{
     height: 1px;
@@ -46,7 +50,6 @@ img{
 #product-size{
     margin: 0px;
     padding: 2px 0px 2px 0px;
-    font-family: "Times New Roman", Georgia, serif;
     color: grey;
     opacity: 0.8;
 }

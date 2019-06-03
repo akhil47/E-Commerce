@@ -8,19 +8,35 @@
                 <div id="filter-toggle">
                     <i class="fa fa-filter filter-icon" aria-hidden="true"></i>
                 </div>
-                    <p class="filter-text">Filters</p>
             </div>
         </a>
         <div id="search-results-header">
-            <p id="header-text-1" class="header-text">{{ header_1 }}</p>
-            <p id="header-text-2" class="header-text">{{ header_2 }}</p>
-            <div id="seperator"></div>
+            <p id="header-nav">{{ headerNav }}</p>
+            <p id="header-title"><b>{{ headerTitle }}</b> - {{ resultCount }}</p>
+        </div>
+        <div id="filters-header">
+            <div id="filter-title">
+                <p style="font-size: 22px; margin: 0px;">FILTERS</p>
+            </div>
+            <div id="filters-applied">
+                <div class="filter-applied-container" *ngFor="let i of [1,2,3,4,5]">
+                    <p class="filter-applied-text">United Colors of Benniton</p>
+                    <a class="filter-applied-icon">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="seperator"></div>
+        <div id="search-filters-container">
+            <app-filters-section></app-filters-section>
         </div>
         <div id="search-results-container">
                 <div class="result" *ngFor="let product of productList">
-                    <a [routerLink]="'/product/'+ product.getId()"><app-product [product]="product"></app-product></a>
+                    <a id="result-link" [routerLink]="'/product/'+ product.getId()">
+                        <app-product [product]="product"></app-product>
+                    </a>
                 </div>
-
         </div>
     </div>
 </div>

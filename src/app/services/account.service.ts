@@ -64,7 +64,7 @@ export class AccountService implements OnDestroy{
             addrs[i].pincode = '530036'
         }
         this.customer.setAddresses(addrs)
-        this.customer.setWishlist([10, 1]) // set it dynamically
+        this.customer.setWishlist([10, 1, 2, 3, 4, 5, 6]) // set it dynamically
     }
     // Basic Get and Set Methods of Customer
     getCart(){

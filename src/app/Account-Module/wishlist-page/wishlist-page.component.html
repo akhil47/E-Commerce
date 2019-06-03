@@ -31,20 +31,22 @@
           <div id="header-container">
             <p id="header-text">My Wishlist - {{ wishListProducts.length }} items</p>
           </div>
-          <div *ngFor="let product of wishListProducts" id="item-container">
-            <div class="close-button">
-                <a (click)="openAlert(product.getId())">
-                  <i class="fa fa-times-circle close" aria-hidden="true"></i>
-                </a>
-            </div>
-            <a [routerLink]="'/product/'+ product.getId()">
-              <div class="item">
-                <app-product [product]="product"></app-product>
-              </div>
-            </a>
-            <div id="text-container">
-              <a (click)="openSizePopup(product)"><p id="cart-text">Move to Cart</p></a>
-            </div>
+          <div id="items-container">
+              <div *ngFor="let product of wishListProducts" class="item-container">
+                  <div class="close-button">
+                      <a (click)="openAlert(product.getId())">
+                        <i class="fa fa-times-circle close" aria-hidden="true"></i>
+                      </a>
+                  </div>
+                  <a [routerLink]="'/product/'+ product.getId()">
+                    <div class="item">
+                      <app-product [product]="product"></app-product>
+                    </div>
+                  </a>
+                  <div id="text-container">
+                    <a (click)="openSizePopup(product)"><p id="cart-text">Move to Cart</p></a>
+                  </div>
+                </div>
           </div>
         </div>
   </div>
