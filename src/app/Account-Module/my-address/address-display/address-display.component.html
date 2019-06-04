@@ -12,4 +12,9 @@
       (deleteAddress)="openAlert($event)"
     >
     </app-address-view2>
+    <app-notification-page 
+      *ngIf="addressList.length == 0"
+      [text]="'There are no saved delivery addresses in your account!'"
+      >
+    </app-notification-page>
 </div>

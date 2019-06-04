@@ -20,7 +20,7 @@
       <a (click)="createAddress()">+ Add New Address</a>
     </div>
     <div id="address-container">
-        <app-address-view class="address_view" *ngFor="let address of addressList; index as i"
+        <app-address-view class="address-view" *ngFor="let address of addressList; index as i"
             [address] = "address"
             [addressIndex] = "i"
             [defaultSelectedAddressindex]="this.selectedAddressIndex"
@@ -28,6 +28,11 @@
             (selectedAddressIndex)="setSelectedAddress($event)"
             >
         </app-address-view>
+        <app-notification-page 
+          *ngIf="addressList.length == 0"
+          [text]="'There are no saved delivery addresses in your account, Please add an address to continue!'"
+          >
+        </app-notification-page>
     </div>
     <div id="summary-wrapper">
         <div id="order-summary-container">

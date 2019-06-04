@@ -58,8 +58,3 @@ a:hover{
     font-weight: bold;
     padding: 8px;
 }
-@media only screen and (min-width: 960px){
-    #main-container{
-        width: 304px;
-    }
-}

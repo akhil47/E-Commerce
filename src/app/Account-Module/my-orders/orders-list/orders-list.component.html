@@ -1,3 +1,8 @@
 <div class="order" *ngFor="let order of ordersList; index as i">
   <app-order [order]="order" [orderIndex]="i"></app-order>
 </div>
+<app-notification-page 
+      *ngIf="ordersList.length == 0"
+      [text]="'There is no order history to display!'"
+      >
+  </app-notification-page>

@@ -35,12 +35,16 @@ export class AddressPageComponent implements OnInit, OnDestroy {
     )
     this.addressList = this.accountService.getAddresses()
     this.cart = this.accountService.getCart()
+    if(this.addressList.length == 0) this.selectedAddressIndex = -1
+    else this.selectedAddressIndex = 0
   }
 
   ngOnInit() {
     this.addressUpdatesSubscription = this.accountService.addressUpdates.subscribe(
       (addresses: Address[]) => {
         this.addressList = addresses
+        if(this.addressList.length == 0) this.selectedAddressIndex = -1
+        else this.selectedAddressIndex = 0
       }
     )
   }
@@ -56,8 +60,10 @@ export class AddressPageComponent implements OnInit, OnDestroy {
     this.selectedAddressIndex = index
   }
   makePayment(){
-    this.orderService.placeOrder(this.cart, this.addressList[this.selectedAddressIndex])
-    this.accountService.emptyCart()
+    if(this.selectedAddressIndex != -1){
+      this.orderService.placeOrder(this.cart, this.addressList[this.selectedAddressIndex])
+      this.accountService.emptyCart()
+    }
   }
 
 

@@ -1,4 +1,4 @@
-import { OrderTimeline } from './order-timeline.modal';
+ import { OrderTimeline } from './order-timeline.modal';
 import { Address } from '../Customer/address.modal';
 import { Cart } from '../Customer/cart.modal';
 
