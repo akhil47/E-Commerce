@@ -1,7 +1,9 @@
 import { Product } from '../Modals/Product/product.modal';
 import { Size } from '../Modals/Product/size.modal';
 import { Subject } from 'rxjs';
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class ProductService{
 
     // Only for <app-size> & <app-sizes-container> component

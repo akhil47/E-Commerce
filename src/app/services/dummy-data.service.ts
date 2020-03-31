@@ -1,6 +1,8 @@
 import { Category } from '../Modals/Product/category.modal';
 import { Product } from '../Modals/Product/product.modal';
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class DummyDataService{
     categories: Category[] = []
     constructor(){

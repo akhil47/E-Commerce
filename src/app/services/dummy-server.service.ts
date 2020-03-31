@@ -1,5 +1,7 @@
 import { Subject } from 'rxjs';
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class DummyServer{
     private username: string = 'akhil@gmail.com'
     private password: string = '9177721444'

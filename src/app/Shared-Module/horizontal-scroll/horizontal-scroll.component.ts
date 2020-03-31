@@ -11,9 +11,9 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class HorizontalScrollComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('productsMainContainer', { read: ElementRef }) public productsMainContainer: ElementRef;
-  @ViewChild('leftArrowContainer') leftArrow: ElementRef;
-  @ViewChild('rightArrowContainer') rightArrow: ElementRef;
+  @ViewChild('productsMainContainer', { read: ElementRef, static: true }) public productsMainContainer: ElementRef;
+  @ViewChild('leftArrowContainer', { static: true }) leftArrow: ElementRef;
+  @ViewChild('rightArrowContainer', { static: true }) rightArrow: ElementRef;
   
   heightValue: string
   productList : Product[] = []

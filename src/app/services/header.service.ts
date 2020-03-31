@@ -1,5 +1,5 @@
 import { Subject } from 'rxjs';
-import { Dropdown } from '../modals/dropdown.modal';
+import { Dropdown } from '../Modals/dropdown.modal';
 import { Injectable } from '@angular/core';
 import { Category } from '../Modals/Product/category.modal';
 import { DummyDataService } from './dummy-data.service';
