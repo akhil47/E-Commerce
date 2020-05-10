@@ -1,14 +1,19 @@
 #main-container{
     text-align: center;
     width: 100%;
-    background-color:#ededed;
+    background-color:white;
+}
+#seperator{
+    height: 0.5px;
+    width: 100%;
+    background: rgb(237, 237, 237, 0.9);
 }
 .list-heading{
-    font-size: 12px;
+    font-size: 14px;
     text-align: left;
 }
 a .list-heading{
-    color: black;
+    color: #9237e8;
 }
 .list-container{
     padding: 16px 32px;
@@ -26,7 +31,7 @@ ul{
 li a{
     padding: 2px;
     display: block;
-    font-size: 12px;
+    font-size: 13px;
     color: inherit;
     text-align: left;
 }
@@ -36,4 +41,5 @@ a{
 }
 li:hover{
     color: #9237e8;
+    font-weight: bold;
 }

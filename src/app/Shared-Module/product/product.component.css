@@ -1,11 +1,10 @@
 #outer-container{
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     width: inherit;
     padding: 8px;
     text-align: left;
 }
 #outer-container:hover{
-    background-color: bisque;
+    background-color: rgb(146, 55, 232, 0.2);
 }
 #product-image{
     width: inherit;

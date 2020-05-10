@@ -16,7 +16,6 @@
     margin: 0px auto;
     text-align: center;
     font-size: 8px;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 #links{
     float: left;
@@ -30,7 +29,6 @@ ul{
     overflow: hidden;
 }
 li{
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
     
     
 }

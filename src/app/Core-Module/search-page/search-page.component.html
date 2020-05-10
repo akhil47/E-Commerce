@@ -19,9 +19,9 @@
                 <p style="font-size: 22px; margin: 0px;">FILTERS</p>
             </div>
             <div id="filters-applied">
-                <div class="filter-applied-container" *ngFor="let i of [1,2,3,4,5]">
-                    <p class="filter-applied-text">United Colors of Benniton</p>
-                    <a class="filter-applied-icon">
+                <div class="filter-applied-container" *ngFor="let filter of filtersApplied | keyvalue">
+                    <p class="filter-applied-text">{{ filter.key }}</p>
+                    <a class="filter-applied-icon" (click)="removeFilter(filter.key)">
                         <i class="fa fa-times" aria-hidden="true"></i>
                     </a>
                 </div>

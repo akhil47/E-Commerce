@@ -1,5 +1,4 @@
 #main-container{
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     top: 0px;
     position: fixed;
     width: 100%;
@@ -58,6 +57,7 @@
     width: 256px;
     height: 25px;
     margin: 7.5px auto;
+    font-size: 14px;
     padding: 0px 32px 0px 8px;
 }
 a{

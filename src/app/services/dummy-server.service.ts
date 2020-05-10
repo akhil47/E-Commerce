@@ -26,7 +26,6 @@ export class DummyServer{
         this.authUpdates.next(false)
     }
     isLoggedIn(): boolean{
-        console.log(this.userLoggedIn)
         return this.userLoggedIn
     }
 

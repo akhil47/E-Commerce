@@ -15,17 +15,19 @@ input{
 }
 .list-items{
     float: left;
+    font-size: 14px;
 }
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     height: 0px;
     width: 0px;
-    background: transparent; /* make scrollbar transparent */
-}
+    background: transparent;
+} */
 .filter-header{
     color: white;
     display: block;
     text-align: left;
     padding: 8px;
+    font-size: 14px;
     background-color: #9237e8;
 }
 .filter-contents{

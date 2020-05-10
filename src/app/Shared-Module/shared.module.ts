@@ -12,7 +12,7 @@ import { PopupComponent } from './popup/popup.component';
 import { ListSelectionMenuComponent } from './list-selection-menu/list-selection-menu.component';
 import { RouterModule } from '@angular/router';
 import { CouponsComponent } from './coupons/coupons.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
 import { NotificationComponent } from './notification/notification.component';
 import { UserDropdownComponent } from './user-dropdown/user-dropdown.component';
@@ -45,7 +45,8 @@ import { NotificationPageComponent } from './notification-page/notification-page
     imports: [
         CommonModule,
         FormsModule,
-        RouterModule
+        RouterModule,
+        ReactiveFormsModule
     ],
     exports: [
         ProductComponent,
