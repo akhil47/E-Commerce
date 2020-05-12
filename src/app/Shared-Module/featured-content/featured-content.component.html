@@ -1,18 +1,17 @@
 <div id="main-container">
-  
-  <a><img [src]="currentImage" alt=""></a>
+
+  <div (transitionend)="transitionEnd($event)" id="images-container" #imageSlider> 
+    <img (click)="imageLinkClicked(lastCloneLink)" #image [src]="lastClone" id="lastClone">
+    <img *ngFor="let img of imageList; let i = index"
+      (click)="imageLinkClicked(linksList[i])"
+      #image [src]="img">
+    <img (click)="imageLinkClicked(firstCloneLink)" #image [src]="firstClone" id="firstClone">
+  </div>
   
   <!-- Navigation arrows -->
-  <a (click)="backwardSlide()"><i id="arrow-left" class="fa fa-arrow-circle-left" aria-hidden="true"></i></a>
-  <a (click)="forwardSlide()"><i id="arrow-right" class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+  <a (click)="previousSlide()"><i id="arrow-left" class="fa fa-chevron-left arrows" aria-hidden="true"></i></a>
+  <a (click)="nextSlide()"><i id="arrow-right" class="fa fa-chevron-right arrows" aria-hidden="true"></i></a>
 
   <!-- Navigation circles -->
-  <div id="circles-main-container">
-    <div id="circles-container">
-        <a class="circle-hover" *ngFor="let i of [0,1,2,3,4]">
-          <i *ngIf="i!=counter" (click)="activateSlide(i)" class="fa fa-circle-thin circles" aria-hidden="true"></i>
-          <i *ngIf="i==counter" class="fa fa-circle circles" aria-hidden="true"></i>
-        </a>
-    </div>
-  </div>
+  <!-- If Interested add them later -->
 </div>
