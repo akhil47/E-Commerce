@@ -1,25 +1,22 @@
 <div id="main-container">
-  <div id="main-wrapper">
-      <div id="content-wrapper">
-          <a (click)="onLeftScroll()">
-            <div #leftArrowContainer id="left-arrow-container">
-              <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            </div>
-          </a>
-          <div #productsMainContainer id="products-main-container">
-            <!-- <div id="products-container"> -->
-              <a [routerLink]="'/product/'+ product.getId()" *ngFor="let product of productList">
-                <div id="product">
-                  <app-product [product]="product"></app-product>
-                </div>
-              </a>
-            <!-- </div> -->
-          </div>
-          <a (click)="onRightScroll()">
-            <div #rightArrowContainer id="right-arrow-container">
-              <i class="fa fa-arrow-right" aria-hidden="true"></i>
-            </div>
-          </a>
+  <p id="title">{{ title }}</p>
+  <div id="scroll-container">
+    <a (click)="onLeftScroll()">
+      <div #leftArrowContainer id="left-arrow" class="arrow-btn-container">
+        <i class="fa fa-chevron-left arrow" aria-hidden="true"></i>
+      </div>
+    </a>
+    <div #itemsContainer id="items-container">
+      <a [routerLink]="'/product/'+ product.getId()" *ngFor="let product of itemsList">
+        <div class="item">
+          <app-product [product]="product"></app-product>
         </div>
+      </a>
+    </div>
+    <a (click)="onRightScroll()">
+      <div #rightArrowContainer id="right-arrow" class="arrow-btn-container">
+        <i class="fa fa-chevron-right arrow" aria-hidden="true"></i>
+      </div>
+    </a>
   </div>
 </div>

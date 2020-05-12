@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2, AfterViewInit, AfterViewChecked, Self } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 
 import { Product } from 'src/app/Modals/Product/product.modal';
 import { ProductService } from 'src/app/services/product.service';
@@ -9,50 +9,28 @@ import { ProductService } from 'src/app/services/product.service';
   templateUrl: './horizontal-scroll.component.html',
   styleUrls: ['./horizontal-scroll.component.css']
 })
-export class HorizontalScrollComponent implements OnInit, AfterViewInit {
+export class HorizontalScrollComponent implements OnInit {
 
-  @ViewChild('productsMainContainer', { read: ElementRef, static: true }) public productsMainContainer: ElementRef;
-  @ViewChild('leftArrowContainer', { static: true }) leftArrow: ElementRef;
-  @ViewChild('rightArrowContainer', { static: true }) rightArrow: ElementRef;
+  @ViewChild('itemsContainer', { read: ElementRef, static: true }) public itemsContainer: ElementRef;
   
-  heightValue: string
-  productList : Product[] = []
+  title: string = 'Featured Products'
+  itemsList : Product[] = []
 
-  constructor(private renderer: Renderer2, private productService: ProductService) {
+  constructor(private productService: ProductService) {
     // temporary code will be replaced by service
     for(let i = 0; i < 20; i++){
-      this.productList.push(this.productService.products[i])
+      this.itemsList.push(this.productService.products[i])
     }
   }
 
   ngOnInit() {
   }
-  ngAfterViewInit(){
-    setTimeout(()=>{
-      this.heightValue = (this.productsMainContainer.nativeElement.scrollHeight) + 'px'
-      this.renderer.setStyle(this.leftArrow.nativeElement, 'height', this.heightValue)
-      this.renderer.setStyle(this.rightArrow.nativeElement, 'height', this.heightValue)
-    }, 100)
-    
-  }
-
-
-  public scrollRight(): void {
-    this.productsMainContainer.nativeElement.scrollTo({ left: (this.productsMainContainer.nativeElement.scrollLeft + 200), behavior: 'smooth' });
-  }
-
-  public scrollLeft(): void {
-    this.productsMainContainer.nativeElement.scrollTo({ left: (this.productsMainContainer.nativeElement.scrollLeft - 200), behavior: 'smooth' });
-  }
-
 
   onLeftScroll(){
-    this.scrollLeft()
+    this.itemsContainer.nativeElement.scrollTo({ left: (this.itemsContainer.nativeElement.scrollLeft - 200), behavior: 'smooth' });
   }
   onRightScroll(){
-    this.scrollRight()
+    this.itemsContainer.nativeElement.scrollTo({ left: (this.itemsContainer.nativeElement.scrollLeft + 200), behavior: 'smooth' });
   }
-  onClick(){
-    console.log('clicked')
-  }
+
 }

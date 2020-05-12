@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { ProductComponent } from './product/product.component';
 import { HorizontalScrollComponent } from './horizontal-scroll/horizontal-scroll.component';
 import { FeaturedContentComponent } from './featured-content/featured-content.component';
-import { BannersSectionComponent } from './banners-section/banners-section.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { CheckboxFilterComponent } from './checkbox-filter/checkbox-filter.component';
 import { FiltersSectionComponent } from './filters-section/filters-section.component';
@@ -29,7 +28,6 @@ import { NotificationPageComponent } from './notification-page/notification-page
         ProductComponent,
         HorizontalScrollComponent,
         FeaturedContentComponent,
-        BannersSectionComponent,
         DropdownComponent,
         PopupComponent,
         ListSelectionMenuComponent,
@@ -52,7 +50,6 @@ import { NotificationPageComponent } from './notification-page/notification-page
         ProductComponent,
         HorizontalScrollComponent,
         FeaturedContentComponent,
-        BannersSectionComponent,
         DropdownComponent,
         CheckboxFilterComponent,
         FiltersSectionComponent,

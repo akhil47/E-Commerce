@@ -1,7 +1,7 @@
 #main-container{
     margin: 50px 0px 0px 0px;
     width: 100%;
-    height: 50%;
+    /* height: 50%; */
     background: black;
     position: relative;
     transition: 0.5s all;
