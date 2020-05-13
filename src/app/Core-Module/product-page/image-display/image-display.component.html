@@ -1,9 +1,15 @@
 <div id="main-container">
-  <div id="images-container">
+  <div id="images-container" #previewContainer>
+    <div (click)="scrollUp()" id="top-arrow" class="image-preview-arrows">
+      <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </div>
+    <div (click)="scrollDown()" id="bottom-arrow" class="image-preview-arrows">
+      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </div>
     <div class="image-preview-container" *ngFor="let image of images; index as i">
-        <a (click)="changeImage(i)">
-            <img class="image-preview" [src]="image" alt="">
-        </a>
+      <a (click)="changeImage(i)">
+        <img class="image-preview" [src]="image" alt="">
+      </a>
     </div>
   </div>
   <div id="selected-image-container">

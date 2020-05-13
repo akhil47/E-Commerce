@@ -19,6 +19,9 @@ import { UserDropdownMenuComponent } from './user-dropdown/user-dropdown-menu/us
 import { SizesContainerComponent } from './sizes-container/sizes-container.component';
 import { SizeComponent } from './sizes-container/size/size.component';
 import { NotificationPageComponent } from './notification-page/notification-page.component';
+import { BannersGridComponent } from './banners-grid/banners-grid.component';
+import { LargeBannerComponent } from './large-banner/large-banner.component';
+import { TrioBannersComponent } from './trio-banners/trio-banners.component';
 
 @NgModule({
     declarations: [
@@ -39,6 +42,9 @@ import { NotificationPageComponent } from './notification-page/notification-page
         SizesContainerComponent,
         SizeComponent,
         NotificationPageComponent,
+        BannersGridComponent,
+        LargeBannerComponent,
+        TrioBannersComponent,
     ],
     imports: [
         CommonModule,
@@ -63,7 +69,10 @@ import { NotificationPageComponent } from './notification-page/notification-page
         UserDropdownMenuComponent,
         SizesContainerComponent,
         SizeComponent,
-        NotificationPageComponent
+        NotificationPageComponent,
+        BannersGridComponent,
+        LargeBannerComponent,
+        TrioBannersComponent
     ]
 })
 export class SharedModule { }

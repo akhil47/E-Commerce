@@ -1,7 +1,6 @@
 #main-container{
     margin: 58px 8px 4px 8px;
     position: relative;
-    
 }
 #wrapper{
     width: 100%;
@@ -105,6 +104,27 @@
     font-size: 14px;
     margin: 4px 0px;
 }
+/* Brand and description */
+#brand{
+    width: 100%;
+    padding: 8px;
+    display: inline-block;
+    background-color: red;
+    vertical-align: top;
+    text-align: center;
+    height: 256px;
+}
+#description{
+    width: 100%;
+    padding: 8px;
+    display: inline-block;
+    background-color: black;
+    height: 256px;
+}
+#brand img{
+    width: 80%;
+    object-fit: contain;
+}
 @media only screen and (min-width: 768px){
     #main-container{
         margin: 98px 8px 4px 8px;
@@ -112,6 +132,10 @@
     }
 }
 @media only screen and (min-width: 1024px){
+    #main-container{
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
     #images-container{
         width: 60%;
         display: inline-block;
@@ -122,15 +146,27 @@
         width: 40%;
         display: inline-block;
     }
+    #brand{
+        width: 60%;
+    }
+    #description{
+        width: 40%;
+    }
 }
 @media only screen and (min-width: 1366px){
     #images-container{
-        width: 944px;
+        width: 844px;
         display: inline-block;
     }
     #product-info-container{
         vertical-align: top;
-        width: 406px;
+        width: 506px;
         display: inline-block;
+    }
+    #brand{
+        width: 844px;
+    }
+    #description{
+        width: 506px;
     }
 }

@@ -29,6 +29,7 @@ export class ProductPageComponent implements OnInit{
   alertText: string
 
   isLoggedIn: boolean = false
+  brandImage: string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRvS6ph7at0XEI7OqWaBOgUB7TUAS7mnu7vDYtiFcu826cfixWH&usqp=CAU'
 
   constructor(private productService: ProductService, private route: ActivatedRoute,
     private accountService: AccountService, private server: DummyServer) {

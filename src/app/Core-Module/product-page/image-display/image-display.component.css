@@ -32,17 +32,15 @@
     height: inherit;
     width: inherit;
 }
+#selected-image{
+    width: inherit;
+    object-fit: contain;
+}
 a{
     height: inherit;
     width: inherit;
     text-decoration: none;
     cursor: pointer;
-}
-@media only screen and (max-width: 512px){
-    #selected-image{
-        width: 100%;
-        object-fit: contain;
-    }
 }
 .arrows{
     position: absolute;
@@ -63,14 +61,45 @@ a{
 i:hover{
     color: black;
 }
+/* Image Preview Container arrows */
+.image-preview-arrows{
+    position: absolute;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 18px;
+    border: 0.5px solid grey;
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    background-color: white;
+    color: #9237e8;
+}
+#top-arrow{
+    top: -16px;
+    left: 42px;
+}
+#bottom-arrow{
+    bottom: -16px;
+    left: 42px;
+}
+#bottom-arrow i{
+    margin-top: 8px;
+}
 @media only screen and (min-width: 1024px){
     #images-container{
         display: inline-block;
     }
     #selected-image-container{
         width: calc(100% - 116px);
+        padding: 8px;
+    }
+    #selected-image{
+        max-height : 584px;
     }
     .arrows{
         display: none;
     }
+}
+@media only screen and (min-width: 1280px){
+    
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-image-display',
@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ImageDisplayComponent implements OnInit {
 
+  @ViewChild('previewContainer', { read: ElementRef, static: true }) public previewContainer: ElementRef;
   imageSelected: number
   @Input() images: string[]
   
@@ -24,6 +25,12 @@ export class ImageDisplayComponent implements OnInit {
   }
   rightArrow(){
     this.imageSelected = (this.imageSelected + 1) % this.images.length
+  }
+  scrollUp(){
+    this.previewContainer.nativeElement.scrollTo({ top: (this.previewContainer.nativeElement.scrollTop - 200), behavior: 'smooth' });
+  }
+  scrollDown(){
+    this.previewContainer.nativeElement.scrollTo({ top: (this.previewContainer.nativeElement.scrollTop + 200), behavior: 'smooth' });
   }
 
 }

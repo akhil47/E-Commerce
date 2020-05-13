@@ -1,0 +1,23 @@
+#main-container{
+    margin: 0px;
+    padding: 8px;
+}
+img{
+    width: 100%;
+
+}
+@media only screen and (min-width: 375px){
+}
+@media only screen and (min-width: 768px){
+    #main-container{
+        margin: 16px;
+    }
+}
+@media only screen and (min-width: 1024px){
+
+}
+@media only screen and (min-width: 1280px){
+    #main-container{
+        margin: 32px;
+    }
+}

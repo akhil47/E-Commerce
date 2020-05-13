@@ -1,0 +1,28 @@
+<div id="main-container">
+    <p id="title">{{ title }}</p>
+    <div *ngIf="mobileViewEnabled" class="banners-row">
+        <div class="banner" *ngFor="let b of getBanners(0, 3)">
+            <a [routerLink]="b.routeLink"><img [src]="b.imgUrl"></a>
+        </div>
+    </div>
+    <div *ngIf="mobileViewEnabled" class="banners-row">
+        <div class="banner" *ngFor="let b of getBanners(3, 6)">
+            <a [routerLink]="b.routeLink"><img [src]="b.imgUrl"></a>
+        </div>
+    </div>
+    <div *ngIf="mobileViewEnabled" class="banners-row">
+        <div class="banner" *ngFor="let b of getBanners(6, 10)">
+            <a [routerLink]="b.routeLink"><img [src]="b.imgUrl"></a>
+        </div>
+    </div>
+    <div *ngIf="!mobileViewEnabled" class="banners-row">
+        <div class="banner" *ngFor="let b of getBanners(0, 5)">
+            <a [routerLink]="b.routeLink"><img [src]="b.imgUrl"></a>
+        </div>
+    </div>
+    <div *ngIf="!mobileViewEnabled" class="banners-row">
+        <div class="banner" *ngFor="let b of getBanners(5, 10)">
+            <a [routerLink]="b.routeLink"><img [src]="b.imgUrl"></a>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, ViewChildren, QueryList, AfterViewInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ViewChildren, QueryList, AfterViewInit, Renderer2, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,6 +10,11 @@ export class FeaturedContentComponent implements OnInit, AfterViewInit {
 
   @ViewChild('imageSlider') slider : ElementRef
   @ViewChildren('image') images : QueryList<ElementRef>
+
+  @HostListener('window:resize', ['$event']) onResize(event) {
+    this.size = this.slider.nativeElement.offsetWidth
+    this.renderer.setStyle(this.slider.nativeElement, 'transform', 'translateX(' + (-this.size * this.counter) + 'px)')
+  }
 
   // Use different images for desktop and mobile versions
   imageList: string[] = [

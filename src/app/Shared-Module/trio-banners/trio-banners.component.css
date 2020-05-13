@@ -1,0 +1,54 @@
+#main-container{
+    margin: 0px;
+    padding: 8px;
+}
+#title{
+    font-size: 22px;
+    font-weight: 600;;
+}
+.banners-row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0px 8px;
+    margin-bottom: 16px;
+}
+.banner{
+    width: 100%;
+    padding: 8px 0px;
+}
+a{
+    cursor: pointer;
+    text-decoration: none;
+    width: inherit;
+}
+img{
+    width: 100%;
+}
+@media only screen and (min-width: 375px){
+    #title{
+        font-size: 24px;
+    }
+}
+@media only screen and (min-width: 768px){
+    #main-container{
+        margin: 16px;
+    }
+    #title{
+        font-size: 28px;
+    }
+    .banner{
+        width: 30%;
+    }
+}
+@media only screen and (min-width: 1024px){
+    .banners-row{
+        margin: 0px 64px;
+        margin-bottom: 32px;
+    }
+}
+@media only screen and (min-width: 1280px){
+    #main-container{
+        margin: 32px;
+    }
+}

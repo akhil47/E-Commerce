@@ -38,11 +38,11 @@ export class ProductService{
             this.products[i].setId(i)
             this.products[i].setDescription('100% Cotton')
             this.products[i].setImages([
-                'https://assets.jassets.com/h_600,q_95,w_440/v1/assets/images/productImage/2018/7/6/cd37416d-5556-4024-9d7f-bb5ebde43a6a1530825330030-1.webp',
-                'https://assets.jassets.com/h_600,q_95,w_440/v1/assets/images/productImage/2018/7/6/ad4f4bd5-b2ae-475d-98e0-7eae8971bda91530825330077-2.webp',
-                'https://assets.jassets.com/h_600,q_95,w_440/v1/assets/images/productImage/2018/7/6/8d0d56fe-4b3d-45cc-812a-6edeb9667c9b1530825330124-3.webp',
-                'https://assets.jassets.com/h_600,q_95,w_440/v1/assets/images/productImage/2018/7/6/17a8d5fd-559a-41ae-91f4-81529fecb83b1530825330137-4.webp',
-                'https://assets.jassets.com/h_600,q_95,w_440/v1/assets/images/productImage/2018/7/6/dd788a0b-6f7a-4e16-9623-3680e1f1ed2f1530825330150-5.webp'
+                'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1700944/2019/6/8/c3d336e4-8c86-4434-94b2-c9b28b6dd6471559989322777-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Round-Neck-T-Shirt--2.jpg',
+                'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1700944/2019/6/8/20153ade-f325-4613-a851-f79f8dc00c571559989322759-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Round-Neck-T-Shirt--3.jpg',
+                'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1700944/2019/6/8/67f8fc06-3131-4ae9-a869-2b485f0aca3c1559989322742-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Round-Neck-T-Shirt--4.jpg',
+                'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1700944/2019/6/8/ec064f55-1640-4bdb-92f2-b1b22cb190391559989322722-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Round-Neck-T-Shirt--5.jpg',
+                'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1700944/2019/6/8/6afd4244-8211-4d49-b708-1e92ff0d1bf11559989322708-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Round-Neck-T-Shirt--6.jpg'
             ])
             this.products[i].setBrand('Tommy Hilfiger')
             this.products[i].setCategory('Men')
